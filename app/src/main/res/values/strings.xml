@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">GuessTheFlag</string>
+
+    <string name="menu_start_game">Игра</string>
+    <string name="menu_statistic">Статистика</string>
+    <string name="menu_exit">Выход</string>
+    <string name="menu_setting">Настройки</string>
+    <string name="menu_back">Назад</string>
+
+    <string name="menu_country_flag">Флаги стран </string>
+    <string name="menu_region_flag">Флаги регионов</string>
+    <string name="menu_country_map">Карты стран</string>
+    <string name="menu_region_map">Карты регионов</string>
+</resources>

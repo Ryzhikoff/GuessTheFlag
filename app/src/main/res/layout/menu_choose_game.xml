@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/menuCountry"
+        style="@style/MenuContainer">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStartCountryFlag"
+            android:text="@string/menu_country_flag"
+            style="@style/ButtonMenu" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStartRegionFlag"
+            android:text="@string/menu_region_flag"
+            style="@style/ButtonMenu"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStartCountryMap"
+            android:text="@string/menu_country_map"
+            style="@style/ButtonMenu"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnStartRegionMap"
+            android:text="@string/menu_region_map"
+            style="@style/ButtonMenu"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBack"
+            android:text="@string/menu_back"
+            style="@style/ButtonMenu"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
