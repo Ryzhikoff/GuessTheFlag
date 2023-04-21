@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="number_of_question_per_round" type="integer">10</item>
+</resources>
