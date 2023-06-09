@@ -20,4 +20,6 @@
     <string name="statistic_total_title">Общие результаты:</string>
     <string name="menu_in_main_menu">В главное меню</string>
     <string name="menu_again">Играть снова</string>
+    <string name="statistic_total_answers">Всего вопросов\n</string>
+    <string name="statistic_percent_correct_answers">Процент верных ответов</string>
 </resources>

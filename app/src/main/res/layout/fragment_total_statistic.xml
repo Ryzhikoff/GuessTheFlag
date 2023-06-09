@@ -136,4 +136,72 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWrongAnswerText" />
 
+    <ImageView
+        android:id="@+id/ivTotalAnswers"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/points"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPointsText" />
+
+    <TextView
+        android:id="@+id/tvTotalAnswersText"
+        style="@style/ButtonTextMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="20sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/neucha"
+        android:text="@string/statistic_total_answers"
+        app:layout_constraintStart_toEndOf="@id/barrierLeft"
+        app:layout_constraintTop_toBottomOf="@id/tvPointsText"
+        app:layout_constraintEnd_toStartOf="@id/barrierRight"/>
+
+    <TextView
+        android:id="@+id/tvTotalAnswers"
+        style="@style/ButtonTextMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="20sp"
+        android:fontFamily="@font/neucha"
+        android:text="10"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPointsText" />
+
+    <ImageView
+        android:id="@+id/ivPercentCorrectAnswers"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/points"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTotalAnswersText" />
+
+    <TextView
+        android:id="@+id/tvPercentCorrectAnswersText"
+        style="@style/ButtonTextMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="20sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/neucha"
+        android:text="@string/statistic_percent_correct_answers"
+        app:layout_constraintStart_toEndOf="@id/barrierLeft"
+        app:layout_constraintTop_toBottomOf="@id/tvTotalAnswersText"
+        app:layout_constraintEnd_toStartOf="@id/barrierRight"/>
+
+    <TextView
+        android:id="@+id/tvPercentCorrectAnswers"
+        style="@style/ButtonTextMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="20sp"
+        android:fontFamily="@font/neucha"
+        android:text="10"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTotalAnswersText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

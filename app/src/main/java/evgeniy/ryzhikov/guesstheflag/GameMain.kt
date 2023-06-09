@@ -14,7 +14,7 @@ class GameMain : AppCompatActivity() {
     private lateinit var binding: ActivityGameMainBinding
     private lateinit var questionManager: QuestionManager
     private lateinit var roundTimer: RoundTimer
-    private var statistic = Statistic()
+    private lateinit var statistic: Statistic
     private var timerCount = 10
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +22,7 @@ class GameMain : AppCompatActivity() {
         binding = ActivityGameMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         questionManager = QuestionManager(this)
+        statistic = Statistic(this)
 
         setListenerButtons()
 
