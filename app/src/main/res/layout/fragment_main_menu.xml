@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menuContainer"
+    style="@style/MenuContainer">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnStartGame"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/neucha"
+        style="@style/ButtonMenu"
+        android:text="@string/menu_start_game" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnStatistic"
+        android:fontFamily="@font/neucha"
+        style="@style/ButtonMenu"
+        android:text="@string/menu_statistic" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSetting"
+        android:fontFamily="@font/neucha"
+        style="@style/ButtonMenu"
+        android:text="@string/menu_setting" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnExit"
+        android:fontFamily="@font/neucha"
+        style="@style/ButtonMenu"
+        android:text="@string/menu_exit" />
+
+</LinearLayout>

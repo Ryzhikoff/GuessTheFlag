@@ -30,8 +30,8 @@
         <item name="android:layout_marginEnd">10dp</item>
         <item name="android:background">@drawable/button_background</item>
         <item name="android:textAppearance">@style/ButtonTextMenu</item>
-        <item name="android:stateListAnimator">@animator/elevation</item>
     </style>
+
 
     <style name="MenuContainer">
         <item name="android:layout_width">wrap_content</item>>
@@ -47,10 +47,13 @@
     <style name="ButtonTextMenu.Answers">
 
     </style>
+
     <style name="AnswerButton" parent="Widget.AppCompat.Button">
-        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_height">130dp</item>
         <item name="android:layout_width">200dp</item>
         <item name="android:padding">10dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/button_background_answers</item>
         <item name="android:textAppearance">@style/ButtonTextMenu.Answers</item>
     </style>
 

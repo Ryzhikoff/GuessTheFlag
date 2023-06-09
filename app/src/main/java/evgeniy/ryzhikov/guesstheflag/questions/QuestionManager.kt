@@ -3,11 +3,14 @@ package evgeniy.ryzhikov.guesstheflag.questions
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.Log
+import evgeniy.ryzhikov.guesstheflag.GameMain
 import evgeniy.ryzhikov.guesstheflag.R
+import evgeniy.ryzhikov.guesstheflag.settings.NUMBER_OF_QUESTION_PER_ROUND
 import evgeniy.ryzhikov.guesstheflag.utils.DataFiles
 import evgeniy.ryzhikov.guesstheflag.utils.DrawableReader
+import kotlin.random.Random
 
-class QuestionManager(val context: Context) {
+class QuestionManager(private val context: Context) {
     private val drawableReader = DrawableReader(context)
     private val questions = ArrayList<Question>()
     private var counter  = 0
@@ -17,34 +20,41 @@ class QuestionManager(val context: Context) {
     }
 
     private fun generateQuestion() {
-        repeat(context.resources.getInteger(R.integer.number_of_question_per_round)) {
+        repeat(NUMBER_OF_QUESTION_PER_ROUND) {
             questions.add(newQuestion())
         }
     }
 
     private fun newQuestion() : Question {
-        val answers = createAnswers()
-        val correctAnswer = answers[0]
-        answers.shuffle()
-        return Question(correctAnswer, answers)
+        val mapOfIdNames = DataFiles().getMapOfNames()
+        val answers = createAnswers(mapOfIdNames)
+
+        val nameForPath = answers[0]
+        val answersName = ArrayList<String>()
+        answers.forEach {
+            answersName.add(context.resources.getString(mapOfIdNames[it]!!))
+        }
+        val correctAnswer = answersName[0]
+        answersName.shuffle()
+        return Question(nameForPath, correctAnswer,  answersName)
     }
 
-    private fun createAnswers() : ArrayList<String> {
-        val listOfNames = DataFiles().getListOfNames()
-        val answers  = ArrayList<String>()
-        Log.d("CREATE ANSWERS", "start create answers")
+    private fun createAnswers(mapOfIdNames: Map<String, Int>) : ArrayList<String> {
+        val answers = ArrayList<String>()
         while(answers.size < 4) {
-            val answer = listOfNames.random()
+            val answer = mapOfIdNames.entries.elementAt(Random.nextInt(mapOfIdNames.size)).key
             if (!answers.contains(answer)) {
                 answers.add(answer)
             }
         }
-        Log.d("CREATE ANSWERS", "finish create answers")
         return answers
     }
 
+    fun isCorrectAnswer(answer: String) : Boolean {
+        return questions[counter].correctAnswer.equals(answer)
+    }
+
     fun isHaveNextQuestion() : Boolean {
-        Log.d("COUNTER", counter.toString() + " " + questions.size.toString())
         counter++
         return (questions.size - 1) >= counter
     }
@@ -56,6 +66,6 @@ class QuestionManager(val context: Context) {
 
     val drawableQuestion: Drawable?
         get() {
-            return drawableReader.getDrawable(questions[counter].correctAnswer)
+            return drawableReader.getDrawable(questions[counter].nameForPath)
         }
 }

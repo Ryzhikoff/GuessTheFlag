@@ -4,7 +4,7 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 
 
-class DrawableReader(val context: Context) {
+class DrawableReader(private val context: Context) {
     private var path: String = when(GameMode.mode)  {
          Mode.COUNTRY_FLAG -> "flags/country_flag/"
          Mode.REGION_FLAG -> "flags/region_flag/"

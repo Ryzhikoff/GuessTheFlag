@@ -1,3 +1,5 @@
 package evgeniy.ryzhikov.guesstheflag.questions
 
-data class Question(val correctAnswer: String, val answers: ArrayList<String>)
+import android.graphics.drawable.Drawable
+
+data class Question(val nameForPath: String, val correctAnswer: String, val answers: ArrayList<String>)

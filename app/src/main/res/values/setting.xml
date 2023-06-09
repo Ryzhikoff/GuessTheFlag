@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="number_of_question_per_round" type="integer">10</item>
+    <integer name="number_of_question_per_round">10</integer>
+    <integer name="round_time_in_millis">10000</integer>
+
+    <integer name="statistic_multiplier_flag_country">3</integer>
+    <integer name="statistic_multiplier_flag_region">5</integer>
+    <integer name="statistic_multiplier_map_country">4</integer>
+    <integer name="statistic_multiplier_map_region">6</integer>
+
+    <integer name="points_for_wrong_flag_country">-15</integer>
+    <integer name="points_for_wrong_flag_region">-10</integer>
+    <integer name="points_for_wrong_map_country">-12</integer>
+    <integer name="points_for_wrong_map_region">-8</integer>
 </resources>

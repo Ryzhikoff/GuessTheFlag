@@ -11,4 +11,13 @@
     <string name="menu_region_flag">Флаги регионов</string>
     <string name="menu_country_map">Карты стран</string>
     <string name="menu_region_map">Карты регионов</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="statistic_round_title">Результаты раунда:</string>
+    <string name="statistic_round_correct_answer">Количество верных ответов:</string>
+    <string name="statistic_round_wrong_answer">Количество не правильных ответов:</string>
+    <string name="statistic_round_points">Набранные очки:</string>
+    <string name="statistic_total_title">Общие результаты:</string>
+    <string name="menu_in_main_menu">В главное меню</string>
+    <string name="menu_again">Играть снова</string>
 </resources>

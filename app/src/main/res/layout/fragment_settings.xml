@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/settingsContainer"
+    style="@style/MenuContainer">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/neucha"
+        android:text="Громкость звуков"/>
+
+    <SeekBar
+        android:id="@+id/sbVolumeSound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/neucha"
+        android:text="Громкость музыки"/>
+
+    <SeekBar
+        android:id="@+id/sbVolumeMusic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBack"
+        android:fontFamily="@font/neucha"
+        android:text="@string/menu_back"
+        style="@style/ButtonMenu"/>
+
+</LinearLayout>
