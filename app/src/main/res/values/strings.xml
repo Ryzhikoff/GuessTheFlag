@@ -22,4 +22,7 @@
     <string name="menu_again">Играть снова</string>
     <string name="statistic_total_answers">Всего вопросов\n</string>
     <string name="statistic_percent_correct_answers">Процент верных ответов</string>
+    <string name="energy_not_enough_1">Упс! Энергия закончилась!</string>
+    <string name="energy_not_enough_2">Что бы восполнитель энергию посмотри видео!</string>
+    <string name="menu_wath_ad">Смотреть видео</string>
 </resources>

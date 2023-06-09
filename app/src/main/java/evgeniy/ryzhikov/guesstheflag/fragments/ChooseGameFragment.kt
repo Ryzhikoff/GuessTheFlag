@@ -11,12 +11,14 @@ import evgeniy.ryzhikov.guesstheflag.GameMain
 import evgeniy.ryzhikov.guesstheflag.MenuActivity
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.databinding.FragmentChooseGameBinding
+import evgeniy.ryzhikov.guesstheflag.utils.Energy
 import evgeniy.ryzhikov.guesstheflag.utils.GameMode
 import evgeniy.ryzhikov.guesstheflag.utils.Mode
 
 class ChooseGameFragment : Fragment() {
     private var _binding: FragmentChooseGameBinding? = null
     private val binding get() = _binding!!
+    private lateinit var  energy: Energy
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +30,7 @@ class ChooseGameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        energy = Energy(requireContext())
         addButtonListener()
     }
 
@@ -55,16 +57,21 @@ class ChooseGameFragment : Fragment() {
     }
 
     private fun startGame(button : AppCompatButton) {
-        GameMode.mode = when (button.id) {
-            R.id.btnStartCountryFlag -> Mode.COUNTRY_FLAG
-            R.id.btnStartRegionFlag -> Mode.REGION_FLAG
-            R.id.btnStartCountryMap -> Mode.COUNTRY_MAP
-            R.id.btnStartRegionMap -> Mode.REGION_MAP
-            else -> Mode.COUNTRY_FLAG
+        if (energy.isHave()) {
+            energy.use()
+            GameMode.mode = when (button.id) {
+                R.id.btnStartCountryFlag -> Mode.COUNTRY_FLAG
+                R.id.btnStartRegionFlag -> Mode.REGION_FLAG
+                R.id.btnStartCountryMap -> Mode.COUNTRY_MAP
+                R.id.btnStartRegionMap -> Mode.REGION_MAP
+                else -> Mode.COUNTRY_FLAG
+            }
+            val intent = Intent(requireContext(), GameMain::class.java)
+            startActivity(intent)
+            activity?.finish()
+        } else {
+            NotEnoughEnergyFragment().show(childFragmentManager, TAG_NOT_ENOUGH_ENERGY)
         }
-        val intent = Intent(requireContext(), GameMain::class.java)
-        startActivity(intent)
-        activity?.finish()
     }
 
     override fun onDestroyView() {
