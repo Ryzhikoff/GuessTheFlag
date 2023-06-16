@@ -6,6 +6,8 @@ import evgeniy.ryzhikov.guesstheflag.databinding.ActivityGameMainBinding
 import evgeniy.ryzhikov.guesstheflag.questions.QuestionManager
 import evgeniy.ryzhikov.guesstheflag.utils.RoundTimer
 import android.content.Intent
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.AppCompatTextView
 import evgeniy.ryzhikov.guesstheflag.settings.*
 import evgeniy.ryzhikov.guesstheflag.statistic.Statistic
@@ -16,6 +18,7 @@ class GameMain : AppCompatActivity() {
     private lateinit var roundTimer: RoundTimer
     private lateinit var statistic: Statistic
     private var timerCount = 10
+    private var backPressed = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +31,7 @@ class GameMain : AppCompatActivity() {
 
         setInfoPanel()
         newRound()
+        onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
     }
 
     private fun setListenerButtons() {
@@ -103,5 +107,25 @@ class GameMain : AppCompatActivity() {
         intent.putExtra("stat", bundle)
         startActivity(intent)
         finish()
+    }
+
+    private val onBackPressedCallback: OnBackPressedCallback =
+        object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                exitDoubleTap()
+            }
+        }
+
+    private fun exitDoubleTap() {
+        if (backPressed + TIME_INTERVAL > System.currentTimeMillis()) {
+            finish()
+        } else {
+            Toast.makeText(this, R.string.alert_double_tap_exit, Toast.LENGTH_SHORT).show()
+        }
+        backPressed = System.currentTimeMillis()
+    }
+
+    companion object {
+        const val TIME_INTERVAL = 2000
     }
 }

@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/neucha"
-            android:text="@string/menu_wath_ad" />
+            android:text="@string/menu_watch_ad" />
 
         <Button
             android:id="@+id/btnInMainMenu"

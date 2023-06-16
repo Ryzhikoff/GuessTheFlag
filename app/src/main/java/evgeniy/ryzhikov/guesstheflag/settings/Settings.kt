@@ -18,7 +18,7 @@ const val POINTS_FOR_WRONG_MAP_COUNTRY = -12
 const val POINTS_FOR_WRONG_MAP_REGION = -8
 
 //Energy Controller
-const val TIME_IN_SECONDS_ENERGY_RECOVERY = 1 * 20;
+const val TIME_IN_SECONDS_ENERGY_RECOVERY = 1 * 60;
 const val ENERGY_START = 3;
 const val ENERGY_MAX = 3;
 const val ENERGY_ADD_FOR_ADS = 3;

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import evgeniy.ryzhikov.guesstheflag.databinding.FragmentRoundStatisticBinding
 import evgeniy.ryzhikov.guesstheflag.statistic.RoundStatistic
+import evgeniy.ryzhikov.guesstheflag.view.StatisticItemView
 
 class RoundStatisticFragment : Fragment() {
     private var _binding: FragmentRoundStatisticBinding? = null
@@ -24,9 +25,12 @@ class RoundStatisticFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val roundStatistic = arguments?.get("statistic") as RoundStatistic
-        binding.tvCorrectAnswer.text = roundStatistic.countCorrectAnswer.toString()
-        binding.tvWrongAnswer.text = roundStatistic.countWrongAnswer.toString()
-        binding.tvPoints.text = roundStatistic.points.toString()
+
+        //binding.roundContainer.addView(StatisticItemView(requireContext(), null))
+
+//        binding.tvCorrectAnswer.text = roundStatistic.countCorrectAnswer.toString()
+//        binding.tvWrongAnswer.text = roundStatistic.countWrongAnswer.toString()
+//        binding.tvPoints.text = roundStatistic.points.toString()
     }
 
     override fun onDestroyView() {

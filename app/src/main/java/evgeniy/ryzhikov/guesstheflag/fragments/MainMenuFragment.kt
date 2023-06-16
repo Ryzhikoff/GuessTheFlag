@@ -40,6 +40,10 @@ class MainMenuFragment : Fragment() {
         binding.btnStatistic.setOnClickListener {
             startStatisticActivity()
         }
+
+        binding.btnExit.setOnClickListener {
+            requireActivity().finish()
+        }
     }
 
     private fun startStatisticActivity() {

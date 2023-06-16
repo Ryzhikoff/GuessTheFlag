@@ -5,135 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StatisticActivity">
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrierLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="end"
-        app:constraint_referenced_ids="ivWrong,ivCorrect,ivPoints"
-        tools:layout_editor_absoluteX="411dp" />
-
     <TextView
         android:id="@+id/tvRoundTitle"
         style="@style/ButtonTextMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/stat_margin_after_item"
         android:fontFamily="@font/neucha"
         android:text="@string/statistic_round_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrierRight"
+    <LinearLayout
+        android:id="@+id/roundContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:barrierDirection="left"
-        app:constraint_referenced_ids="tvCorrectAnswer,tvWrongAnswer,tvPoints"
-        tools:layout_editor_absoluteX="411dp" />
-
-    <ImageView
-        android:id="@+id/ivCorrect"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/answer_correct"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvRoundTitle" />
-
-    <TextView
-        android:id="@+id/tvCorrectAnswerText"
-        style="@style/ButtonTextMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:autoSizeMaxTextSize="20sp"
-        android:fontFamily="@font/neucha"
-        android:text="@string/statistic_round_correct_answer"
-        app:layout_constraintStart_toEndOf="@id/barrierLeft"
+        android:layout_marginTop="@dimen/stat_margin_after_item"
         app:layout_constraintTop_toBottomOf="@id/tvRoundTitle"
-        app:layout_constraintEnd_toStartOf="@id/barrierRight"/>
-
-    <TextView
-        android:id="@+id/tvCorrectAnswer"
-        style="@style/ButtonTextMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoSizeMaxTextSize="20sp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/neucha"
-        android:text="10"
-        app:layout_constraintTop_toBottomOf="@id/tvRoundTitle"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivWrong"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/answer_wrong"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCorrectAnswerText" />
-
-    <TextView
-        android:id="@+id/tvWrongAnswerText"
-        style="@style/ButtonTextMenu"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:autoSizeTextType="uniform"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/neucha"
-        android:text="@string/statistic_round_wrong_answer"
-        app:layout_constraintTop_toBottomOf="@id/tvCorrectAnswerText"
-        app:layout_constraintStart_toEndOf="@id/barrierLeft"
-        app:layout_constraintEnd_toStartOf="@id/barrierRight"/>
-
-    <TextView
-        android:id="@+id/tvWrongAnswer"
-        style="@style/ButtonTextMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoSizeMaxTextSize="20sp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/neucha"
-        android:text="10"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCorrectAnswer"/>
+        android:orientation="vertical" >
 
-    <ImageView
-        android:id="@+id/ivPoints"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/points"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvWrongAnswerText" />
+        <evgeniy.ryzhikov.guesstheflag.view.StatisticItemView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvPointsText"
-        style="@style/ButtonTextMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoSizeMaxTextSize="20sp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/neucha"
-        android:text="@string/statistic_round_points"
-        app:layout_constraintStart_toEndOf="@id/barrierLeft"
-        app:layout_constraintTop_toBottomOf="@id/tvWrongAnswerText"
-        app:layout_constraintEnd_toStartOf="@id/barrierRight"/>
 
-    <TextView
-        android:id="@+id/tvPoints"
-        style="@style/ButtonTextMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autoSizeMaxTextSize="20sp"
-        android:fontFamily="@font/neucha"
-        android:text="10"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWrongAnswerText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
