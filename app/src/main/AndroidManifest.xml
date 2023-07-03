@@ -19,6 +19,9 @@
             android:exported="false" />
         <activity
             android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GreetingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -2,6 +2,7 @@ package evgeniy.ryzhikov.guesstheflag
 
 import android.content.SharedPreferences
 import android.media.MediaPlayer
+import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
@@ -19,6 +20,7 @@ import evgeniy.ryzhikov.guesstheflag.utils.Energy
 import evgeniy.ryzhikov.guesstheflag.utils.RoundTimer
 import java.util.Calendar
 import java.util.Date
+import kotlin.system.exitProcess
 
 class MenuActivity : AppCompatActivity() {
     private lateinit var bindingMainMenuActivity : ActivityMenuMainBinding
@@ -112,11 +114,16 @@ class MenuActivity : AppCompatActivity() {
 
     private fun exitDoubleTap() {
         if (backPressed + TIME_INTERVAL > System.currentTimeMillis()) {
-            finish()
+            exit()
         } else {
             Toast.makeText(this, R.string.alert_double_tap_exit, Toast.LENGTH_SHORT).show()
         }
         backPressed = System.currentTimeMillis()
+    }
+
+    fun exit() {
+        finishAndRemoveTask();
+        exitProcess(0);
     }
 
     companion object {
