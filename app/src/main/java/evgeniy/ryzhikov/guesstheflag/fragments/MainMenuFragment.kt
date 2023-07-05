@@ -42,7 +42,7 @@ class MainMenuFragment : Fragment() {
         }
 
         binding.btnExit.setOnClickListener {
-            requireActivity().finish()
+            (requireActivity() as MenuActivity).exit()
         }
     }
 

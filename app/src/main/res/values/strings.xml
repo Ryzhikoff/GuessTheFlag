@@ -27,4 +27,6 @@
     <string name="energy_not_enough_2">Что бы восполнитель энергию посмотри видео!</string>
     <string name="menu_watch_ad">Смотреть видео</string>
     <string name="alert_double_tap_exit">Нажми дважды для выходы из игры</string>
+    <string name="error_auth">Ошибка авторизации</string>
+    <string name="error_btn_try_again">Попробовать снова</string>
 </resources>
