@@ -2,11 +2,8 @@ package evgeniy.ryzhikov.guesstheflag.questions
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.util.Log
-import evgeniy.ryzhikov.guesstheflag.GameMain
-import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.settings.NUMBER_OF_QUESTION_PER_ROUND
-import evgeniy.ryzhikov.guesstheflag.utils.DataFiles
+import evgeniy.ryzhikov.guesstheflag.data.DataFiles
 import evgeniy.ryzhikov.guesstheflag.utils.DrawableReader
 import kotlin.random.Random
 
