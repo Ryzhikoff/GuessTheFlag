@@ -1,8 +1,6 @@
 package evgeniy.ryzhikov.guesstheflag
 
-import android.content.SharedPreferences
 import android.media.MediaPlayer
-import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
@@ -15,12 +13,8 @@ import evgeniy.ryzhikov.guesstheflag.databinding.ActivityMenuMainBinding
 import evgeniy.ryzhikov.guesstheflag.fragments.PREFERENCE_SETTINGS
 import evgeniy.ryzhikov.guesstheflag.fragments.PREFERENCE_SETTINGS_MUSIC_VOLUME
 import evgeniy.ryzhikov.guesstheflag.settings.ENERGY_MAX
-import evgeniy.ryzhikov.guesstheflag.statistic.PREFERENCES_STATISTIC
 import evgeniy.ryzhikov.guesstheflag.utils.Energy
-import evgeniy.ryzhikov.guesstheflag.utils.RoundTimer
-import java.util.Calendar
-import java.util.Date
-import kotlin.system.exitProcess
+
 
 class MenuActivity : AppCompatActivity() {
     private lateinit var bindingMainMenuActivity : ActivityMenuMainBinding
@@ -122,8 +116,7 @@ class MenuActivity : AppCompatActivity() {
     }
 
     fun exit() {
-        finishAndRemoveTask();
-        exitProcess(0);
+        finishAndRemoveTask()
     }
 
     companion object {
