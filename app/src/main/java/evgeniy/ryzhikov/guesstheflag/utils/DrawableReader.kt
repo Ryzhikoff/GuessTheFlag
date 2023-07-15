@@ -2,6 +2,8 @@ package evgeniy.ryzhikov.guesstheflag.utils
 
 import android.content.Context
 import android.graphics.drawable.Drawable
+import evgeniy.ryzhikov.guesstheflag.domain.GameMode
+import evgeniy.ryzhikov.guesstheflag.domain.Mode
 
 
 class DrawableReader(private val context: Context) {

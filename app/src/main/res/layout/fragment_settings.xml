@@ -1,42 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/settingsContainer"
     style="@style/MenuContainer">
 
     <TextView
+        style="@style/ButtonTextMenu.Answers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/neucha"
+        android:padding="@dimen/stat_padding_around_text"
+        android:text=" Твоё имя в рейтинге: " />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/ButtonTextMenu.Answers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/neucha"
+            android:padding="@dimen/stat_padding_around_text"
+            android:text=" name of user" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnChangeName"
+            style="@style/ButtonMenu"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/neucha"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/name"
+            android:textSize="15sp"
+            android:text="@string/setting_change_name" />
+    </RelativeLayout>
+
+    <TextView
         style="@style/ButtonTextMenu.Answers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="Громкость звуков"/>
+        android:fontFamily="@font/neucha"
+        android:padding="@dimen/stat_padding_around_text"
+        android:text="@string/settings_volume_sounds" />
 
     <SeekBar
         android:id="@+id/sbVolumeSound"
-        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp" />
 
     <TextView
+        style="@style/ButtonTextMenu.Answers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/ButtonTextMenu.Answers"
-        android:fontFamily="@font/neucha"
         android:layout_marginBottom="10dp"
-        android:text="Громкость музыки"/>
+        android:fontFamily="@font/neucha"
+        android:padding="@dimen/stat_padding_around_text"
+        android:text="@string/settings_volume_music" />
 
     <SeekBar
         android:id="@+id/sbVolumeMusic"
-        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBack"
+        style="@style/ButtonMenu"
         android:layout_width="wrap_content"
         android:fontFamily="@font/neucha"
-        android:text="@string/menu_back"
-        style="@style/ButtonMenu"/>
+        android:text="@string/menu_back" />
 
 </LinearLayout>

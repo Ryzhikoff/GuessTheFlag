@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/stat_margin_after_item"
     android:layout_marginBottom="@dimen/stat_margin_after_item"
-    tools:context=".StatisticActivity">
+    tools:context=".view.activity.StatisticActivity">
 
     <TextView
         android:id="@+id/statHeader"

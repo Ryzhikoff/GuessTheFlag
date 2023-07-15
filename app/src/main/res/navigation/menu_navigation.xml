@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainMenuFragment"
-        android:name="evgeniy.ryzhikov.guesstheflag.fragments.MainMenuFragment"
+        android:name="evgeniy.ryzhikov.guesstheflag.view.fragments.MainMenuFragment"
         android:label="MainMenuFragment"
         tools:layout="@layout/fragment_main_menu">
         <action
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/chooseGameFragment"
-        android:name="evgeniy.ryzhikov.guesstheflag.fragments.ChooseGameFragment"
+        android:name="evgeniy.ryzhikov.guesstheflag.view.fragments.ChooseGameFragment"
         android:label="fragment_choose_game"
         tools:layout="@layout/fragment_choose_game" >
         <action
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="evgeniy.ryzhikov.guesstheflag.fragments.SettingsFragment"
+        android:name="evgeniy.ryzhikov.guesstheflag.view.fragments.SettingsFragment"
         android:label="SettingsFragment"
         tools:layout="@layout/fragment_settings">
         <action

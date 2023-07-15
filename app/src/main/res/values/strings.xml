@@ -29,4 +29,11 @@
     <string name="alert_double_tap_exit">Нажми дважды для выходы из игры</string>
     <string name="error_auth">Ошибка авторизации</string>
     <string name="error_btn_try_again">Попробовать снова</string>
+    <string name="statistic_total_game">Всего игр</string>
+    <string name="settings_volume_music">Громкость музыки</string>
+    <string name="settings_volume_sounds">Громкость звуков</string>
+    <string name="setting_change_name">Изменить имя</string>
+    <string name="setting_hint_input_name">Введи имя\n</string>
+    <string name="setting_save_name">Сохранить</string>
+    <string name="settings_non_length_name">Имя должно быть не короче 3 букв</string>
 </resources>

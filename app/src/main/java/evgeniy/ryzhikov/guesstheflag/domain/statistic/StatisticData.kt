@@ -1,0 +1,32 @@
+package evgeniy.ryzhikov.guesstheflag.domain.statistic
+
+data class StatisticData(
+    val id: String = "",
+    var name: String = "",
+    var totalGame: Int = 0,
+    var totalQuestions: Int = 0,
+    var totalPoints: Int = 0,
+    var totalCorrect: Int = 0,
+    var totalWrong: Int = 0,
+    var totalPercentCorrect: String = "0,00%",
+    var countryFlagQuestions: Int = 0,
+    var countryFlagPoints: Int = 0,
+    var countryFlagCorrect: Int = 0,
+    var countryFlagWrong: Int = 0,
+    var countryFlagPercentCorrect: String = "0,00%",
+    var regionFlagQuestions: Int = 0,
+    var regionFlagPoints: Int = 0,
+    var regionFlagCorrect: Int = 0,
+    var regionFlagWrong: Int = 0,
+    var regionFlagPercentCorrect: String = "0,00%",
+    var countryMapQuestions: Int = 0,
+    var countryMapPoints: Int = 0,
+    var countryMapCorrect: Int = 0,
+    var countryMapWrong: Int = 0,
+    var countryMapPercentCorrect: String = "0,00%",
+    var regionMapQuestions: Int = 0,
+    var regionMapPoints: Int = 0,
+    var regionMapCorrect: Int = 0,
+    var regionMapWrong: Int = 0,
+    var regionMapPercentCorrect: String = "0,00%"
+)

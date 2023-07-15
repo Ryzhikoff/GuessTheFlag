@@ -1,8 +1,8 @@
 package evgeniy.ryzhikov.guesstheflag.data
 
 import evgeniy.ryzhikov.guesstheflag.R
-import evgeniy.ryzhikov.guesstheflag.utils.GameMode
-import evgeniy.ryzhikov.guesstheflag.utils.Mode
+import evgeniy.ryzhikov.guesstheflag.domain.GameMode
+import evgeniy.ryzhikov.guesstheflag.domain.Mode
 
 class DataFiles() {
     private val countryFlag = mapOf(
