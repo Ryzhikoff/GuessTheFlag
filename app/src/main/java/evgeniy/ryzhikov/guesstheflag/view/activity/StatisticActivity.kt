@@ -9,20 +9,14 @@ import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.RecyclerView
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
-import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
 import evgeniy.ryzhikov.guesstheflag.databinding.ActivityStatisticBinding
 import evgeniy.ryzhikov.guesstheflag.view.fragments.NotEnoughEnergyFragment
 import evgeniy.ryzhikov.guesstheflag.view.fragments.TAG_NOT_ENOUGH_ENERGY
-import evgeniy.ryzhikov.guesstheflag.domain.statistic.PREFERENCES_STATISTIC
-import evgeniy.ryzhikov.guesstheflag.domain.statistic.PREFERENCES_STATISTIC_CORRECT_ANSWERS
-import evgeniy.ryzhikov.guesstheflag.domain.statistic.PREFERENCES_STATISTIC_TOTAL_ANSWERS
-import evgeniy.ryzhikov.guesstheflag.domain.statistic.PREFERENCES_STATISTIC_TOTAL_POINTS
-import evgeniy.ryzhikov.guesstheflag.domain.statistic.PREFERENCES_STATISTIC_WRONG_ANSWERS
-import evgeniy.ryzhikov.guesstheflag.domain.statistic.RoundStatistic
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.rv.StatField
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.rv.StatHeader
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.rv.StatisticAdapter
 import evgeniy.ryzhikov.guesstheflag.domain.Energy
+import evgeniy.ryzhikov.guesstheflag.domain.RoundResult
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 
 class StatisticActivity : AppCompatActivity() {
@@ -37,39 +31,37 @@ class StatisticActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityStatisticBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        lifecycle.addObserver(viewModel)
+        initRV()
 
-        recyclerView = binding.statRecycler
-
-        val bundleRoundStat = intent.extras?.getBundle("stat")
-        if (bundleRoundStat != null) {
-            addRoundStatistic(bundleRoundStat)
+        val roundResult = viewModel.roundResult
+        if (roundResult.countQuestions != 0) {
+            addRoundStatistic(roundResult)
             displayButtonPlayAgain()
         }
-
         setButtonOnClickListener()
-        initRV()
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 
         viewModel.statisticLiveData.observe(this) { statisticData ->
+            println("!!! StatisticActivity viewModel.statisticLiveData.observe")
             addTotalStatistic(statisticData)
+            stopLoadingAnimation()
         }
 
-        getStatistic()
+        getStatisticData()
     }
 
 
-    private fun getStatistic() {
-        viewModel.getStatistic()
+    private fun getStatisticData() {
+        viewModel.getStatisticData()
     }
 
-
-    private fun addRoundStatistic(bundleRoundStat: Bundle) {
-        val roundStatistic = bundleRoundStat.get("statistic") as RoundStatistic
-
+    private fun addRoundStatistic(roundResult: RoundResult) {
         adapter.addItem(StatHeader(getString(R.string.statistic_round_title)))
-        adapter.addItem(StatField(R.drawable.answer_correct, getString(R.string.statistic_correct_answer), roundStatistic.countCorrectAnswer.toString()))
-        adapter.addItem(StatField(R.drawable.answer_wrong, getString(R.string.statistic_wrong_answer), roundStatistic.countWrongAnswer.toString()))
-        adapter.addItem(StatField(R.drawable.points, getString(R.string.statistic_round_points), roundStatistic.points.toString()))
+        adapter.addItem(StatField(R.drawable.ic_answer_correct, getString(R.string.statistic_correct_answer), roundResult.countCorrectAnswers.toString()))
+        adapter.addItem(StatField(R.drawable.ic_answer_wrong, getString(R.string.statistic_wrong_answer), roundResult.countWrongAnswers.toString()))
+        adapter.addItem(StatField(R.drawable.ic_coin, getString(R.string.statistic_round_points), roundResult.points.toString()))
+        adapter.update()
     }
 
     private fun displayButtonPlayAgain() {
@@ -77,40 +69,23 @@ class StatisticActivity : AppCompatActivity() {
     }
 
     private fun addTotalStatistic(statisticData: StatisticData) {
+        println("!!! StatisticActivity .addTotalStatistic()")
         adapter.addItem(StatHeader(getString(R.string.statistic_total_title)))
-        adapter.addItem(StatField(R.drawable.question, getString(R.string.statistic_total_game), statisticData.totalGame.toString()))
-        adapter.addItem(StatField(R.drawable.question, getString(R.string.statistic_total_answers), statisticData.totalQuestions.toString()))
-        adapter.addItem(StatField(R.drawable.answer_correct, getString(R.string.statistic_correct_answer), statisticData.totalCorrect.toString()))
-        adapter.addItem(StatField(R.drawable.answer_wrong, getString(R.string.statistic_wrong_answer), statisticData.totalWrong.toString()))
-        adapter.addItem(StatField(R.drawable.percent, getString(R.string.statistic_percent_correct_answers),statisticData.totalPercentCorrect))
-        adapter.addItem(StatField(R.drawable.points, getString(R.string.statistic_all_points), statisticData.totalPoints.toString()))
+        adapter.addItem(StatField(R.drawable.ic_star, getString(R.string.statistic_total_game), statisticData.totalGame.toString()))
+        adapter.addItem(StatField(R.drawable.ic_question, getString(R.string.statistic_total_answers), statisticData.totalQuestions.toString()))
+        adapter.addItem(StatField(R.drawable.ic_answer_correct, getString(R.string.statistic_correct_answer), statisticData.totalCorrect.toString()))
+        adapter.addItem(StatField(R.drawable.ic_answer_wrong, getString(R.string.statistic_wrong_answer), statisticData.totalWrong.toString()))
+        adapter.addItem(StatField(R.drawable.ic_percent, getString(R.string.statistic_percent_correct_answers),statisticData.totalPercentCorrect))
+        adapter.addItem(StatField(R.drawable.ic_coin, getString(R.string.statistic_all_points), statisticData.totalPoints.toString()))
+        adapter.update()
     }
 
-    /*private fun addTotalStatistic() {
-        val sharedPreferences = getSharedPreferences(
-            PREFERENCES_STATISTIC,
-            MODE_PRIVATE
-        )
-
-        val correctAnswers = sharedPreferences.getInt(PREFERENCES_STATISTIC_CORRECT_ANSWERS, 0)
-        val wrongAnswers = sharedPreferences.getInt(PREFERENCES_STATISTIC_WRONG_ANSWERS, 0)
-        val totalAnswers = sharedPreferences.getInt(PREFERENCES_STATISTIC_TOTAL_ANSWERS, 0)
-        val points = sharedPreferences.getInt(PREFERENCES_STATISTIC_TOTAL_POINTS, 0)
-        var percent = 0f
-        if (totalAnswers != 0) {
-            percent = correctAnswers.toFloat() / totalAnswers * 100f
-        }
-
-        adapter.addItem(StatHeader(getString(R.string.statistic_total_title)))
-        adapter.addItem(StatField(R.drawable.question, getString(R.string.statistic_total_answers), totalAnswers.toString()))
-        adapter.addItem(StatField(R.drawable.answer_correct, getString(R.string.statistic_correct_answer), correctAnswers.toString()))
-        adapter.addItem(StatField(R.drawable.answer_wrong, getString(R.string.statistic_wrong_answer), wrongAnswers.toString()))
-        adapter.addItem(StatField(R.drawable.percent, getString(R.string.statistic_percent_correct_answers), String.format("%.2f%%", percent)))
-        adapter.addItem(StatField(R.drawable.points, getString(R.string.statistic_all_points), points.toString()))
-    }*/
-
+    private fun stopLoadingAnimation() {
+        binding.loadingAnimation.cancelAnimation()
+        binding.loadingAnimation.visibility = View.GONE
+    }
     private fun initRV() {
-        adapter.update()
+        recyclerView = binding.statRecycler
         recyclerView.adapter = adapter
     }
 
@@ -142,6 +117,12 @@ class StatisticActivity : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        adapter.clear()
+        viewModel.resetRoundResult()
+    }
+
     private val onBackPressedCallback: OnBackPressedCallback =
         object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -161,4 +142,6 @@ class StatisticActivity : AppCompatActivity() {
     companion object {
         const val TIME_INTERVAL = 2000
     }
+
+
 }

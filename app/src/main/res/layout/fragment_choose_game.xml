@@ -24,13 +24,15 @@
             android:id="@+id/btnStartCountryMap"
             android:fontFamily="@font/neucha"
             android:text="@string/menu_country_map"
-            style="@style/ButtonMenu"/>
+            android:enabled="false"
+            style="@style/ButtonMenu.NonActive"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnStartRegionMap"
             android:fontFamily="@font/neucha"
             android:text="@string/menu_region_map"
-            style="@style/ButtonMenu"/>
+            android:enabled="false"
+            style="@style/ButtonMenu.NonActive"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnBack"

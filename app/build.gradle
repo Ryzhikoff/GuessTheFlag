@@ -53,6 +53,8 @@ dependencies {
 
     implementation 'com.github.AndroidDeveloperLB:AutoFitTextView:10'
 
+    implementation 'com.airbnb.android:lottie:6.0.0'
+
     // Import the BoM for the Firebase platform
     implementation platform('com.google.firebase:firebase-bom:32.1.1')
 

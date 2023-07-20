@@ -29,7 +29,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="10dp"
-        android:src="@drawable/energy"
+        android:src="@drawable/ic_energy"
         app:layout_constraintStart_toEndOf="@id/ivArrow"
         app:layout_constraintTop_toTopOf="parent" />
 

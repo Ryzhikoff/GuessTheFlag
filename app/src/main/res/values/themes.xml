@@ -34,6 +34,9 @@
         <item name="android:textAppearance">@style/ButtonTextMenu</item>
     </style>
 
+    <style name="ButtonMenu.NonActive" parent="ButtonMenu">
+        <item name="android:background">@drawable/button_background_non_active</item>
+    </style>
 
     <style name="MenuContainer">
         <item name="android:layout_width">wrap_content</item>>
@@ -58,5 +61,6 @@
         <item name="android:background">@drawable/button_background_answers</item>
         <item name="android:textAppearance">@style/ButtonTextMenu.Answers</item>
     </style>
+    
 
 </resources>

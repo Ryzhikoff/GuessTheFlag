@@ -1,6 +1,5 @@
 package evgeniy.ryzhikov.guesstheflag.domain.statistic.rv
 
-import android.util.Log
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 
 class StatisticAdapter : ListDelegationAdapter<List<StatItem>>() {
@@ -18,7 +17,11 @@ class StatisticAdapter : ListDelegationAdapter<List<StatItem>>() {
 
     fun update() {
         setItems(list)
-        Log.d("===========> ", list.toString())
+    }
+
+    fun clear() {
+        list.clear()
+        update()
     }
     override fun setItems(items: List<StatItem>?) {
         super.setItems(items)

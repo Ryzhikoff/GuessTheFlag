@@ -12,13 +12,11 @@ import androidx.appcompat.widget.AppCompatTextView
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.settings.*
-import evgeniy.ryzhikov.guesstheflag.domain.statistic.Statistic
 
 class GameMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameMainBinding
     private lateinit var questionManager: QuestionManager
     private lateinit var roundTimer: RoundTimer
-    private lateinit var statistic: Statistic
     private var timerCount = 10
     private var backPressed = 0L
 
@@ -30,7 +28,8 @@ class GameMainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         questionManager = QuestionManager(this)
-        statistic = Statistic(this)
+
+        lifecycle.addObserver(viewModel)
 
         setListenerButtons()
 
@@ -88,10 +87,10 @@ class GameMainActivity : AppCompatActivity() {
     private fun processingAnswer(answer: String) {
         roundTimer.stop()
 
-        statistic.scoring(questionManager.isCorrectAnswer(answer), timerCount)
+        viewModel.scoring(questionManager.isCorrectAnswer(answer), timerCount)
 
-        binding.tvCounterCorrect.text = statistic.counterCorrectAnswers.toString()
-        binding.tvCounterWrong.text = statistic.counterWrongAnswers.toString()
+        binding.tvCounterCorrect.text = viewModel.counterCorrectAnswers.toString()
+        binding.tvCounterWrong.text = viewModel.counterWrongAnswers.toString()
 
         prepareNewRound()
     }
@@ -105,12 +104,12 @@ class GameMainActivity : AppCompatActivity() {
     }
 
     private fun endGame() {
-        viewModel.saveStatistic(statistic.getRoundResult())
-        statistic.save()
-        val bundle = Bundle()
-        bundle.putParcelable("statistic", statistic.getRoundStatistic())
+        viewModel.saveStatistic()
+        //statistic.save()
+        //val bundle = Bundle()
+        //bundle.putParcelable("statistic", statistic.getRoundStatistic())
         val intent = Intent(this, StatisticActivity::class.java)
-        intent.putExtra("stat", bundle)
+        //intent.putExtra("stat", bundle)
         startActivity(intent)
         finish()
     }

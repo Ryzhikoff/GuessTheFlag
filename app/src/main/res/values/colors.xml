@@ -10,6 +10,8 @@
     
     <color name="violet">#D64DED</color>
     <color name="orange">#FF9F12</color>
+    <color name="light_gray">#E8E0D5</color>
+    <color name="gray">#8A837A</color>
 
     <color name="white_alpha30">#4DFFFFFF</color>
 </resources>

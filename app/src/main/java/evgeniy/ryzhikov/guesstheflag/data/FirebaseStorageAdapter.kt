@@ -17,6 +17,7 @@ class FirebaseStorageAdapter {
     }
 
     @Synchronized fun get(uid: String, callback: GetStatisticCallback) {
+        println("!!! FirebaseStorageAdapter .get")
         val docRef = db.collection(FB_COLLECTION_NAME)
             .document(uid)
         docRef.get()
@@ -27,9 +28,9 @@ class FirebaseStorageAdapter {
                 if (documentSnapshot.exists()) {
                     documentSnapshot.toObject<StatisticData>()!!
                 } else {
-                    StatisticData(id = uid)
+                    StatisticData(id = uid, name = FirebaseUserUid.getName())
                 }
-
+                println("!!! FirebaseStorageAdapter .addOnSuccessListener")
             callback.onSuccess(statisticData)
             }
             .addOnFailureListener {

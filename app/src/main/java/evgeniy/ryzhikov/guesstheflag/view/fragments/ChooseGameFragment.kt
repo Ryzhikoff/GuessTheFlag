@@ -47,13 +47,14 @@ class ChooseGameFragment : Fragment() {
             startGame(it as AppCompatButton)
         }
 
-        binding.btnStartCountryMap.setOnClickListener {
+        //Пока заглушка:
+        /*binding.btnStartCountryMap.setOnClickListener {
             startGame(it as AppCompatButton)
         }
 
         binding.btnStartRegionMap.setOnClickListener {
             startGame(it as AppCompatButton)
-        }
+        }*/
     }
 
     private fun startGame(button : AppCompatButton) {
