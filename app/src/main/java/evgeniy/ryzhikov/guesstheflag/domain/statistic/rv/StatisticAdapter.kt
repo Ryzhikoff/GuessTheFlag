@@ -9,6 +9,7 @@ class StatisticAdapter : ListDelegationAdapter<List<StatItem>>() {
     init {
         delegatesManager.addDelegate(StatFieldDelegateAdapter())
         delegatesManager.addDelegate(StatHeaderDelegateAdapter())
+        delegatesManager.addDelegate(RatingFieldDelegateAdapter())
     }
 
     fun addItem(item : StatItem) {
@@ -25,6 +26,7 @@ class StatisticAdapter : ListDelegationAdapter<List<StatItem>>() {
     }
     override fun setItems(items: List<StatItem>?) {
         super.setItems(items)
+        println("setItems list size: ${list.size}")
         notifyDataSetChanged()
     }
 }

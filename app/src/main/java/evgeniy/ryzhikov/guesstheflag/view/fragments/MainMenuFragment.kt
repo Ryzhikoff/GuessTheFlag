@@ -10,6 +10,7 @@ import evgeniy.ryzhikov.guesstheflag.view.activity.MenuActivity
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.view.activity.StatisticActivity
 import evgeniy.ryzhikov.guesstheflag.databinding.FragmentMainMenuBinding
+import evgeniy.ryzhikov.guesstheflag.view.activity.RatingActivity
 
 class MainMenuFragment : Fragment() {
     private var _binding: FragmentMainMenuBinding? = null
@@ -37,6 +38,10 @@ class MainMenuFragment : Fragment() {
             (activity as MenuActivity).navController.navigate((R.id.action_mainMenuFragment_to_settingsFragment))
         }
 
+        binding.btnRating.setOnClickListener {
+            startRatingActivity()
+        }
+
         binding.btnStatistic.setOnClickListener {
             startStatisticActivity()
         }
@@ -48,6 +53,12 @@ class MainMenuFragment : Fragment() {
 
     private fun startStatisticActivity() {
         val intent = Intent(requireContext(), StatisticActivity::class.java)
+        startActivity(intent)
+        activity?.finish()
+    }
+
+    private fun startRatingActivity() {
+        val intent = Intent(requireContext(), RatingActivity::class.java)
         startActivity(intent)
         activity?.finish()
     }

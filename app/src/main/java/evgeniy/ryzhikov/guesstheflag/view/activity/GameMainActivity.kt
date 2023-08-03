@@ -12,6 +12,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.settings.*
+import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 
 class GameMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameMainBinding
@@ -36,6 +37,7 @@ class GameMainActivity : AppCompatActivity() {
         setInfoPanel()
         newRound()
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
+        HideNavigationBars.hide(window, binding.root)
     }
 
     private fun setListenerButtons() {
@@ -105,11 +107,7 @@ class GameMainActivity : AppCompatActivity() {
 
     private fun endGame() {
         viewModel.saveStatistic()
-        //statistic.save()
-        //val bundle = Bundle()
-        //bundle.putParcelable("statistic", statistic.getRoundStatistic())
         val intent = Intent(this, StatisticActivity::class.java)
-        //intent.putExtra("stat", bundle)
         startActivity(intent)
         finish()
     }

@@ -26,7 +26,7 @@ import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_MAP_REGION
 import kotlin.math.roundToInt
 
 class GameMainViewModel(application: Application) : AndroidViewModel(application), LifecycleObserver {
-    private val fsa = FirebaseStorageAdapter()
+    private val fsa = FirebaseStorageAdapter.getInstance()
 
 
     private lateinit var questionManager : QuestionManager
@@ -44,6 +44,12 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
         counterCorrectAnswers = 0
         counterWrongAnswers = 0
         points = 0
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    fun clearRatingList() {
+        fsa.clearRatingList()
+        fsa.clearPlayerStatisticData()
     }
 
     fun scoring(isCorrectAnswer: Boolean, timerCount: Int = 0) {
@@ -72,10 +78,8 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
     fun saveStatistic() {
         val roundResult = getRoundResult()
         App.instance.statisticViewModel.roundResult = roundResult
-        println("!!! --- GameMainViewModel .saveStatistic")
-        fsa.get(FirebaseUserUid.get(), object : GetStatisticCallback {
+        fsa.getPlayerStatisticData(FirebaseUserUid.get(), object : GetStatisticCallback {
             override fun onSuccess(statisticData: StatisticData) {
-                println("!!! --- GameMainViewModel .saveStatistic fsa.get ...  GetStatisticCallback onSuccess")
                 val newStatisticData = when (GameMode.mode) {
                     Mode.COUNTRY_FLAG -> addCountryFlagStatistic(statisticData, roundResult)
                     Mode.REGION_FLAG -> addRegionFlagStatistic(statisticData, roundResult)
@@ -90,11 +94,10 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
                     totalPoints += roundResult.points
                     totalPercentCorrect = getFormattedPercentString(totalCorrect, totalQuestions)
                 }
-
                 fsa.put(newStatisticData)
             }
 
-            override fun onFailure() {
+            override fun onFailure(e: Exception) {
             }
         })
 

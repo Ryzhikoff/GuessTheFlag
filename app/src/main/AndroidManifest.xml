@@ -22,6 +22,9 @@
             android:name=".view.activity.MenuActivity"
             android:exported="false" />
         <activity
+            android:name=".view.activity.RatingActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activity.GreetingActivity"
             android:exported="true">
             <intent-filter>

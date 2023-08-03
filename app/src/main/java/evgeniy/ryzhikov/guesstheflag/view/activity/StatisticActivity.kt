@@ -18,6 +18,7 @@ import evgeniy.ryzhikov.guesstheflag.domain.statistic.rv.StatisticAdapter
 import evgeniy.ryzhikov.guesstheflag.domain.Energy
 import evgeniy.ryzhikov.guesstheflag.domain.RoundResult
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
+import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 
 class StatisticActivity : AppCompatActivity() {
     lateinit var binding: ActivityStatisticBinding
@@ -43,11 +44,11 @@ class StatisticActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 
         viewModel.statisticLiveData.observe(this) { statisticData ->
-            println("!!! StatisticActivity viewModel.statisticLiveData.observe")
             addTotalStatistic(statisticData)
             stopLoadingAnimation()
         }
 
+        HideNavigationBars.hide(window, binding.root)
         getStatisticData()
     }
 
@@ -69,7 +70,6 @@ class StatisticActivity : AppCompatActivity() {
     }
 
     private fun addTotalStatistic(statisticData: StatisticData) {
-        println("!!! StatisticActivity .addTotalStatistic()")
         adapter.addItem(StatHeader(getString(R.string.statistic_total_title)))
         adapter.addItem(StatField(R.drawable.ic_star, getString(R.string.statistic_total_game), statisticData.totalGame.toString()))
         adapter.addItem(StatField(R.drawable.ic_question, getString(R.string.statistic_total_answers), statisticData.totalQuestions.toString()))

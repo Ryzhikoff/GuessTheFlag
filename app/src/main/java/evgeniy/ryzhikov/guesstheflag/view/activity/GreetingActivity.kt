@@ -16,6 +16,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.databinding.ActivityGreetingBinding
+import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 
 
 class GreetingActivity : AppCompatActivity() {
@@ -45,13 +46,10 @@ class GreetingActivity : AppCompatActivity() {
         val user = auth.currentUser
 
         if (user != null) {
-            println("!!! ${user.uid}")
             startMenuActivity()
-        } else {
-            println("!!! no login")
         }
-
         addButtonsListener()
+        HideNavigationBars.hide(window, binding.root)
     }
 
     private fun addButtonsListener() {

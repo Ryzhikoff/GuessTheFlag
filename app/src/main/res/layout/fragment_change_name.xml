@@ -5,6 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/button_background_answers"
+    app:elevation="0dp"
     tools:context=".view.activity.MenuActivity">
 
     <EditText

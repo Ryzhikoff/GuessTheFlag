@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/button_background_rating"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:maxLines="1"
+        style="@style/ButtonTextMenu.Rating"
+        android:fontFamily="@font/neucha"
+        android:text="#1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:maxLines="1"
+        style="@style/ButtonTextMenu.Rating"
+        android:fontFamily="@font/neucha"
+        android:text="Baron Richards 34"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="5sp"
+        app:layout_constraintStart_toEndOf="@id/tvPosition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.lb.auto_fit_textview.AutoResizeTextView
+        android:id="@+id/tvRatingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        style="@style/ButtonTextMenu.Rating"
+        android:fontFamily="@font/neucha"
+        android:text="@string/menu_rating_points"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvGameText"/>
+
+    <TextView
+        android:id="@+id/tvRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        style="@style/ButtonTextMenu.Rating"
+        android:fontFamily="@font/neucha"
+        android:text="13234"
+        app:layout_constraintTop_toBottomOf="@id/tvRatingText"
+        app:layout_constraintStart_toStartOf="@id/tvRatingText"
+        app:layout_constraintEnd_toEndOf="@id/tvRatingText"/>
+
+    <com.lb.auto_fit_textview.AutoResizeTextView
+        android:id="@+id/tvGameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        style="@style/ButtonTextMenu.Rating"
+        android:fontFamily="@font/neucha"
+        android:text="@string/menu_rating_games"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintStart_toEndOf="@id/tvRatingText"
+        app:layout_constraintEnd_toStartOf="@id/tvPercentText"/>
+
+    <TextView
+        android:id="@+id/tvGame"
+        style="@style/ButtonTextMenu.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/neucha"
+        android:maxLines="1"
+        android:text="2"
+        app:layout_constraintEnd_toEndOf="@+id/tvGameText"
+        app:layout_constraintStart_toStartOf="@id/tvGameText"
+        app:layout_constraintTop_toBottomOf="@id/tvGameText" />
+
+    <com.lb.auto_fit_textview.AutoResizeTextView
+        android:id="@+id/tvPercentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        style="@style/ButtonTextMenu.Rating"
+        android:fontFamily="@font/neucha"
+        android:text="@string/menu_rating_wins"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintStart_toEndOf="@id/tvGameText"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvPercent"
+        style="@style/ButtonTextMenu.Rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/neucha"
+        android:maxLines="1"
+        android:text="2"
+        app:layout_constraintEnd_toEndOf="@+id/tvPercentText"
+        app:layout_constraintStart_toStartOf="@id/tvPercentText"
+        app:layout_constraintTop_toBottomOf="@id/tvPercentText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

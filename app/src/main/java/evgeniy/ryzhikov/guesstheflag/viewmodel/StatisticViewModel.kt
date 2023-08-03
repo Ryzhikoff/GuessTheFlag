@@ -11,25 +11,20 @@ import evgeniy.ryzhikov.guesstheflag.data.GetStatisticCallback
 import evgeniy.ryzhikov.guesstheflag.domain.RoundResult
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 
-class StatisticViewModel: ViewModel(), LifecycleObserver {
-    private val fsa = FirebaseStorageAdapter()
+class StatisticViewModel : ViewModel(), LifecycleObserver {
+    private val fsa = FirebaseStorageAdapter.getInstance()
     var statisticLiveData = MutableLiveData<StatisticData>()
     var roundResult = RoundResult()
 
-
-
     fun getStatisticData() {
         val uid = FirebaseUserUid.get()
-        println("!!! StatisticViewModel .getStatisticData")
-        fsa.get(uid, object : GetStatisticCallback {
+        fsa.getPlayerStatisticData(uid, object : GetStatisticCallback {
             override fun onSuccess(statisticData: StatisticData) {
-                println("!!! StatisticViewModel .getStatisticData .get onSuccess")
                 statisticLiveData.postValue(statisticData)
             }
 
-            override fun onFailure() {
+            override fun onFailure(e: Exception) {
             }
-
         })
     }
 

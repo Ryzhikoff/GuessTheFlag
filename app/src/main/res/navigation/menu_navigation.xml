@@ -55,4 +55,5 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:launchSingleTop="true" />
     </fragment>
+
 </navigation>

@@ -15,6 +15,7 @@ import evgeniy.ryzhikov.guesstheflag.view.fragments.PREFERENCE_SETTINGS
 import evgeniy.ryzhikov.guesstheflag.view.fragments.PREFERENCE_SETTINGS_MUSIC_VOLUME
 import evgeniy.ryzhikov.guesstheflag.settings.ENERGY_MAX
 import evgeniy.ryzhikov.guesstheflag.domain.Energy
+import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 
 
 class MenuActivity : AppCompatActivity() {
@@ -35,10 +36,13 @@ class MenuActivity : AppCompatActivity() {
         setEnergy()
         setMusic()
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
+
+        HideNavigationBars.hide(window, bindingMainMenuActivity.root)
     }
 
+
     private fun setEnergy() {
-        val countEnergy = "${energy.get()} / $ENERGY_MAX"
+        val countEnergy = " ${energy.get()} / $ENERGY_MAX "
         bindingMainMenuActivity.tvEnergyCounter.text = countEnergy
         if (!energy.isFull()) {
             bindingMainMenuActivity.ivTimer.visibility = View.VISIBLE
@@ -58,8 +62,11 @@ class MenuActivity : AppCompatActivity() {
 
             override fun onTick(millisUntilFinished: Long) {
                 val minute = millisUntilFinished / (60 * 1000)
-                val second = millisUntilFinished - minute
-                val timeStr = "${minute/(60*1000)}:${second/1000}"
+                val second = (millisUntilFinished - minute * (60 * 1000)) / 1000
+
+                val secondStr = if (second < 10) "0$second" else second.toString()
+
+                val timeStr = " $minute:$secondStr "
                 bindingMainMenuActivity.tvTimer.text = timeStr
             }
 
@@ -123,4 +130,6 @@ class MenuActivity : AppCompatActivity() {
     companion object {
         const val TIME_INTERVAL = 2000
     }
+
+
 }

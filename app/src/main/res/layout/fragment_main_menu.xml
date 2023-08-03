@@ -19,6 +19,12 @@
         android:text="@string/menu_statistic" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRating"
+        android:fontFamily="@font/neucha"
+        style="@style/ButtonMenu"
+        android:text="@string/menu_rating" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnSetting"
         android:fontFamily="@font/neucha"
         style="@style/ButtonMenu"

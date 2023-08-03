@@ -4,13 +4,15 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="false"
     android:background="@drawable/menu_background"
     tools:context=".view.activity.MenuActivity">
 
     <LinearLayout
+        android:id="@+id/energyContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_marginTop="@dimen/main_menu_margin_energy_top"
         android:orientation="horizontal"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
@@ -50,16 +52,23 @@
 
     </LinearLayout>
 
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:constraint_referenced_ids="energyContainer"
+        app:barrierDirection="bottom"
+        android:orientation="horizontal"/>
     <fragment
         android:id="@+id/navHostMenuFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:defaultNavHost="true"
+        app:layout_constraintTop_toBottomOf="@id/barrier"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:navGraph="@navigation/menu_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

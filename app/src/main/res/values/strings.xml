@@ -36,4 +36,10 @@
     <string name="setting_hint_input_name">Введи имя\n</string>
     <string name="setting_save_name">Сохранить</string>
     <string name="settings_non_length_name">Имя должно быть не короче 3 букв</string>
+    <string name="menu_rating">Рейтинг игроков</string>
+    <string name="statistic_rating_tittle">Рейтинг игроков</string>
+    <string name="menu_rating_player_position">Твоя позиция в рейтинге:</string>
+    <string name="menu_rating_wins">Победы</string>
+    <string name="menu_rating_games">Игры</string>
+    <string name="menu_rating_points">Очки</string>
 </resources>
