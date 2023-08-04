@@ -1,16 +1,19 @@
 package evgeniy.ryzhikov.guesstheflag.viewmodel
 
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModel
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseStorageAdapter
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
 import evgeniy.ryzhikov.guesstheflag.data.GetRatingCallback
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 
-class RatingViewModel(): ViewModel() {
+class RatingViewModel(): ViewModel(), LifecycleObserver {
     private val fsa = FirebaseStorageAdapter.getInstance()
     var ratingListLiveData = MutableLiveData<ArrayList<StatisticData>>()
-    val playerPositionInRatingLiveData = MutableLiveData<Int>()
+    var playerPositionInRatingLiveData = MutableLiveData<Int>()
 
     fun getRating() {
         fsa.getRatingList(object : GetRatingCallback {
@@ -28,7 +31,7 @@ class RatingViewModel(): ViewModel() {
     }
 
     private fun getPlayerPositionInRating(ratingList: ArrayList<StatisticData>) : Int {
-        val uid = FirebaseUserUid.get()
+        val uid = FirebaseUserUid.getUid()
         ratingList.forEachIndexed{ index, statisticData ->
             if(statisticData.id.equals(uid)) {
                 return index
@@ -36,4 +39,11 @@ class RatingViewModel(): ViewModel() {
         }
         return -1
     }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    private fun cleanData() {
+        ratingListLiveData = MutableLiveData<ArrayList<StatisticData>>()
+        playerPositionInRatingLiveData = MutableLiveData<Int>()
+    }
+
 }

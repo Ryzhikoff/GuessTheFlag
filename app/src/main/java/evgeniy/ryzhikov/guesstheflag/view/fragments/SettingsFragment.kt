@@ -1,24 +1,22 @@
 package evgeniy.ryzhikov.guesstheflag.view.fragments
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import androidx.appcompat.app.AppCompatActivity
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
+import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
+import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.*
 import evgeniy.ryzhikov.guesstheflag.view.activity.MenuActivity
 import evgeniy.ryzhikov.guesstheflag.databinding.FragmentSettingsBinding
 
-const val PREFERENCE_SETTINGS = "settings"
-const val PREFERENCE_SETTINGS_MUSIC_VOLUME = "music_volume"
 
 class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var sharedPreferences: SharedPreferences
+    private var preference = PreferenceProvider.getInstance()
     private var volumeMusic = 0f
 
     override fun onCreateView(
@@ -31,7 +29,7 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        sharedPreferences = requireActivity().getSharedPreferences(PREFERENCE_SETTINGS, AppCompatActivity.MODE_PRIVATE)
+
         addButtonListener()
         setPositionOnSeekbars()
     }
@@ -76,14 +74,15 @@ class SettingsFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        val editor = sharedPreferences.edit()
-        editor.putFloat(PREFERENCE_SETTINGS_MUSIC_VOLUME, volumeMusic)
-        editor.apply()
+
+        preference.putFloat(PreferenceName.SETTINGS, PreferenceKey.MUSIC_VOLUME, volumeMusic)
+
     }
 
     private fun setPositionOnSeekbars() {
-        binding.sbVolumeMusic.progress = (sharedPreferences.getFloat(
-            PREFERENCE_SETTINGS_MUSIC_VOLUME, 0f) * 100).toInt()
+        binding.sbVolumeMusic.progress = (
+                preference.getFloat(
+            PreferenceName.SETTINGS, PreferenceKey.MUSIC_VOLUME) * 100).toInt()
     }
 
     override fun onDestroyView() {

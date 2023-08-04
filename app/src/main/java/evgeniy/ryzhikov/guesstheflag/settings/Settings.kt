@@ -22,3 +22,7 @@ const val TIME_IN_SECONDS_ENERGY_RECOVERY = 30 * 60;
 const val ENERGY_START = 3;
 const val ENERGY_MAX = 3;
 const val ENERGY_ADD_FOR_ADS = 3;
+
+const val DEFAULT_MUSIC_VOLUME = 0.5f
+const val DEFAULT_SOUND_VOLUME = 0.5f
+

@@ -10,9 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import evgeniy.ryzhikov.guesstheflag.R
+import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
+import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences
 import evgeniy.ryzhikov.guesstheflag.databinding.ActivityMenuMainBinding
-import evgeniy.ryzhikov.guesstheflag.view.fragments.PREFERENCE_SETTINGS
-import evgeniy.ryzhikov.guesstheflag.view.fragments.PREFERENCE_SETTINGS_MUSIC_VOLUME
 import evgeniy.ryzhikov.guesstheflag.settings.ENERGY_MAX
 import evgeniy.ryzhikov.guesstheflag.domain.Energy
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
@@ -22,7 +22,7 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var bindingMainMenuActivity : ActivityMenuMainBinding
     lateinit var navController: NavController
 
-    private lateinit var energy: Energy
+    private var energy: Energy = Energy()
     private lateinit var mediaPlayer: MediaPlayer
     private var backPressed = 0L
 
@@ -31,7 +31,6 @@ class MenuActivity : AppCompatActivity() {
         bindingMainMenuActivity = ActivityMenuMainBinding.inflate(layoutInflater)
         setContentView(bindingMainMenuActivity.root)
 
-        energy = Energy(this)
         navController = Navigation.findNavController(this, R.id.navHostMenuFragment)
         setEnergy()
         setMusic()
@@ -80,11 +79,8 @@ class MenuActivity : AppCompatActivity() {
     private fun setMusic() {
         mediaPlayer = MediaPlayer.create(this, R.raw.music_menu)
         mediaPlayer.isLooping = true
-        val sharedPreferences = getSharedPreferences(
-            PREFERENCE_SETTINGS,
-            MODE_PRIVATE
-        )
-        val volume = sharedPreferences.getFloat(PREFERENCE_SETTINGS_MUSIC_VOLUME, 0.5f)
+        val preference = PreferenceProvider.getInstance()
+        val volume = preference.getFloat(Preferences.PreferenceName.SETTINGS, Preferences.PreferenceKey.MUSIC_VOLUME)
         setVolumeMusic(volume)
     }
 

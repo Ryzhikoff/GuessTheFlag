@@ -15,7 +15,11 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import evgeniy.ryzhikov.guesstheflag.R
+import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
+import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences
 import evgeniy.ryzhikov.guesstheflag.databinding.ActivityGreetingBinding
+import evgeniy.ryzhikov.guesstheflag.settings.DEFAULT_MUSIC_VOLUME
+import evgeniy.ryzhikov.guesstheflag.settings.DEFAULT_SOUND_VOLUME
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 
 
@@ -47,6 +51,8 @@ class GreetingActivity : AppCompatActivity() {
 
         if (user != null) {
             startMenuActivity()
+        } else {
+            setDefaultSettings()
         }
         addButtonsListener()
         HideNavigationBars.hide(window, binding.root)
@@ -97,5 +103,11 @@ class GreetingActivity : AppCompatActivity() {
     private fun errorSignInWithGoogle() {
         binding.signIn.visibility = View.GONE
         binding.error.visibility = View.VISIBLE
+    }
+
+    private fun setDefaultSettings() {
+        val preferences = PreferenceProvider.getInstance()
+        preferences.putFloat(Preferences.PreferenceName.SETTINGS, Preferences.PreferenceKey.MUSIC_VOLUME, DEFAULT_MUSIC_VOLUME)
+        preferences.putFloat(Preferences.PreferenceName.SETTINGS, Preferences.PreferenceKey.SOUND_VOLUME, DEFAULT_SOUND_VOLUME)
     }
 }

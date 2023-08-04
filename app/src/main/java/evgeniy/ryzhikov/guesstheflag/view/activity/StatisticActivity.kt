@@ -106,7 +106,7 @@ class StatisticActivity : AppCompatActivity() {
     }
 
     private fun checkEnergyAndStartGame() {
-        val energy = Energy(this)
+        val energy = Energy()
         if (energy.isHave()) {
             energy.use()
             val intent = Intent(this, GameMainActivity::class.java)

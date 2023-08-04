@@ -18,7 +18,7 @@ import evgeniy.ryzhikov.guesstheflag.domain.Mode
 class ChooseGameFragment : Fragment() {
     private var _binding: FragmentChooseGameBinding? = null
     private val binding get() = _binding!!
-    private lateinit var  energy: Energy
+    private var  energy: Energy = Energy()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +30,6 @@ class ChooseGameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        energy = Energy(requireContext())
         addButtonListener()
     }
 

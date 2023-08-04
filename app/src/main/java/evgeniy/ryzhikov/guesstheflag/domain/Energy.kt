@@ -1,58 +1,56 @@
 package evgeniy.ryzhikov.guesstheflag.domain
 
 import android.content.Context
+import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
 import evgeniy.ryzhikov.guesstheflag.settings.ENERGY_ADD_FOR_ADS
 import evgeniy.ryzhikov.guesstheflag.settings.ENERGY_MAX
 import evgeniy.ryzhikov.guesstheflag.settings.TIME_IN_SECONDS_ENERGY_RECOVERY
+import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.*
 
-const val PREFERENCE_ENERGY = "energy"
-const val PREFERENCE_ENERGY_COUNT = "energy_count"
-const val PREFERENCE_ENERGY_TIME_LAST_USED = "energy_last_used"
 
-class Energy (context: Context) {
 
-    private val sharedPreferences = context.getSharedPreferences(PREFERENCE_ENERGY, 0)
+class Energy () {
+
+    private val preference = PreferenceProvider.getInstance()
 
     fun isHave() : Boolean {
         if (!isFull())
             update()
 
-        return sharedPreferences.getInt(PREFERENCE_ENERGY_COUNT, 0) > 0
+        return preference.getInt(PreferenceName.ENERGY, PreferenceKey.ENERGY_COUNT) > 0
     }
 
     fun get() : Int {
         if (!isFull()) {
             update()
         }
-        return sharedPreferences.getInt(PREFERENCE_ENERGY_COUNT, 0)
+        return preference.getInt(PreferenceName.ENERGY, PreferenceKey.ENERGY_COUNT)
     }
 
-    fun isFull() : Boolean = sharedPreferences.getInt(PREFERENCE_ENERGY_COUNT, 0) >= ENERGY_MAX
+    fun isFull() : Boolean = preference.getInt(PreferenceName.ENERGY, PreferenceKey.ENERGY_COUNT) >= ENERGY_MAX
 
     fun use() {
-        val editor = sharedPreferences.edit()
         if (isFull()) {
-            editor.putLong(PREFERENCE_ENERGY_TIME_LAST_USED, System.currentTimeMillis())
+            preference.putLong(PreferenceName.ENERGY, PreferenceKey.ENERGY_TIME_LAST_USED, System.currentTimeMillis())
         }
 
-        editor.putInt(
-            PREFERENCE_ENERGY_COUNT,
-            sharedPreferences.getInt(PREFERENCE_ENERGY_COUNT, 0) - 1
+        preference.putInt(
+            PreferenceName.ENERGY,
+            PreferenceKey.ENERGY_COUNT,
+            preference.getInt(PreferenceName.ENERGY, PreferenceKey.ENERGY_COUNT) -1
         )
-
-        editor.apply()
     }
 
     fun getTimeToIncrease() : Long {
-        val timeOfLastUsed = sharedPreferences.getLong(PREFERENCE_ENERGY_TIME_LAST_USED, 0)
+        val timeOfLastUsed = preference.getLong(PreferenceName.ENERGY, PreferenceKey.ENERGY_TIME_LAST_USED)
         val deltaTime = timeOfLastUsed + TIME_IN_SECONDS_ENERGY_RECOVERY * 1000 - System.currentTimeMillis()
         return deltaTime
     }
 
     private fun update() {
-        val energy = sharedPreferences.getInt(PREFERENCE_ENERGY_COUNT, 0)
+        val energy = preference.getInt(PreferenceName.ENERGY, PreferenceKey.ENERGY_COUNT)
         val deltaEnergy = ENERGY_MAX - energy
-        val timeOfLastUse = sharedPreferences.getLong(PREFERENCE_ENERGY_TIME_LAST_USED, 0L)
+        val timeOfLastUse = preference.getLong(PreferenceName.ENERGY, PreferenceKey.ENERGY_TIME_LAST_USED)
 
         val deltaTime = System.currentTimeMillis() - timeOfLastUse
 
@@ -67,21 +65,18 @@ class Energy (context: Context) {
         }
 
         if (countAddTime != 0) {
-
-            print("Добавили энергии: $countAddTime")
-            val editor = sharedPreferences.edit()
             //Добавляем Энергию
-            editor.putInt(PREFERENCE_ENERGY_COUNT, energy + countAddTime)
+            preference.putInt(PreferenceName.ENERGY, PreferenceKey.ENERGY_COUNT, energy + countAddTime)
             //Устанавливаем новое время использования, увеличие знаение на количество добавлленной энергии
             val newLastUsed = timeOfLastUse + countAddTime * TIME_IN_SECONDS_ENERGY_RECOVERY * 1000
-            editor.putLong(PREFERENCE_ENERGY_TIME_LAST_USED, newLastUsed)
-            editor.apply()
+            preference.putLong(PreferenceName.ENERGY, PreferenceKey.ENERGY_TIME_LAST_USED, newLastUsed)
         }
     }
 
     fun addForViewingAds() {
-        val editor = sharedPreferences.edit()
-        editor.putInt(PREFERENCE_ENERGY_COUNT,sharedPreferences.getInt(PREFERENCE_ENERGY_COUNT, 0) + ENERGY_ADD_FOR_ADS)
-        editor.apply()
+        preference.putInt(
+            PreferenceName.ENERGY,
+            PreferenceKey.ENERGY_COUNT,
+            preference.getInt(PreferenceName.ENERGY, PreferenceKey.ENERGY_COUNT) + ENERGY_ADD_FOR_ADS)
     }
 }

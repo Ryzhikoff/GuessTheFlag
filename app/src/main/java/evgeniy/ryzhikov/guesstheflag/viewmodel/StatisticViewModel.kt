@@ -17,7 +17,7 @@ class StatisticViewModel : ViewModel(), LifecycleObserver {
     var roundResult = RoundResult()
 
     fun getStatisticData() {
-        val uid = FirebaseUserUid.get()
+        val uid = FirebaseUserUid.getUid()
         fsa.getPlayerStatisticData(uid, object : GetStatisticCallback {
             override fun onSuccess(statisticData: StatisticData) {
                 statisticLiveData.postValue(statisticData)

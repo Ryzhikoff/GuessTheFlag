@@ -78,7 +78,7 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
     fun saveStatistic() {
         val roundResult = getRoundResult()
         App.instance.statisticViewModel.roundResult = roundResult
-        fsa.getPlayerStatisticData(FirebaseUserUid.get(), object : GetStatisticCallback {
+        fsa.getPlayerStatisticData(FirebaseUserUid.getUid(), object : GetStatisticCallback {
             override fun onSuccess(statisticData: StatisticData) {
                 val newStatisticData = when (GameMode.mode) {
                     Mode.COUNTRY_FLAG -> addCountryFlagStatistic(statisticData, roundResult)

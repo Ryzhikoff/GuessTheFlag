@@ -40,7 +40,7 @@ class NotEnoughEnergyFragment : DialogFragment() {
 
         binding.btnWathVideo.setOnClickListener {
             Toast.makeText(requireContext(), "Посмотрели рекламу!", Toast.LENGTH_SHORT).show()
-            val energy = Energy(requireContext())
+            val energy = Energy()
             energy.addForViewingAds()
         }
     }
