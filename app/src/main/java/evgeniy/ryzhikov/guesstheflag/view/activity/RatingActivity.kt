@@ -33,6 +33,7 @@ class RatingActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initRV()
+        lifecycle.addObserver(viewModel)
         viewModel.playerPositionInRatingLiveData.observe(this) { position ->
             playerPosition = position
         }
@@ -121,5 +122,10 @@ class RatingActivity : AppCompatActivity() {
 
             lm?.startSmoothScroll(smoothScroller)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        adapter.clear()
     }
 }
