@@ -8,5 +8,7 @@
     <dimen name="stat_padding_around_text">10dp</dimen>
     <dimen name="stat_margin_after_item">20dp</dimen>
     <dimen name="main_menu_margin_energy_top">30dp</dimen>
+    <dimen name="settings_seekbar_margin">40dp</dimen>
+    <dimen name="settings_seekbar_margin_buttom">10dp</dimen>
 
 </resources>

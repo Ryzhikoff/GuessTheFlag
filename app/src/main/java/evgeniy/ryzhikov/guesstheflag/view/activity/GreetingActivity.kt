@@ -21,12 +21,14 @@ import evgeniy.ryzhikov.guesstheflag.databinding.ActivityGreetingBinding
 import evgeniy.ryzhikov.guesstheflag.settings.DEFAULT_MUSIC_VOLUME
 import evgeniy.ryzhikov.guesstheflag.settings.DEFAULT_SOUND_VOLUME
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
+import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 
 
 class GreetingActivity : AppCompatActivity() {
     lateinit var binding: ActivityGreetingBinding
     private lateinit var launcher: ActivityResultLauncher<Intent>
     private lateinit var auth: FirebaseAuth
+    private val media = MediaPlayerController.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,6 +94,16 @@ class GreetingActivity : AppCompatActivity() {
                 errorSignInWithGoogle()
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        media.resumeMusic()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        media.pauseMusic()
     }
 
     private fun startMenuActivity() {

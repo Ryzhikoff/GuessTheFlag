@@ -42,4 +42,5 @@
     <string name="menu_rating_wins">Победы</string>
     <string name="menu_rating_games">Игры</string>
     <string name="menu_rating_points">Очки</string>
+    <string name="setting_player_name">Твоё имя в рейтинге:</string>
 </resources>

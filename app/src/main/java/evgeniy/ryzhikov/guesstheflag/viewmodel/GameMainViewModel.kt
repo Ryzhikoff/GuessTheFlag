@@ -2,9 +2,8 @@ package evgeniy.ryzhikov.guesstheflag.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseStorageAdapter
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
@@ -12,7 +11,6 @@ import evgeniy.ryzhikov.guesstheflag.data.GetStatisticCallback
 import evgeniy.ryzhikov.guesstheflag.domain.GameMode
 import evgeniy.ryzhikov.guesstheflag.domain.Mode
 import evgeniy.ryzhikov.guesstheflag.domain.RoundResult
-import evgeniy.ryzhikov.guesstheflag.domain.questions.QuestionManager
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 import evgeniy.ryzhikov.guesstheflag.settings.NUMBER_OF_QUESTION_PER_ROUND
 import evgeniy.ryzhikov.guesstheflag.settings.POINTS_FOR_WRONG_FLAG_COUNTRY
@@ -25,11 +23,10 @@ import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_MAP_COUNTRY
 import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_MAP_REGION
 import kotlin.math.roundToInt
 
-class GameMainViewModel(application: Application) : AndroidViewModel(application), LifecycleObserver {
+class GameMainViewModel(application: Application) : AndroidViewModel(application), DefaultLifecycleObserver {
     private val fsa = FirebaseStorageAdapter.getInstance()
 
 
-    private lateinit var questionManager : QuestionManager
 
     var counterCorrectAnswers = 0
         private set
@@ -38,16 +35,16 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
 
     private var points = 0
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun startGame() {
+    override fun onCreate(owner: LifecycleOwner) {
+        super.onCreate(owner)
         //questionManager = QuestionManager(getApplication())
         counterCorrectAnswers = 0
         counterWrongAnswers = 0
         points = 0
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    fun clearRatingList() {
+    override fun onDestroy(owner: LifecycleOwner) {
+        super.onDestroy(owner)
         fsa.clearRatingList()
         fsa.clearPlayerStatisticData()
     }

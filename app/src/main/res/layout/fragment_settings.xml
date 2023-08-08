@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/settingsContainer"
     style="@style/MenuContainer">
 
@@ -9,7 +10,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/neucha"
         android:padding="@dimen/stat_padding_around_text"
-        android:text=" Твоё имя в рейтинге: " />
+        android:text="@string/setting_player_name" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -23,7 +24,7 @@
             android:layout_centerInParent="true"
             android:fontFamily="@font/neucha"
             android:padding="@dimen/stat_padding_around_text"
-            android:text=" name of user" />
+            tools:text=" name of user" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnChangeName"
@@ -42,7 +43,7 @@
         style="@style/ButtonTextMenu.Answers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/settings_seekbar_margin_buttom"
         android:fontFamily="@font/neucha"
         android:padding="@dimen/stat_padding_around_text"
         android:text="@string/settings_volume_sounds" />
@@ -51,14 +52,17 @@
         android:id="@+id/sbVolumeSound"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginStart="@dimen/settings_seekbar_margin"
+        android:layout_marginEnd="@dimen/settings_seekbar_margin"
+        android:layout_marginBottom="@dimen/settings_seekbar_margin_buttom" />
 
     <TextView
         style="@style/ButtonTextMenu.Answers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/settings_seekbar_margin_buttom"
         android:fontFamily="@font/neucha"
+
         android:padding="@dimen/stat_padding_around_text"
         android:text="@string/settings_volume_music" />
 
@@ -66,7 +70,9 @@
         android:id="@+id/sbVolumeMusic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginStart="@dimen/settings_seekbar_margin"
+        android:layout_marginEnd="@dimen/settings_seekbar_margin"
+        android:layout_marginBottom="@dimen/settings_seekbar_margin_buttom" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBack"

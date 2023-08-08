@@ -1,9 +1,8 @@
 package evgeniy.ryzhikov.guesstheflag.viewmodel
 
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModel
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseStorageAdapter
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
@@ -11,7 +10,7 @@ import evgeniy.ryzhikov.guesstheflag.data.GetStatisticCallback
 import evgeniy.ryzhikov.guesstheflag.domain.RoundResult
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 
-class StatisticViewModel : ViewModel(), LifecycleObserver {
+class StatisticViewModel : ViewModel(), DefaultLifecycleObserver {
     private val fsa = FirebaseStorageAdapter.getInstance()
     var statisticLiveData = MutableLiveData<StatisticData>()
     var roundResult = RoundResult()
@@ -33,8 +32,8 @@ class StatisticViewModel : ViewModel(), LifecycleObserver {
         roundResult = RoundResult()
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    private fun cleanData() {
+    override fun onDestroy(owner: LifecycleOwner) {
+        super.onDestroy(owner)
         statisticLiveData = MutableLiveData<StatisticData>()
     }
 

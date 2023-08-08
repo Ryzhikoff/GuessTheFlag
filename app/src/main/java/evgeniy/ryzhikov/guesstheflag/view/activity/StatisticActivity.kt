@@ -19,6 +19,7 @@ import evgeniy.ryzhikov.guesstheflag.domain.Energy
 import evgeniy.ryzhikov.guesstheflag.domain.RoundResult
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
+import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 
 class StatisticActivity : AppCompatActivity() {
     lateinit var binding: ActivityStatisticBinding
@@ -27,6 +28,7 @@ class StatisticActivity : AppCompatActivity() {
     private var adapter = StatisticAdapter()
 
     private val viewModel = App.instance.statisticViewModel
+    private val media = MediaPlayerController.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -91,15 +93,18 @@ class StatisticActivity : AppCompatActivity() {
 
     private fun setButtonOnClickListener() {
         binding.btnBack.setOnClickListener {
+            media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
             startMainMenu()
         }
 
         binding.btnAgain.setOnClickListener {
+            media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
             checkEnergyAndStartGame()
         }
     }
 
     private fun startMainMenu() {
+        media.stopMusic = false
         val intent = Intent(this, MenuActivity::class.java)
         startActivity(intent)
         finish()
@@ -109,11 +114,27 @@ class StatisticActivity : AppCompatActivity() {
         val energy = Energy()
         if (energy.isHave()) {
             energy.use()
+            media.stopMusic = false
             val intent = Intent(this, GameMainActivity::class.java)
             startActivity(intent)
             finish()
         } else {
             NotEnoughEnergyFragment().show(supportFragmentManager, TAG_NOT_ENOUGH_ENERGY)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (media.stopMusic) {
+            media.resumeMusic()
+        }
+        media.stopMusic = true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (media.stopMusic) {
+            media.pauseMusic()
         }
     }
 
