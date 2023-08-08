@@ -5,19 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SeekBar
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
 import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
 import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.*
 import evgeniy.ryzhikov.guesstheflag.view.activity.MenuActivity
 import evgeniy.ryzhikov.guesstheflag.databinding.FragmentSettingsBinding
+import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 
 
 class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
     private var preference = PreferenceProvider.getInstance()
-    private var volumeMusic = 0f
+    private val media = MediaPlayerController.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +32,9 @@ class SettingsFragment : Fragment() {
 
         addButtonListener()
         setPositionOnSeekbars()
+
+        binding.sbVolumeMusic.setOnSeekBarChangeListener(MediaPlayerController.getInstance().MusicVolumeChangeListener())
+        binding.sbVolumeSound.setOnSeekBarChangeListener(MediaPlayerController.getInstance().SoundVolumeChangeListener())
     }
 
     override fun onResume() {
@@ -44,45 +47,34 @@ class SettingsFragment : Fragment() {
 
     private fun addButtonListener() {
         binding.btnBack.setOnClickListener {
+            media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
             (activity as MenuActivity).navController.popBackStack()
         }
 
         binding.btnChangeName.setOnClickListener {
-            ChangeNameFragment(object : ChangeNameCallback{
-                override fun nameChanges(name: String) {
-                    binding.name.text = name
-                }
-
-            }).show(parentFragmentManager, TAG_CHANGE_NAME)
+            media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
+            displayChangeNameFragment()
         }
 
-        binding.sbVolumeMusic.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(p0: SeekBar?, v: Int, p2: Boolean) {
-                volumeMusic = v / 100f
-                (requireActivity() as MenuActivity).setVolumeMusic(volumeMusic)
-            }
-
-            override fun onStartTrackingTouch(p0: SeekBar?) {
-            }
-
-            override fun onStopTrackingTouch(p0: SeekBar?) {
-
-            }
-
-        })
     }
 
-    override fun onPause() {
-        super.onPause()
+    private fun displayChangeNameFragment() {
+        ChangeNameFragment(object : ChangeNameCallback{
+            override fun nameChanges(name: String) {
+                binding.name.text = name
+            }
 
-        preference.putFloat(PreferenceName.SETTINGS, PreferenceKey.MUSIC_VOLUME, volumeMusic)
-
+        }).show(parentFragmentManager, TAG_CHANGE_NAME)
     }
 
     private fun setPositionOnSeekbars() {
+        binding.sbVolumeSound.progress = (
+                preference.getFloat(
+            PreferenceName.SETTINGS, PreferenceKey.SOUND_VOLUME) * 100).toInt()
+
         binding.sbVolumeMusic.progress = (
                 preference.getFloat(
-            PreferenceName.SETTINGS, PreferenceKey.MUSIC_VOLUME) * 100).toInt()
+                    PreferenceName.SETTINGS, PreferenceKey.MUSIC_VOLUME) * 100).toInt()
     }
 
     override fun onDestroyView() {

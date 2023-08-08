@@ -1,6 +1,5 @@
 package evgeniy.ryzhikov.guesstheflag.view.activity
 
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
@@ -10,12 +9,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import evgeniy.ryzhikov.guesstheflag.R
-import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
-import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences
 import evgeniy.ryzhikov.guesstheflag.databinding.ActivityMenuMainBinding
 import evgeniy.ryzhikov.guesstheflag.settings.ENERGY_MAX
 import evgeniy.ryzhikov.guesstheflag.domain.Energy
+import evgeniy.ryzhikov.guesstheflag.settings.COEF_FOR_SPEED_SCROLLING_FACTS
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
+import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import kotlin.random.Random
 
 
 class MenuActivity : AppCompatActivity() {
@@ -23,8 +23,9 @@ class MenuActivity : AppCompatActivity() {
     lateinit var navController: NavController
 
     private var energy: Energy = Energy()
-    private lateinit var mediaPlayer: MediaPlayer
     private var backPressed = 0L
+    private val media = MediaPlayerController.getInstance()
+    private var isRunningFacts = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,12 +34,28 @@ class MenuActivity : AppCompatActivity() {
 
         navController = Navigation.findNavController(this, R.id.navHostMenuFragment)
         setEnergy()
-        setMusic()
+
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 
         HideNavigationBars.hide(window, bindingMainMenuActivity.root)
+        isRunningFacts = false
     }
 
+    private fun startFactsFlags() {
+        val facts = resources.getStringArray(R.array.facts)
+        val randomPos = Random.nextInt(0, facts.size - 1)
+        val randomFact = facts[randomPos]
+        val speed = randomFact.length * COEF_FOR_SPEED_SCROLLING_FACTS
+        bindingMainMenuActivity.tvFacts.text = randomFact
+
+        bindingMainMenuActivity.tvFacts.viewTreeObserver.addOnGlobalLayoutListener {
+            if (!isRunningFacts) {
+                isRunningFacts = true
+                bindingMainMenuActivity.tvFacts.startScroll(speed)
+            }
+        }
+
+    }
 
     private fun setEnergy() {
         val countEnergy = " ${energy.get()} / $ENERGY_MAX "
@@ -76,32 +93,28 @@ class MenuActivity : AppCompatActivity() {
 
     }
 
-    private fun setMusic() {
-        mediaPlayer = MediaPlayer.create(this, R.raw.music_menu)
-        mediaPlayer.isLooping = true
-        val preference = PreferenceProvider.getInstance()
-        val volume = preference.getFloat(Preferences.PreferenceName.SETTINGS, Preferences.PreferenceKey.MUSIC_VOLUME)
-        setVolumeMusic(volume)
-    }
-
-    fun setVolumeMusic(volume: Float) {
-        mediaPlayer.setVolume(volume, volume)
+    override fun onStart() {
+        super.onStart()
+        if (!isRunningFacts) {
+            startFactsFlags()
+        }
     }
 
     override fun onResume() {
         super.onResume()
-        mediaPlayer.start()
+        if (media.stopMusic) {
+            media.resumeMusic()
+        }
+        media.stopMusic = true
     }
 
     override fun onPause() {
         super.onPause()
-        mediaPlayer.pause()
+        if (media.stopMusic) {
+            media.pauseMusic()
+        }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mediaPlayer.stop()
-    }
 
     private val onBackPressedCallback: OnBackPressedCallback =
         object : OnBackPressedCallback(true) {

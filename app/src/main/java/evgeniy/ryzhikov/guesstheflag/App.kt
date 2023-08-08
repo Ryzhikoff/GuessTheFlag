@@ -23,9 +23,10 @@ class App : Application() {
         mainGameViewModel = GameMainViewModel(this)
         ratingViewModel = RatingViewModel()
         menuViewModel = MenuViewModel()
-        mediaPlayerController = MediaPlayerController(this)
         preferenceProvider = PreferenceProvider.getInstance()
+        mediaPlayerController = MediaPlayerController.getInstance()
     }
+
 
     companion object {
         lateinit var instance : App

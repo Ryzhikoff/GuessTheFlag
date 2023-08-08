@@ -1,11 +1,9 @@
 package evgeniy.ryzhikov.guesstheflag.view.activity
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import evgeniy.ryzhikov.guesstheflag.App
@@ -18,6 +16,7 @@ import evgeniy.ryzhikov.guesstheflag.domain.statistic.rv.StatHeader
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.rv.StatisticAdapter
 import evgeniy.ryzhikov.guesstheflag.utils.CenterSmoothScroller
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
+import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 
 
 class RatingActivity : AppCompatActivity() {
@@ -25,7 +24,8 @@ class RatingActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private var adapter = StatisticAdapter()
     private val viewModel = App.instance.ratingViewModel
-    private var playerPosition = 0;
+    private var playerPosition = 0
+    private val media = MediaPlayerController.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -100,13 +100,16 @@ class RatingActivity : AppCompatActivity() {
 
     private fun addButtonsListeners() {
         binding.btnBack.setOnClickListener {
+            media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
             startMainMenu()
         }
         binding.ratingItem.setOnClickListener {
+            media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
             smoothScrollToPosition()
         }
     }
     private fun startMainMenu() {
+        media.stopMusic = false
         val intent = Intent(this, MenuActivity::class.java)
         startActivity(intent)
         finish()
@@ -121,6 +124,21 @@ class RatingActivity : AppCompatActivity() {
             smoothScroller.targetPosition = playerPosition
 
             lm?.startSmoothScroll(smoothScroller)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (media.stopMusic) {
+            media.resumeMusic()
+        }
+        media.stopMusic = true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (media.stopMusic) {
+            media.pauseMusic()
         }
     }
 

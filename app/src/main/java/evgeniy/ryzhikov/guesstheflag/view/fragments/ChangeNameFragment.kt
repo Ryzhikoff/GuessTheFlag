@@ -9,12 +9,14 @@ import androidx.fragment.app.DialogFragment
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
 import evgeniy.ryzhikov.guesstheflag.databinding.FragmentChangeNameBinding
+import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 
 const val TAG_CHANGE_NAME = "fragment_change_name"
 
 class ChangeNameFragment(val callback: SettingsFragment.ChangeNameCallback) : DialogFragment() {
     private var _binding: FragmentChangeNameBinding? = null
     private val binding get() = _binding!!
+    private val media = MediaPlayerController.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +30,7 @@ class ChangeNameFragment(val callback: SettingsFragment.ChangeNameCallback) : Di
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnChangeName.setOnClickListener {
+            media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
             val name = binding.edNewName.text.toString()
             saveName(name)
         }

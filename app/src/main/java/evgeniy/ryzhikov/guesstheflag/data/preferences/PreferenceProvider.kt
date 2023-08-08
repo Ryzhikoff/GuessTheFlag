@@ -1,13 +1,11 @@
 package evgeniy.ryzhikov.guesstheflag.data.preferences
 
 
-import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.PreferenceName
-import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.PreferenceKey
 
 
 class PreferenceProvider private constructor() {

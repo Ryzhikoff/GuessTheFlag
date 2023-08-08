@@ -13,6 +13,7 @@ import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.settings.*
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
+import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 
 class GameMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameMainBinding
@@ -20,6 +21,7 @@ class GameMainActivity : AppCompatActivity() {
     private lateinit var roundTimer: RoundTimer
     private var timerCount = 10
     private var backPressed = 0L
+    private val media = MediaPlayerController.getInstance()
 
     private val viewModel = App.instance.mainGameViewModel
 
@@ -89,6 +91,12 @@ class GameMainActivity : AppCompatActivity() {
     private fun processingAnswer(answer: String) {
         roundTimer.stop()
 
+        media.playSound(
+            if (questionManager.isCorrectAnswer(answer))
+                MediaPlayerController.SoundEvent.CORRECT_ANSWER
+            else
+                MediaPlayerController.SoundEvent.WRONG_ANSWER
+        )
         viewModel.scoring(questionManager.isCorrectAnswer(answer), timerCount)
 
         binding.tvCounterCorrect.text = viewModel.counterCorrectAnswers.toString()
@@ -107,9 +115,25 @@ class GameMainActivity : AppCompatActivity() {
 
     private fun endGame() {
         viewModel.saveStatistic()
+        media.stopMusic = false
         val intent = Intent(this, StatisticActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (media.stopMusic) {
+            media.resumeMusic()
+        }
+        media.stopMusic = true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (media.stopMusic) {
+            media.pauseMusic()
+        }
     }
 
     private val onBackPressedCallback: OnBackPressedCallback =
