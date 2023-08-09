@@ -15,10 +15,11 @@ import evgeniy.ryzhikov.guesstheflag.domain.Energy
 import evgeniy.ryzhikov.guesstheflag.settings.COEF_FOR_SPEED_SCROLLING_FACTS
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import evgeniy.ryzhikov.guesstheflag.utils.StartingLoadingAnimation
 import kotlin.random.Random
 
 
-class MenuActivity : AppCompatActivity() {
+class MenuActivity : AppCompatActivity(), StartingLoadingAnimation {
     private lateinit var bindingMainMenuActivity : ActivityMenuMainBinding
     lateinit var navController: NavController
 
@@ -138,6 +139,19 @@ class MenuActivity : AppCompatActivity() {
 
     companion object {
         const val TIME_INTERVAL = 2000
+    }
+
+    override fun startLoadingAnimation() {
+        bindingMainMenuActivity.loadingAnimation.playAnimation()
+        bindingMainMenuActivity.loadingAnimation.visibility = View.VISIBLE
+        bindingMainMenuActivity.containerForLoadAnim.visibility = View.VISIBLE
+
+    }
+
+    override fun stopLoadingAnimation() {
+        bindingMainMenuActivity.loadingAnimation.cancelAnimation()
+        bindingMainMenuActivity.loadingAnimation.visibility = View.GONE
+        bindingMainMenuActivity.containerForLoadAnim.visibility = View.GONE
     }
 
 

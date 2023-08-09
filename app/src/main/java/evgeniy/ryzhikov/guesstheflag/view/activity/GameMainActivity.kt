@@ -11,6 +11,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.AppCompatTextView
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
+import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexInterstitialAd
+import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexAdCallback
 import evgeniy.ryzhikov.guesstheflag.settings.*
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
@@ -22,6 +24,7 @@ class GameMainActivity : AppCompatActivity() {
     private var timerCount = 10
     private var backPressed = 0L
     private val media = MediaPlayerController.getInstance()
+    private lateinit var yandexInterstitialAd: YandexInterstitialAd
 
     private val viewModel = App.instance.mainGameViewModel
 
@@ -35,6 +38,9 @@ class GameMainActivity : AppCompatActivity() {
         lifecycle.addObserver(viewModel)
 
         setListenerButtons()
+
+        yandexInterstitialAd = YandexInterstitialAd(this)
+        yandexInterstitialAd.loadAd()
 
         setInfoPanel()
         newRound()
@@ -116,9 +122,16 @@ class GameMainActivity : AppCompatActivity() {
     private fun endGame() {
         viewModel.saveStatistic()
         media.stopMusic = false
-        val intent = Intent(this, StatisticActivity::class.java)
-        startActivity(intent)
-        finish()
+
+        yandexInterstitialAd.showAds(object : YandexAdCallback{
+            override fun onComplete() {
+                val intent = Intent(this@GameMainActivity, StatisticActivity::class.java)
+                startActivity(intent)
+                this@GameMainActivity.finish()
+            }
+            override fun onError() {
+            }
+        })
     }
 
     override fun onResume() {
@@ -155,4 +168,5 @@ class GameMainActivity : AppCompatActivity() {
     companion object {
         const val TIME_INTERVAL = 2000
     }
+
 }

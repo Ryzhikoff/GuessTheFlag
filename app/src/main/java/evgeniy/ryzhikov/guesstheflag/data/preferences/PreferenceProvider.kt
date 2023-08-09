@@ -9,13 +9,9 @@ import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.PreferenceName
 
 
 class PreferenceProvider private constructor() {
-    companion object {
-        private var instance: PreferenceProvider? = null
-        fun getInstance(): PreferenceProvider {
-            return instance ?: PreferenceProvider().also {
-                instance = it
-            }
-        }
+
+    init {
+        println("PreferenceProvider init")
     }
 
     private var preferenceSettings: SharedPreferences? = null
@@ -112,5 +108,12 @@ class PreferenceProvider private constructor() {
     ) =
         getSharedPreference(preferenceName).contains(preferencesKey)
 
-
+    companion object {
+        private var instance: PreferenceProvider? = null
+        fun getInstance(): PreferenceProvider {
+            return instance ?: PreferenceProvider().also {
+                instance = it
+            }
+        }
+    }
 }

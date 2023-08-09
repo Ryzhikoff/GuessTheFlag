@@ -19,13 +19,16 @@
         tools:listitem="@layout/item_stat_field" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/containerForLoadAnim"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/btnAgain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white_alpha30"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/statRecycler">
+        app:layout_constraintTop_toBottomOf="parent">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/loadingAnimation"
@@ -33,7 +36,8 @@
             android:layout_height="match_parent"
             android:clickable="false"
             android:focusable="true"
-            app:lottie_autoPlay="true"
+            android:visibility="gone"
+            app:lottie_autoPlay="false"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/animation_load_statistic2" />
     </androidx.appcompat.widget.LinearLayoutCompat>

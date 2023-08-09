@@ -43,4 +43,5 @@
     <string name="menu_rating_games">Игры</string>
     <string name="menu_rating_points">Очки</string>
     <string name="setting_player_name">Твоё имя в рейтинге:</string>
+    <string name="error_reward_ad_not_loaded">Упс! Реклама не загружена! Попробуй еще раз!</string>
 </resources>
