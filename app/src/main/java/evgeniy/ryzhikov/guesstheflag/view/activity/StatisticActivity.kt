@@ -63,6 +63,7 @@ class StatisticActivity : AppCompatActivity(), StartingLoadingAnimation {
         viewModel.getStatisticData()
     }
 
+
     private fun addRoundStatistic(roundResult: RoundResult) {
         adapter.addItem(StatHeader(getString(R.string.statistic_round_title)))
         adapter.addItem(StatField(R.drawable.ic_answer_correct, getString(R.string.statistic_correct_answer), roundResult.countCorrectAnswers.toString()))

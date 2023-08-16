@@ -66,10 +66,22 @@ class GameMainActivity : AppCompatActivity() {
 
     private fun setQuestionAndAnswerOnUi() {
         binding.ivQuestion.setImageDrawable(questionManager.drawableQuestion)
-        binding.answer1.text = questionManager.answers[0]
-        binding.answer2.text = questionManager.answers[1]
-        binding.answer3.text = questionManager.answers[2]
-        binding.answer4.text = questionManager.answers[3]
+        binding.answer1.apply {
+            text = questionManager.answers[0]
+            isClickable = true
+        }
+        binding.answer2.apply {
+            text = questionManager.answers[1]
+            isClickable = true
+        }
+        binding.answer3.apply {
+            text = questionManager.answers[2]
+            isClickable = true
+        }
+        binding.answer4.apply {
+            text = questionManager.answers[3]
+            isClickable = true
+        }
     }
 
     private fun startTimer() {
@@ -96,6 +108,10 @@ class GameMainActivity : AppCompatActivity() {
 
     private fun processingAnswer(answer: String) {
         roundTimer.stop()
+        binding.answer1.isClickable = false
+        binding.answer2.isClickable = false
+        binding.answer3.isClickable = false
+        binding.answer4.isClickable = false
 
         media.playSound(
             if (questionManager.isCorrectAnswer(answer))
@@ -125,13 +141,18 @@ class GameMainActivity : AppCompatActivity() {
 
         yandexInterstitialAd.showAds(object : YandexAdCallback{
             override fun onComplete() {
-                val intent = Intent(this@GameMainActivity, StatisticActivity::class.java)
-                startActivity(intent)
-                this@GameMainActivity.finish()
+                startStatisticActivity()
             }
             override fun onError() {
+                startStatisticActivity()
             }
         })
+    }
+
+    private fun startStatisticActivity() {
+        val intent = Intent(this@GameMainActivity, StatisticActivity::class.java)
+        startActivity(intent)
+        this@GameMainActivity.finish()
     }
 
     override fun onResume() {

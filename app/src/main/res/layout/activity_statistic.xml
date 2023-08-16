@@ -7,6 +7,14 @@
     android:background="@drawable/menu_background"
     tools:context=".view.activity.StatisticActivity">
 
+    <evgeniy.ryzhikov.guesstheflag.view.customview.YandexBanner
+        android:id="@+id/yandexBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/statRecycler"
         android:layout_width="match_parent"
@@ -15,7 +23,7 @@
         app:layout_constraintBottom_toTopOf="@id/btnAgain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/yandexBanner"
         tools:listitem="@layout/item_stat_field" />
 
     <androidx.appcompat.widget.LinearLayoutCompat

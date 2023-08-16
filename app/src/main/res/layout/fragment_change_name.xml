@@ -15,7 +15,11 @@
         android:hint="@string/setting_hint_input_name"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        android:inputType="text"
+        android:fontFamily="@font/neucha"
         style="@style/ButtonTextMenu"
+        android:maxLength="20"
+        android:autofillHints="name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
