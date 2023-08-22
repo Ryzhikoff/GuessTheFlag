@@ -57,6 +57,8 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.6.0"
     implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.0'
 
+    implementation "androidx.fragment:fragment-ktx:1.5.7"
+
     //Autofit textView
     implementation 'com.github.AndroidDeveloperLB:AutoFitTextView:10'
 

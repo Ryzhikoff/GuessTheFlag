@@ -79,7 +79,6 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
 
     fun saveStatistic() {
         val roundResult = getRoundResult()
-        App.instance.statisticViewModel.roundResult = roundResult
         fsa.getPlayerStatisticData(firebaseUserUid.getUid(), object : GetStatisticCallback {
             override fun onSuccess(statisticData: StatisticData) {
                 val newStatisticData = when (GameMode.mode) {
@@ -105,7 +104,7 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
 
     }
 
-    private fun getRoundResult() : RoundResult {
+    fun getRoundResult() : RoundResult {
         return RoundResult(
             countQuestions = NUMBER_OF_QUESTION_PER_ROUND,
             countCorrectAnswers = counterCorrectAnswers,
