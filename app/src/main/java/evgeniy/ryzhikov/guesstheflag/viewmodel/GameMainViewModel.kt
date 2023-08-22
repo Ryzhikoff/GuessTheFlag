@@ -21,10 +21,10 @@ import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_FLAG_COUNTRY
 import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_FLAG_REGION
 import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_MAP_COUNTRY
 import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_MAP_REGION
+import javax.inject.Inject
 import kotlin.math.roundToInt
 
 class GameMainViewModel(application: Application) : AndroidViewModel(application), DefaultLifecycleObserver {
-    private val fsa = FirebaseStorageAdapter.getInstance()
 
     var counterCorrectAnswers = 0
         private set
@@ -33,6 +33,13 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
 
     private var points = 0
 
+    @Inject
+    lateinit var fsa: FirebaseStorageAdapter
+    @Inject
+    lateinit var firebaseUserUid: FirebaseUserUid
+    init {
+        App.instance.dagger.inject(this)
+    }
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
         //questionManager = QuestionManager(getApplication())
@@ -73,7 +80,7 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
     fun saveStatistic() {
         val roundResult = getRoundResult()
         App.instance.statisticViewModel.roundResult = roundResult
-        fsa.getPlayerStatisticData(FirebaseUserUid.getUid(), object : GetStatisticCallback {
+        fsa.getPlayerStatisticData(firebaseUserUid.getUid(), object : GetStatisticCallback {
             override fun onSuccess(statisticData: StatisticData) {
                 val newStatisticData = when (GameMode.mode) {
                     Mode.COUNTRY_FLAG -> addCountryFlagStatistic(statisticData, roundResult)
@@ -81,7 +88,7 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
                     Mode.COUNTRY_MAP -> addCountryMapStatistic(statisticData, roundResult)
                     Mode.REGION_MAP -> addRegionMapStatistic(statisticData, roundResult)
                 }.apply {
-                    name = FirebaseUserUid.getName()
+                    name = firebaseUserUid.getName()
                     totalGame += 1
                     totalQuestions += roundResult.countQuestions
                     totalCorrect += roundResult.countCorrectAnswers

@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
     id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
 }
 
 ext {
@@ -56,8 +57,10 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.6.0"
     implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.0'
 
+    //Autofit textView
     implementation 'com.github.AndroidDeveloperLB:AutoFitTextView:10'
 
+    //Lottie animation
     implementation 'com.airbnb.android:lottie:6.0.0'
 
     // Import the BoM for the Firebase platform
@@ -71,7 +74,13 @@ dependencies {
     // Also add the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:20.6.0'
 
+    //Yandex Ads
     implementation 'com.yandex.android:mobileads:5.10.0'
+
+    //Dagger 2
+    def dagger_version = "2.47"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
     apply plugin: 'com.google.gms.google-services'
 

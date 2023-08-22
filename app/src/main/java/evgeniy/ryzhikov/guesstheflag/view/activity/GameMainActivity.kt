@@ -16,6 +16,7 @@ import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexAdCallback
 import evgeniy.ryzhikov.guesstheflag.settings.*
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import javax.inject.Inject
 
 class GameMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameMainBinding
@@ -23,16 +24,19 @@ class GameMainActivity : AppCompatActivity() {
     private lateinit var roundTimer: RoundTimer
     private var timerCount = 10
     private var backPressed = 0L
-    private val media = MediaPlayerController.getInstance()
     private lateinit var yandexInterstitialAd: YandexInterstitialAd
 
     private val viewModel = App.instance.mainGameViewModel
+
+    @Inject
+    lateinit var media: MediaPlayerController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGameMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        App.instance.dagger.inject(this)
         questionManager = QuestionManager(this)
 
         lifecycle.addObserver(viewModel)

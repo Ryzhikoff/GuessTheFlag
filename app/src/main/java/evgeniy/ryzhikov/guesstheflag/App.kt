@@ -7,8 +7,10 @@ import android.os.Process
 import android.util.Log
 import com.yandex.mobile.ads.common.InitializationListener
 import com.yandex.mobile.ads.common.MobileAds
-import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
-import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import evgeniy.ryzhikov.guesstheflag.di.AppComponent
+import evgeniy.ryzhikov.guesstheflag.di.DaggerAppComponent
+import evgeniy.ryzhikov.guesstheflag.di.modules.DomainModule
+import evgeniy.ryzhikov.guesstheflag.di.modules.FirebaseModule
 import evgeniy.ryzhikov.guesstheflag.viewmodel.GameMainViewModel
 import evgeniy.ryzhikov.guesstheflag.viewmodel.MenuViewModel
 import evgeniy.ryzhikov.guesstheflag.viewmodel.RatingViewModel
@@ -20,21 +22,24 @@ class App : Application() {
     lateinit var mainGameViewModel: GameMainViewModel
     lateinit var ratingViewModel: RatingViewModel
     lateinit var menuViewModel: MenuViewModel
-    lateinit var mediaPlayerController: MediaPlayerController
-    lateinit var preferenceProvider: PreferenceProvider
 
+    lateinit var dagger: AppComponent
 
     override fun onCreate() {
         super.onCreate()
 
         if (isMainProcess()) {
             instance = this
+
+            dagger = DaggerAppComponent.builder()
+                .domainModule(DomainModule(this))
+                .firebaseModule(FirebaseModule())
+                .build()
+
             statisticViewModel = StatisticViewModel()
             mainGameViewModel = GameMainViewModel(instance)
             ratingViewModel = RatingViewModel()
             menuViewModel = MenuViewModel()
-            preferenceProvider = PreferenceProvider.getInstance()
-            mediaPlayerController = MediaPlayerController.getInstance()
 
             initializeYandexAds()
         }

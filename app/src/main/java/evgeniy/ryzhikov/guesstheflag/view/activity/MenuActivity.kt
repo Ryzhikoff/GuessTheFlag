@@ -8,6 +8,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.databinding.ActivityMenuMainBinding
 import evgeniy.ryzhikov.guesstheflag.settings.ENERGY_MAX
@@ -16,6 +17,7 @@ import evgeniy.ryzhikov.guesstheflag.settings.COEF_FOR_SPEED_SCROLLING_FACTS
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 import evgeniy.ryzhikov.guesstheflag.utils.StartingLoadingAnimation
+import javax.inject.Inject
 import kotlin.random.Random
 
 
@@ -23,16 +25,20 @@ class MenuActivity : AppCompatActivity(), StartingLoadingAnimation {
     private lateinit var bindingMainMenuActivity : ActivityMenuMainBinding
     lateinit var navController: NavController
 
-    private var energy: Energy = Energy()
     private var backPressed = 0L
-    private val media = MediaPlayerController.getInstance()
     private var isRunningFacts = false
+
+    @Inject
+    lateinit var energy: Energy
+    @Inject
+    lateinit var media: MediaPlayerController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingMainMenuActivity = ActivityMenuMainBinding.inflate(layoutInflater)
         setContentView(bindingMainMenuActivity.root)
 
+        App.instance.dagger.inject(this)
         navController = Navigation.findNavController(this, R.id.navHostMenuFragment)
         setEnergy()
 

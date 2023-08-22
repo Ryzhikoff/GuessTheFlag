@@ -17,6 +17,7 @@ import evgeniy.ryzhikov.guesstheflag.domain.statistic.rv.StatisticAdapter
 import evgeniy.ryzhikov.guesstheflag.utils.CenterSmoothScroller
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import javax.inject.Inject
 
 
 class RatingActivity : AppCompatActivity() {
@@ -25,12 +26,18 @@ class RatingActivity : AppCompatActivity() {
     private var adapter = StatisticAdapter()
     private val viewModel = App.instance.ratingViewModel
     private var playerPosition = 0
-    private val media = MediaPlayerController.getInstance()
+
+    @Inject
+    lateinit var media: MediaPlayerController
+    @Inject
+    lateinit var firebaseUserUid: FirebaseUserUid
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRatingBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        App.instance.dagger.inject(this)
 
         initRV()
         lifecycle.addObserver(viewModel)
@@ -58,7 +65,7 @@ class RatingActivity : AppCompatActivity() {
     private fun displayRating(ratingList: ArrayList<StatisticData>) {
 
         if (playerPosition == -1) {
-            setPlayerRating(ratingList.size, StatisticData(name = FirebaseUserUid.getName()))
+            setPlayerRating(ratingList.size, StatisticData(name = firebaseUserUid.getName()))
         } else {
             setPlayerRating(playerPosition + 1, ratingList[playerPosition] )
         }

@@ -10,19 +10,24 @@ import com.yandex.mobile.ads.banner.BannerAdView
 import com.yandex.mobile.ads.common.AdRequest
 import com.yandex.mobile.ads.common.AdRequestError
 import com.yandex.mobile.ads.common.ImpressionData
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexAds
 import evgeniy.ryzhikov.guesstheflag.databinding.YandexBannerBinding
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import javax.inject.Inject
 
 class YandexBanner(context: Context, attributeSet: AttributeSet) :
     LinearLayout(context, attributeSet) {
     private var _binding: YandexBannerBinding? = null
     private val binding get() = _binding!!
     private var bannerAdView: BannerAdView
-    private val media = MediaPlayerController.getInstance()
+
+    @Inject
+    lateinit var media: MediaPlayerController
 
     init {
+        App.instance.dagger.inject(this)
         val view = LayoutInflater.from(context).inflate(R.layout.yandex_banner, this)
         _binding = YandexBannerBinding.bind(view)
         bannerAdView = binding.bannerAdView

@@ -1,23 +1,37 @@
 package evgeniy.ryzhikov.guesstheflag.view.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
 import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
 import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.*
 import evgeniy.ryzhikov.guesstheflag.view.activity.MenuActivity
 import evgeniy.ryzhikov.guesstheflag.databinding.FragmentSettingsBinding
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import javax.inject.Inject
 
 
 class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
-    private var preference = PreferenceProvider.getInstance()
-    private val media = MediaPlayerController.getInstance()
+
+
+    @Inject
+    lateinit var preference : PreferenceProvider
+    @Inject
+    lateinit var media: MediaPlayerController
+    @Inject
+    lateinit var firebaseUserUid: FirebaseUserUid
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        App.instance.dagger.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,8 +47,8 @@ class SettingsFragment : Fragment() {
         addButtonListener()
         setPositionOnSeekbars()
 
-        binding.sbVolumeMusic.setOnSeekBarChangeListener(MediaPlayerController.getInstance().MusicVolumeChangeListener())
-        binding.sbVolumeSound.setOnSeekBarChangeListener(MediaPlayerController.getInstance().SoundVolumeChangeListener())
+        binding.sbVolumeMusic.setOnSeekBarChangeListener(media.MusicVolumeChangeListener())
+        binding.sbVolumeSound.setOnSeekBarChangeListener(media.SoundVolumeChangeListener())
     }
 
     override fun onResume() {
@@ -42,7 +56,7 @@ class SettingsFragment : Fragment() {
         displayName()
     }
     private fun displayName() {
-        binding.name.text = FirebaseUserUid.getName()
+        binding.name.text = firebaseUserUid.getName()
     }
 
     private fun addButtonListener() {

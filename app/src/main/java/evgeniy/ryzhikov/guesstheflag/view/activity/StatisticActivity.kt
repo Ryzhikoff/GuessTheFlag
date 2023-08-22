@@ -21,6 +21,7 @@ import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 import evgeniy.ryzhikov.guesstheflag.utils.StartingLoadingAnimation
+import javax.inject.Inject
 
 class StatisticActivity : AppCompatActivity(), StartingLoadingAnimation {
     lateinit var binding: ActivityStatisticBinding
@@ -29,12 +30,18 @@ class StatisticActivity : AppCompatActivity(), StartingLoadingAnimation {
     private var adapter = StatisticAdapter()
 
     private val viewModel = App.instance.statisticViewModel
-    private val media = MediaPlayerController.getInstance()
+
+
+    @Inject
+    lateinit var energy: Energy
+    @Inject
+    lateinit var media: MediaPlayerController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityStatisticBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        App.instance.dagger.inject(this)
         startLoadingAnimation()
         lifecycle.addObserver(viewModel)
         initRV()
@@ -122,7 +129,6 @@ class StatisticActivity : AppCompatActivity(), StartingLoadingAnimation {
     }
 
     private fun checkEnergyAndStartGame() {
-        val energy = Energy()
         if (energy.isHave()) {
             energy.use()
             media.stopMusic = false
