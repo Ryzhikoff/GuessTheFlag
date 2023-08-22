@@ -6,15 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
+import evgeniy.ryzhikov.guesstheflag.R
+import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexAdCallback
+import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexRewardedAd
 import evgeniy.ryzhikov.guesstheflag.view.activity.MenuActivity
 import evgeniy.ryzhikov.guesstheflag.databinding.FragmentNotEnoughEnergyBinding
-import evgeniy.ryzhikov.guesstheflag.domain.Energy
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import evgeniy.ryzhikov.guesstheflag.utils.StartingLoadingAnimation
 
 const val TAG_NOT_ENOUGH_ENERGY = "fragment_not_enough_energy"
 
-class NotEnoughEnergyFragment : DialogFragment() {
+class NotEnoughEnergyFragment(var callingActivity: StartingLoadingAnimation?) : DialogFragment() {
     private var _binding: FragmentNotEnoughEnergyBinding? = null
     private val binding get() = _binding!!
     private val media = MediaPlayerController.getInstance()
@@ -36,22 +40,40 @@ class NotEnoughEnergyFragment : DialogFragment() {
     private fun setListenerButton() {
         binding.btnInMainMenu.setOnClickListener {
             media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
-            val intent = Intent(requireActivity(), MenuActivity::class.java)
-            media.stopMusic = false
-            startActivity(intent)
-            requireActivity().finish()
+            startMainActivity()
         }
 
         binding.btnWathVideo.setOnClickListener {
             media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
-            Toast.makeText(requireContext(), "Посмотрели рекламу!", Toast.LENGTH_SHORT).show()
-            val energy = Energy()
-            energy.addForViewingAds()
+            showRewardAd()
+
         }
+    }
+    private fun startMainActivity() {
+        val intent = Intent(requireActivity(), MenuActivity::class.java)
+        media.stopMusic = false
+        startActivity(intent)
+        requireActivity().finish()
+    }
+
+    private fun showRewardAd() {
+        val yandexRewardedAd = YandexRewardedAd(callingActivity as AppCompatActivity)
+        callingActivity?.startLoadingAnimation()
+        yandexRewardedAd.loadAndStartAd(object : YandexAdCallback{
+            override fun onComplete() {
+                startMainActivity()
+            }
+
+            override fun onError() {
+                Toast.makeText(requireContext(), requireContext().resources.getString(R.string.error_reward_ad_not_loaded), Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        callingActivity = null
     }
 }

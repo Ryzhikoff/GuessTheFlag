@@ -1,5 +1,6 @@
 package evgeniy.ryzhikov.guesstheflag.data
 
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -8,7 +9,11 @@ import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 const val FB_COLLECTION_NAME = "statistic"
 
 class FirebaseStorageAdapter private constructor(){
-    private val db = Firebase.firestore
+    private var _db : FirebaseFirestore? = null
+    private val db
+        get() = _db ?: Firebase.firestore.also {
+                            _db = it
+                        }
     private var cashedStatisticData: StatisticData? = null
     private var cashedRatingList: ArrayList<StatisticData>? = null
 

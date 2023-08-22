@@ -7,6 +7,14 @@
     android:background="@drawable/menu_background"
     tools:context=".view.activity.RatingActivity">
 
+    <evgeniy.ryzhikov.guesstheflag.view.customview.YandexBanner
+        android:id="@+id/yandexBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <TextView
         android:id="@+id/tvHeader"
         android:layout_width="wrap_content"
@@ -15,7 +23,7 @@
         android:layout_margin="@dimen/stat_padding_around_text"
         android:fontFamily="@font/neucha"
         android:text="@string/menu_rating_player_position"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/yandexBanner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

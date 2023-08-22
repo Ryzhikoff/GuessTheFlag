@@ -78,7 +78,7 @@ class ChooseGameFragment : Fragment() {
             startActivity(intent)
             activity?.finish()
         } else {
-            NotEnoughEnergyFragment().show(childFragmentManager, TAG_NOT_ENOUGH_ENERGY)
+            NotEnoughEnergyFragment(activity as MenuActivity).show(childFragmentManager, TAG_NOT_ENOUGH_ENERGY)
         }
     }
 

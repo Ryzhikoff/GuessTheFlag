@@ -20,8 +20,9 @@ import evgeniy.ryzhikov.guesstheflag.domain.RoundResult
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import evgeniy.ryzhikov.guesstheflag.utils.StartingLoadingAnimation
 
-class StatisticActivity : AppCompatActivity() {
+class StatisticActivity : AppCompatActivity(), StartingLoadingAnimation {
     lateinit var binding: ActivityStatisticBinding
     private var backPressed = 0L
     private lateinit var recyclerView: RecyclerView
@@ -34,6 +35,7 @@ class StatisticActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityStatisticBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        startLoadingAnimation()
         lifecycle.addObserver(viewModel)
         initRV()
 
@@ -52,12 +54,15 @@ class StatisticActivity : AppCompatActivity() {
 
         HideNavigationBars.hide(window, binding.root)
         getStatisticData()
+
+        startLoadingAnimation()
     }
 
 
     private fun getStatisticData() {
         viewModel.getStatisticData()
     }
+
 
     private fun addRoundStatistic(roundResult: RoundResult) {
         adapter.addItem(StatHeader(getString(R.string.statistic_round_title)))
@@ -82,9 +87,15 @@ class StatisticActivity : AppCompatActivity() {
         adapter.update()
     }
 
-    private fun stopLoadingAnimation() {
+    override fun startLoadingAnimation() {
+        binding.loadingAnimation.playAnimation()
+        binding.loadingAnimation.visibility = View.VISIBLE
+        binding.containerForLoadAnim.visibility = View.VISIBLE
+    }
+    override fun stopLoadingAnimation() {
         binding.loadingAnimation.cancelAnimation()
         binding.loadingAnimation.visibility = View.GONE
+        binding.containerForLoadAnim.visibility = View.GONE
     }
     private fun initRV() {
         recyclerView = binding.statRecycler
@@ -119,7 +130,7 @@ class StatisticActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         } else {
-            NotEnoughEnergyFragment().show(supportFragmentManager, TAG_NOT_ENOUGH_ENERGY)
+            NotEnoughEnergyFragment(this).show(supportFragmentManager, TAG_NOT_ENOUGH_ENERGY)
         }
     }
 

@@ -8,6 +8,30 @@
     android:background="@drawable/menu_background"
     tools:context=".view.activity.MenuActivity">
 
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/containerForLoadAnim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/btnAgain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/white_alpha30"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loadingAnimation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:focusable="true"
+            android:visibility="gone"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation_load_statistic2" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
     <LinearLayout
         android:id="@+id/energyContainer"
         android:layout_width="wrap_content"

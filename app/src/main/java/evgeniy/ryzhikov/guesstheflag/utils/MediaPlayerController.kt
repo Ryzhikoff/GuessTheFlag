@@ -45,7 +45,6 @@ class MediaPlayerController private constructor() {
         music.setVolume(volume, volume)
         music.isLooping = true
         music.start()
-        //context.startService(Intent(context, BackgroundMusicService::class.java))
     }
 
     fun resumeMusic() {
@@ -71,7 +70,6 @@ class MediaPlayerController private constructor() {
         } else {
             music.stop()
             playingMusic = false
-            //context.stopService(Intent(context, BackgroundMusicService::class.java))
         }
     }
 
@@ -118,7 +116,7 @@ class MediaPlayerController private constructor() {
         }
     }
 
-    inner class MusicVolumeChangeListener() : SeekBar.OnSeekBarChangeListener {
+    inner class MusicVolumeChangeListener : SeekBar.OnSeekBarChangeListener {
         private var tempVolume = 0f
         override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
             tempVolume = progress / 100f
@@ -132,7 +130,7 @@ class MediaPlayerController private constructor() {
         }
     }
 
-    inner class SoundVolumeChangeListener() : SeekBar.OnSeekBarChangeListener {
+    inner class SoundVolumeChangeListener : SeekBar.OnSeekBarChangeListener {
         private var tempVolume = 0f
         override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
             tempVolume = progress / 100f

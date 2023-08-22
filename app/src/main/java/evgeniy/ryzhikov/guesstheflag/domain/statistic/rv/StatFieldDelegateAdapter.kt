@@ -33,6 +33,5 @@ class StatFieldDelegateAdapter :
         holder.icon.setImageResource(item.iconId)
         holder.header.text = item.header
         holder.quantity.text = item.quantity
-        println("onBindViewHolder ${item.header} - ${item.quantity}")
     }
 }

@@ -26,8 +26,6 @@ import kotlin.math.roundToInt
 class GameMainViewModel(application: Application) : AndroidViewModel(application), DefaultLifecycleObserver {
     private val fsa = FirebaseStorageAdapter.getInstance()
 
-
-
     var counterCorrectAnswers = 0
         private set
     var counterWrongAnswers = 0

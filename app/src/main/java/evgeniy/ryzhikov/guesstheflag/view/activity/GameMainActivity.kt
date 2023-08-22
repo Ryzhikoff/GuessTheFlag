@@ -11,6 +11,8 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.AppCompatTextView
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
+import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexInterstitialAd
+import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexAdCallback
 import evgeniy.ryzhikov.guesstheflag.settings.*
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
@@ -22,6 +24,7 @@ class GameMainActivity : AppCompatActivity() {
     private var timerCount = 10
     private var backPressed = 0L
     private val media = MediaPlayerController.getInstance()
+    private lateinit var yandexInterstitialAd: YandexInterstitialAd
 
     private val viewModel = App.instance.mainGameViewModel
 
@@ -35,6 +38,9 @@ class GameMainActivity : AppCompatActivity() {
         lifecycle.addObserver(viewModel)
 
         setListenerButtons()
+
+        yandexInterstitialAd = YandexInterstitialAd(this)
+        yandexInterstitialAd.loadAd()
 
         setInfoPanel()
         newRound()
@@ -60,10 +66,22 @@ class GameMainActivity : AppCompatActivity() {
 
     private fun setQuestionAndAnswerOnUi() {
         binding.ivQuestion.setImageDrawable(questionManager.drawableQuestion)
-        binding.answer1.text = questionManager.answers[0]
-        binding.answer2.text = questionManager.answers[1]
-        binding.answer3.text = questionManager.answers[2]
-        binding.answer4.text = questionManager.answers[3]
+        binding.answer1.apply {
+            text = questionManager.answers[0]
+            isClickable = true
+        }
+        binding.answer2.apply {
+            text = questionManager.answers[1]
+            isClickable = true
+        }
+        binding.answer3.apply {
+            text = questionManager.answers[2]
+            isClickable = true
+        }
+        binding.answer4.apply {
+            text = questionManager.answers[3]
+            isClickable = true
+        }
     }
 
     private fun startTimer() {
@@ -90,6 +108,10 @@ class GameMainActivity : AppCompatActivity() {
 
     private fun processingAnswer(answer: String) {
         roundTimer.stop()
+        binding.answer1.isClickable = false
+        binding.answer2.isClickable = false
+        binding.answer3.isClickable = false
+        binding.answer4.isClickable = false
 
         media.playSound(
             if (questionManager.isCorrectAnswer(answer))
@@ -116,9 +138,21 @@ class GameMainActivity : AppCompatActivity() {
     private fun endGame() {
         viewModel.saveStatistic()
         media.stopMusic = false
-        val intent = Intent(this, StatisticActivity::class.java)
+
+        yandexInterstitialAd.showAds(object : YandexAdCallback{
+            override fun onComplete() {
+                startStatisticActivity()
+            }
+            override fun onError() {
+                startStatisticActivity()
+            }
+        })
+    }
+
+    private fun startStatisticActivity() {
+        val intent = Intent(this@GameMainActivity, StatisticActivity::class.java)
         startActivity(intent)
-        finish()
+        this@GameMainActivity.finish()
     }
 
     override fun onResume() {
@@ -155,4 +189,5 @@ class GameMainActivity : AppCompatActivity() {
     companion object {
         const val TIME_INTERVAL = 2000
     }
+
 }
