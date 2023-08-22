@@ -6,13 +6,21 @@ import com.yandex.mobile.ads.common.AdRequestError
 import com.yandex.mobile.ads.common.ImpressionData
 import com.yandex.mobile.ads.interstitial.InterstitialAd
 import com.yandex.mobile.ads.interstitial.InterstitialAdEventListener
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import javax.inject.Inject
 
 class YandexInterstitialAd(val context: Context) {
     private lateinit var interstitialAd: InterstitialAd
     private var isLoaded = false
     private lateinit var callback: YandexAdCallback
-    private val media = MediaPlayerController.getInstance()
+
+    @Inject
+    lateinit var media: MediaPlayerController
+
+    init {
+        App.instance.dagger.inject(this)
+    }
 
     fun loadAd() {
         interstitialAd = InterstitialAd(context)

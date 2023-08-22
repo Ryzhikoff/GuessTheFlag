@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
 import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences
@@ -22,19 +23,24 @@ import evgeniy.ryzhikov.guesstheflag.settings.DEFAULT_MUSIC_VOLUME
 import evgeniy.ryzhikov.guesstheflag.settings.DEFAULT_SOUND_VOLUME
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import javax.inject.Inject
 
 
 class GreetingActivity : AppCompatActivity() {
     lateinit var binding: ActivityGreetingBinding
     private lateinit var launcher: ActivityResultLauncher<Intent>
     private lateinit var auth: FirebaseAuth
-    private val media = MediaPlayerController.getInstance()
+
+    @Inject
+    lateinit var preference : PreferenceProvider
+    @Inject
+    lateinit var media: MediaPlayerController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGreetingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        App.instance.dagger.inject(this)
         auth = Firebase.auth
 
         launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -118,8 +124,7 @@ class GreetingActivity : AppCompatActivity() {
     }
 
     private fun setDefaultSettings() {
-        val preferences = PreferenceProvider.getInstance()
-        preferences.putFloat(Preferences.PreferenceName.SETTINGS, Preferences.PreferenceKey.MUSIC_VOLUME, DEFAULT_MUSIC_VOLUME)
-        preferences.putFloat(Preferences.PreferenceName.SETTINGS, Preferences.PreferenceKey.SOUND_VOLUME, DEFAULT_SOUND_VOLUME)
+        preference.putFloat(Preferences.PreferenceName.SETTINGS, Preferences.PreferenceKey.MUSIC_VOLUME, DEFAULT_MUSIC_VOLUME)
+        preference.putFloat(Preferences.PreferenceName.SETTINGS, Preferences.PreferenceKey.SOUND_VOLUME, DEFAULT_SOUND_VOLUME)
     }
 }

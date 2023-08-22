@@ -4,19 +4,29 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseStorageAdapter
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
 import evgeniy.ryzhikov.guesstheflag.data.GetStatisticCallback
 import evgeniy.ryzhikov.guesstheflag.domain.RoundResult
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
+import javax.inject.Inject
 
 class StatisticViewModel : ViewModel(), DefaultLifecycleObserver {
-    private val fsa = FirebaseStorageAdapter.getInstance()
     var statisticLiveData = MutableLiveData<StatisticData>()
     var roundResult = RoundResult()
 
+    @Inject
+    lateinit var fsa: FirebaseStorageAdapter
+    @Inject
+    lateinit var firebaseUserUid: FirebaseUserUid
+
+    init {
+        App.instance.dagger.inject(this)
+    }
+
     fun getStatisticData() {
-        val uid = FirebaseUserUid.getUid()
+        val uid = firebaseUserUid.getUid()
         fsa.getPlayerStatisticData(uid, object : GetStatisticCallback {
             override fun onSuccess(statisticData: StatisticData) {
                 statisticLiveData.postValue(statisticData)

@@ -4,10 +4,10 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
 import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.*
+import javax.inject.Inject
 
 
-object FirebaseUserUid {
-    private val preference = PreferenceProvider.getInstance()
+class FirebaseUserUid @Inject constructor(val preference : PreferenceProvider){
 
     fun getUid() : String {
         val uid: String

@@ -3,19 +3,16 @@ package evgeniy.ryzhikov.guesstheflag.utils
 import android.content.Context
 import android.media.MediaPlayer
 import android.widget.SeekBar
-import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
 import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.*
+import javax.inject.Inject
 
 
-class MediaPlayerController private constructor() {
+class MediaPlayerController @Inject constructor(val context: Context ,val preference : PreferenceProvider) {
 
-
-    private val context: Context = App.instance
     private lateinit var music: MediaPlayer
     private lateinit var sounds: MediaPlayer
-    private val preference = PreferenceProvider.getInstance()
 
     private var playingMusic = true
     private var playingSound = true
@@ -105,16 +102,6 @@ class MediaPlayerController private constructor() {
 
     private fun getSoundVolume() =
         preference.getFloat(PreferenceName.SETTINGS, PreferenceKey.SOUND_VOLUME)
-
-
-    companion object {
-        private var instance: MediaPlayerController? = null
-        fun getInstance(): MediaPlayerController {
-            return instance ?: MediaPlayerController().also {
-                instance = it
-            }
-        }
-    }
 
     inner class MusicVolumeChangeListener : SeekBar.OnSeekBarChangeListener {
         private var tempVolume = 0f

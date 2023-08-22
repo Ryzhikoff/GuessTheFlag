@@ -1,19 +1,28 @@
 package evgeniy.ryzhikov.guesstheflag.viewmodel
 
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModel
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseStorageAdapter
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
 import evgeniy.ryzhikov.guesstheflag.data.GetRatingCallback
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
+import javax.inject.Inject
 
-class RatingViewModel(): ViewModel(), LifecycleObserver {
-    private val fsa = FirebaseStorageAdapter.getInstance()
+class RatingViewModel(): ViewModel(), DefaultLifecycleObserver {
     var ratingListLiveData = MutableLiveData<ArrayList<StatisticData>>()
     var playerPositionInRatingLiveData = MutableLiveData<Int>()
+
+    @Inject
+    lateinit var fsa: FirebaseStorageAdapter
+    @Inject
+    lateinit var firebaseUserUid: FirebaseUserUid
+
+    init {
+        App.instance.dagger.inject(this)
+    }
 
     fun getRating() {
         fsa.getRatingList(object : GetRatingCallback {
@@ -31,7 +40,7 @@ class RatingViewModel(): ViewModel(), LifecycleObserver {
     }
 
     private fun getPlayerPositionInRating(ratingList: ArrayList<StatisticData>) : Int {
-        val uid = FirebaseUserUid.getUid()
+        val uid = firebaseUserUid.getUid()
         ratingList.forEachIndexed{ index, statisticData ->
             if(statisticData.id.equals(uid)) {
                 return index
@@ -40,8 +49,8 @@ class RatingViewModel(): ViewModel(), LifecycleObserver {
         return -1
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-    private fun cleanData() {
+    override fun onDestroy(owner: LifecycleOwner) {
+        super.onDestroy(owner)
         ratingListLiveData = MutableLiveData<ArrayList<StatisticData>>()
         playerPositionInRatingLiveData = MutableLiveData<Int>()
     }

@@ -1,22 +1,33 @@
 package evgeniy.ryzhikov.guesstheflag.view.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.view.activity.MenuActivity
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.view.activity.StatisticActivity
 import evgeniy.ryzhikov.guesstheflag.databinding.FragmentMainMenuBinding
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 import evgeniy.ryzhikov.guesstheflag.view.activity.RatingActivity
+import javax.inject.Inject
 
 class MainMenuFragment : Fragment() {
     private var _binding: FragmentMainMenuBinding? = null
     private val binding get() = _binding!!
-    private val media = MediaPlayerController.getInstance()
+
+
+    @Inject
+    lateinit var media: MediaPlayerController
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        App.instance.dagger.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

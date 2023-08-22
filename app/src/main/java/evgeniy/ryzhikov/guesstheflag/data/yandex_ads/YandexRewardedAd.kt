@@ -7,12 +7,23 @@ import com.yandex.mobile.ads.common.ImpressionData
 import com.yandex.mobile.ads.rewarded.Reward
 import com.yandex.mobile.ads.rewarded.RewardedAd
 import com.yandex.mobile.ads.rewarded.RewardedAdEventListener
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.domain.Energy
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import javax.inject.Inject
 
 class YandexRewardedAd(val context: Context) {
     private lateinit var rewardedAd : RewardedAd
-    private val media = MediaPlayerController.getInstance()
+
+
+    @Inject
+    lateinit var energy: Energy
+    @Inject
+    lateinit var media: MediaPlayerController
+
+    init {
+        App.instance.dagger.inject(this)
+    }
 
     fun loadAndStartAd(callback: YandexAdCallback) {
         rewardedAd = RewardedAd(context)
@@ -41,7 +52,6 @@ class YandexRewardedAd(val context: Context) {
             }
 
             override fun onRewarded(p0: Reward) {
-                val energy = Energy()
                 energy.addForViewingAds()
             }
 

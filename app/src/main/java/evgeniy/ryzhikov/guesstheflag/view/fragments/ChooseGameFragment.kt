@@ -1,5 +1,6 @@
 package evgeniy.ryzhikov.guesstheflag.view.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.view.activity.GameMainActivity
 import evgeniy.ryzhikov.guesstheflag.view.activity.MenuActivity
 import evgeniy.ryzhikov.guesstheflag.R
@@ -15,12 +17,22 @@ import evgeniy.ryzhikov.guesstheflag.domain.Energy
 import evgeniy.ryzhikov.guesstheflag.domain.GameMode
 import evgeniy.ryzhikov.guesstheflag.domain.Mode
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import javax.inject.Inject
 
 class ChooseGameFragment : Fragment() {
     private var _binding: FragmentChooseGameBinding? = null
     private val binding get() = _binding!!
-    private var  energy: Energy = Energy()
-    private val media = MediaPlayerController.getInstance()
+
+
+    @Inject
+    lateinit var energy: Energy
+    @Inject
+    lateinit var media: MediaPlayerController
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        App.instance.dagger.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

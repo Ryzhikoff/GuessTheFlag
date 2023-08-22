@@ -1,5 +1,6 @@
 package evgeniy.ryzhikov.guesstheflag.view.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexAdCallback
 import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexRewardedAd
@@ -15,13 +17,21 @@ import evgeniy.ryzhikov.guesstheflag.view.activity.MenuActivity
 import evgeniy.ryzhikov.guesstheflag.databinding.FragmentNotEnoughEnergyBinding
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 import evgeniy.ryzhikov.guesstheflag.utils.StartingLoadingAnimation
+import javax.inject.Inject
 
 const val TAG_NOT_ENOUGH_ENERGY = "fragment_not_enough_energy"
 
 class NotEnoughEnergyFragment(var callingActivity: StartingLoadingAnimation?) : DialogFragment() {
     private var _binding: FragmentNotEnoughEnergyBinding? = null
     private val binding get() = _binding!!
-    private val media = MediaPlayerController.getInstance()
+
+    @Inject
+    lateinit var media: MediaPlayerController
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        App.instance.dagger.inject(this)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

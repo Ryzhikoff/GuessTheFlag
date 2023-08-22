@@ -4,14 +4,13 @@ import androidx.annotation.StringDef
 
 class Preferences() {
 
-
     @StringDef(
         value = [
             PreferenceName.SETTINGS,
             PreferenceName.ENERGY
         ]
     )
-    @kotlin.annotation.Retention(AnnotationRetention.SOURCE)
+    @Retention(AnnotationRetention.SOURCE)
     annotation class PreferencesName
 
     @StringDef(
@@ -24,7 +23,7 @@ class Preferences() {
             PreferenceKey.NAME
         ]
     )
-    @kotlin.annotation.Retention(AnnotationRetention.SOURCE)
+    @Retention(AnnotationRetention.SOURCE)
     annotation class PreferencesKey
 
     class PreferenceName {

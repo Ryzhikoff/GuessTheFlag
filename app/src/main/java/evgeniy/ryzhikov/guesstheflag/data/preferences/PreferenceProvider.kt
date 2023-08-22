@@ -1,22 +1,18 @@
 package evgeniy.ryzhikov.guesstheflag.data.preferences
 
 
+import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.PreferenceName
+import javax.inject.Inject
 
 
-class PreferenceProvider private constructor() {
-
-    init {
-        println("PreferenceProvider init")
-    }
+class PreferenceProvider @Inject constructor(val context: Context) {
 
     private var preferenceSettings: SharedPreferences? = null
     private var preferenceEnergy: SharedPreferences? = null
-    private val context = App.instance
 
     private fun getPreferenceSettings(): SharedPreferences {
         return preferenceSettings ?: context.getSharedPreferences(PreferenceName.SETTINGS, MODE_PRIVATE).also {
@@ -108,12 +104,4 @@ class PreferenceProvider private constructor() {
     ) =
         getSharedPreference(preferenceName).contains(preferencesKey)
 
-    companion object {
-        private var instance: PreferenceProvider? = null
-        fun getInstance(): PreferenceProvider {
-            return instance ?: PreferenceProvider().also {
-                instance = it
-            }
-        }
-    }
 }

@@ -1,19 +1,14 @@
 package evgeniy.ryzhikov.guesstheflag.data
 
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
-import com.google.firebase.ktx.Firebase
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
+import javax.inject.Inject
 
 const val FB_COLLECTION_NAME = "statistic"
 
-class FirebaseStorageAdapter private constructor(){
-    private var _db : FirebaseFirestore? = null
-    private val db
-        get() = _db ?: Firebase.firestore.also {
-                            _db = it
-                        }
+class FirebaseStorageAdapter @Inject constructor(val firebaseUserUid : FirebaseUserUid, val db: FirebaseFirestore) {
+
     private var cashedStatisticData: StatisticData? = null
     private var cashedRatingList: ArrayList<StatisticData>? = null
 
@@ -40,7 +35,7 @@ class FirebaseStorageAdapter private constructor(){
                         if (documentSnapshot.exists()) {
                             documentSnapshot.toObject<StatisticData>()!!
                         } else {
-                            StatisticData(id = uid, name = FirebaseUserUid.getName())
+                            StatisticData(id = uid, name = firebaseUserUid.getName())
                         }
                     callback.onSuccess(statisticData)
                 }
@@ -52,7 +47,6 @@ class FirebaseStorageAdapter private constructor(){
 
     fun getRatingList(callback: GetRatingCallback) {
         if (cashedRatingList != null) {
-            println("!!! возвращаем сохраненный список")
             callback.onSuccess(cashedRatingList!!)
         } else {
             val list = ArrayList<StatisticData>()
@@ -76,15 +70,5 @@ class FirebaseStorageAdapter private constructor(){
     }
     fun clearPlayerStatisticData() {
         cashedStatisticData = null
-    }
-
-    companion object {
-        private var instance: FirebaseStorageAdapter? = null
-        fun getInstance(): FirebaseStorageAdapter {
-            return instance ?: FirebaseStorageAdapter().also {
-                instance = it
-            }
-        }
-
     }
 }

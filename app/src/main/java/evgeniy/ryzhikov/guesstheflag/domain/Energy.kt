@@ -1,17 +1,22 @@
 package evgeniy.ryzhikov.guesstheflag.domain
 
-import android.content.Context
+import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
 import evgeniy.ryzhikov.guesstheflag.settings.ENERGY_ADD_FOR_ADS
 import evgeniy.ryzhikov.guesstheflag.settings.ENERGY_MAX
 import evgeniy.ryzhikov.guesstheflag.settings.TIME_IN_SECONDS_ENERGY_RECOVERY
 import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.*
-
+import javax.inject.Inject
 
 
 class Energy () {
 
-    private val preference = PreferenceProvider.getInstance()
+    @Inject
+    lateinit var preference : PreferenceProvider
+
+    init {
+        App.instance.dagger.inject(this)
+    }
 
     fun isHave() : Boolean {
         if (!isFull())
