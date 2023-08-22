@@ -362,5 +362,25 @@
     <string name="russia_yugra">Югра (Россия)</string>
     <string name="russia_zabaykalsky_krai">Забайкальский край (Россия)</string>
 
+    <string name="belarus_brest_oblast">Брестская область (Беларусь)</string>
+    <string name="belarus_homyel_oblast">Гомельская область (Беларусь)</string>
+    <string name="belarus_hrodna_oblasts">Гродненская область (Беларусь)</string>
+    <string name="belarus_mahilyow_oblast">Могилевская область (Беларусь)</string>
+    <string name="belarus_minsk">Минск (Беларусь)</string>
+    <string name="belarus_minsk_oblast">Минская область (Беларусь)</string>
+    <string name="belarus_vitsebsk_oblast">Витебская область (Беларусь)</string>
+
+    <string name="france_auvergne_rhone_alpes">Овернь Рона Альпы (Франция)</string>
+    <string name="france_bourgogne_franche_comte">Бургундия Франш Конте (Франция)</string>
+    <string name="france_brittany">Бретань (Франция)</string>
+    <string name="france_centre_val_de_loire">Центр Валь-де-Луар (Франция)</string>
+    <string name="france_corsica">Корсика (Франция)</string>
+    <string name="france_hauts_de_france">О-де-Франс (Франция)</string>
+    <string name="france_normandie">Нормандия (Франция)</string>
+    <string name="france_nouvelle_aquitaine">Новая Аквитания (Франция)</string>
+    <string name="france_occitanie">Окситания (Франция)</string>
+    <string name="france_pays_de_la_loire">Пеи-де-ла-Луар (Франция)</string>
+    <string name="france_provence_alpes_cote_d_azur">Прованс Альпы Лазурный берег (Франция)</string>
+
 
 </resources>

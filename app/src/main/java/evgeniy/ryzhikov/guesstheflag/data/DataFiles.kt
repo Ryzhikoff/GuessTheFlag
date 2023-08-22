@@ -368,6 +368,14 @@ class DataFiles() {
         "russia_yaroslavl_oblast" to R.string.russia_yaroslavl_oblast,
         "russia_yugra" to R.string.russia_yugra,
         "russia_zabaykalsky_krai" to R.string.russia_zabaykalsky_krai,
+        "belarus_brest_oblast" to R.string.belarus_brest_oblast,
+        "belarus_homyel_oblast" to R.string.belarus_homyel_oblast,
+        "belarus_hrodna_oblasts" to R.string.belarus_hrodna_oblasts,
+        "belarus_mahilyow_oblast" to R.string.belarus_mahilyow_oblast,
+        "belarus_minsk" to R.string.belarus_minsk,
+        "belarus_minsk_oblast" to R.string.belarus_minsk_oblast,
+        "belarus_vitsebsk_oblast" to R.string.belarus_vitsebsk_oblast,
+
 
         )
     private val countryMap = mapOf<String, Int>()
