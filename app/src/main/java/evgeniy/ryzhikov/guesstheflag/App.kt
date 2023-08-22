@@ -11,18 +11,8 @@ import evgeniy.ryzhikov.guesstheflag.di.AppComponent
 import evgeniy.ryzhikov.guesstheflag.di.DaggerAppComponent
 import evgeniy.ryzhikov.guesstheflag.di.modules.DomainModule
 import evgeniy.ryzhikov.guesstheflag.di.modules.FirebaseModule
-import evgeniy.ryzhikov.guesstheflag.viewmodel.GameMainViewModel
-import evgeniy.ryzhikov.guesstheflag.viewmodel.MenuViewModel
-import evgeniy.ryzhikov.guesstheflag.viewmodel.RatingViewModel
-import evgeniy.ryzhikov.guesstheflag.viewmodel.StatisticViewModel
-
 
 class App : Application() {
-    lateinit var statisticViewModel: StatisticViewModel
-    lateinit var mainGameViewModel: GameMainViewModel
-    lateinit var ratingViewModel: RatingViewModel
-    lateinit var menuViewModel: MenuViewModel
-
     lateinit var dagger: AppComponent
 
     override fun onCreate() {
@@ -35,11 +25,6 @@ class App : Application() {
                 .domainModule(DomainModule(this))
                 .firebaseModule(FirebaseModule())
                 .build()
-
-            statisticViewModel = StatisticViewModel()
-            mainGameViewModel = GameMainViewModel(instance)
-            ratingViewModel = RatingViewModel()
-            menuViewModel = MenuViewModel()
 
             initializeYandexAds()
         }

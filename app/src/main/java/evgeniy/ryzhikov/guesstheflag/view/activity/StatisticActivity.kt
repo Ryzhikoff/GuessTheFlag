@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
@@ -21,16 +22,17 @@ import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 import evgeniy.ryzhikov.guesstheflag.utils.StartingLoadingAnimation
+import evgeniy.ryzhikov.guesstheflag.viewmodel.StatisticViewModel
 import javax.inject.Inject
 
+const val KEY_PARCELABLE_ROUNDRESULT = "RoundResult"
 class StatisticActivity : AppCompatActivity(), StartingLoadingAnimation {
-    lateinit var binding: ActivityStatisticBinding
+    private lateinit var binding: ActivityStatisticBinding
     private var backPressed = 0L
     private lateinit var recyclerView: RecyclerView
     private var adapter = StatisticAdapter()
 
-    private val viewModel = App.instance.statisticViewModel
-
+    private val viewModel: StatisticViewModel by viewModels()
 
     @Inject
     lateinit var energy: Energy
@@ -46,11 +48,17 @@ class StatisticActivity : AppCompatActivity(), StartingLoadingAnimation {
         lifecycle.addObserver(viewModel)
         initRV()
 
-        val roundResult = viewModel.roundResult
-        if (roundResult.countQuestions != 0) {
-            addRoundStatistic(roundResult)
+        val roundResult = intent.extras?.getBundle(KEY_PARCELABLE_ROUNDRESULT)
+        if (roundResult != null) {
+            addRoundStatistic(roundResult.get(KEY_PARCELABLE_ROUNDRESULT) as RoundResult)
             displayButtonPlayAgain()
         }
+
+//        val roundResult = viewModel.roundResult
+//        if (roundResult.countQuestions != 0) {
+//            addRoundStatistic(roundResult)
+//            displayButtonPlayAgain()
+//        }
         setButtonOnClickListener()
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 

@@ -3,6 +3,7 @@ package evgeniy.ryzhikov.guesstheflag.view.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
@@ -17,6 +18,7 @@ import evgeniy.ryzhikov.guesstheflag.domain.statistic.rv.StatisticAdapter
 import evgeniy.ryzhikov.guesstheflag.utils.CenterSmoothScroller
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import evgeniy.ryzhikov.guesstheflag.viewmodel.RatingViewModel
 import javax.inject.Inject
 
 
@@ -24,7 +26,7 @@ class RatingActivity : AppCompatActivity() {
     lateinit var binding: ActivityRatingBinding
     private lateinit var recyclerView: RecyclerView
     private var adapter = StatisticAdapter()
-    private val viewModel = App.instance.ratingViewModel
+    private val viewModel: RatingViewModel by viewModels()
     private var playerPosition = 0
 
     @Inject
@@ -87,11 +89,14 @@ class RatingActivity : AppCompatActivity() {
         adapter.update()
     }
 
-
+    /**
+     * Поле name берется из firebaseUserUid.getName()
+     * Если пользователь изменил имя, но рейтинг не обновился
+     */
     private fun setPlayerRating(position: Int, statisticData: StatisticData) {
         binding.ratingItem.setData(
             position = position,
-            name = statisticData.name,
+            name = firebaseUserUid.getName(),
             points = statisticData.totalPoints,
             games = statisticData.totalGame,
             percent = statisticData.totalPercentCorrect

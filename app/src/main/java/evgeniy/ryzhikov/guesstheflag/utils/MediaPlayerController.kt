@@ -8,7 +8,36 @@ import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
 import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.*
 import javax.inject.Inject
 
-
+/**
+ * Класс для управления фоновой музыкой и звуками в приложении.
+ * Фоновая музыка играет на протяжении всей жизни приложения.
+ * Пример для паузы возобновления музыки при сворачивании приложения:
+ *
+ * override fun onPause() {
+ *     super.onPause()
+ *     if (media.stopMusic) {
+ *         media.pauseMusic()
+ *     }
+ * }
+ *
+ * override fun onResume() {
+ *    super.onResume()
+ *    if (media.stopMusic) {
+ *      media.resumeMusic()
+ *    }
+ *    media.stopMusic = true
+ * }
+ *
+ * При смене Активити/Фрагмента добавить:
+ * media.stopMusic = false
+ * Где media - объект MediaPlayerController
+ *
+ * Слушатели MusicVolumeChangeListener и SoundVolumeChangeListener отслеживают изменение громкости
+ * в настройках
+ *
+ * Для установки звука при нажатии кнопки:
+ * media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
+ */
 class MediaPlayerController @Inject constructor(val context: Context ,val preference : PreferenceProvider) {
 
     private lateinit var music: MediaPlayer

@@ -8,6 +8,7 @@ import evgeniy.ryzhikov.guesstheflag.utils.RoundTimer
 import android.content.Intent
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.viewModels
 import androidx.appcompat.widget.AppCompatTextView
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
@@ -16,6 +17,7 @@ import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexAdCallback
 import evgeniy.ryzhikov.guesstheflag.settings.*
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import evgeniy.ryzhikov.guesstheflag.viewmodel.GameMainViewModel
 import javax.inject.Inject
 
 class GameMainActivity : AppCompatActivity() {
@@ -26,7 +28,7 @@ class GameMainActivity : AppCompatActivity() {
     private var backPressed = 0L
     private lateinit var yandexInterstitialAd: YandexInterstitialAd
 
-    private val viewModel = App.instance.mainGameViewModel
+    private val viewModel: GameMainViewModel by viewModels()
 
     @Inject
     lateinit var media: MediaPlayerController
@@ -154,7 +156,12 @@ class GameMainActivity : AppCompatActivity() {
     }
 
     private fun startStatisticActivity() {
+
+        val roundResult = viewModel.getRoundResult()
+        val bundle = Bundle()
+        bundle.putParcelable(KEY_PARCELABLE_ROUNDRESULT, roundResult)
         val intent = Intent(this@GameMainActivity, StatisticActivity::class.java)
+        intent.putExtra(KEY_PARCELABLE_ROUNDRESULT, bundle)
         startActivity(intent)
         this@GameMainActivity.finish()
     }
