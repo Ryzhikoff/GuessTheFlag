@@ -62,7 +62,6 @@ class MediaPlayerController @Inject constructor(val context: Context ,val prefer
             PreferenceName.SETTINGS,
             PreferenceKey.SOUND_VOLUME
         ) > 0
-
     }
 
     private fun initMusic() {
@@ -85,7 +84,6 @@ class MediaPlayerController @Inject constructor(val context: Context ,val prefer
         }
     }
 
-
     private fun setMusicVolume(volume: Float) {
         if (volume > 0) {
             if (!playingMusic) {
@@ -102,7 +100,6 @@ class MediaPlayerController @Inject constructor(val context: Context ,val prefer
     private fun getMusicVolume() =
         preference.getFloat(PreferenceName.SETTINGS, PreferenceKey.MUSIC_VOLUME)
 
-
     fun playSound(soundEvent: SoundEvent, volume: Float = getSoundVolume()) {
         if (playingSound) {
             sounds = MediaPlayer.create(
@@ -117,6 +114,7 @@ class MediaPlayerController @Inject constructor(val context: Context ,val prefer
             sounds.start()
         }
     }
+
     private fun setSoundVolume(volume: Float) {
         if (volume > 0) {
             if (!playingSound) {
@@ -127,7 +125,6 @@ class MediaPlayerController @Inject constructor(val context: Context ,val prefer
             playingSound = false
         }
     }
-
 
     private fun getSoundVolume() =
         preference.getFloat(PreferenceName.SETTINGS, PreferenceKey.SOUND_VOLUME)

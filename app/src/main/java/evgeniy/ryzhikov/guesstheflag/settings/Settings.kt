@@ -28,3 +28,6 @@ const val DEFAULT_SOUND_VOLUME = 0.4f
 
 const val COEF_FOR_SPEED_SCROLLING_FACTS = 150
 
+//Tag for Lod.d
+const val TAG = "===> "
+

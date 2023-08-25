@@ -37,11 +37,12 @@
     <string name="setting_save_name">Сохранить</string>
     <string name="settings_non_length_name">Имя должно быть не короче 3 букв</string>
     <string name="menu_rating">Рейтинг игроков</string>
-    <string name="statistic_rating_tittle">Рейтинг игроков</string>
+    <string name="statistic_rating_top10">Топ 10 игроков</string>
     <string name="menu_rating_player_position">Твоя позиция в рейтинге:</string>
     <string name="menu_rating_wins">Победы</string>
     <string name="menu_rating_games">Игры</string>
     <string name="menu_rating_points">Очки</string>
     <string name="setting_player_name">Твоё имя в рейтинге:</string>
     <string name="error_reward_ad_not_loaded">Упс! Реклама не загружена! Попробуй еще раз!</string>
+    <string name="statistic_rating_player_tittle">Твои результаты:</string>
 </resources>

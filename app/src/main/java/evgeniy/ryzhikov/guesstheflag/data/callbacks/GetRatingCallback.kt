@@ -1,4 +1,4 @@
-package evgeniy.ryzhikov.guesstheflag.data
+package evgeniy.ryzhikov.guesstheflag.data.callbacks
 
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 

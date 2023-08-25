@@ -8,7 +8,6 @@ import dagger.Provides
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseStorageAdapter
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
 import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
-import javax.inject.Singleton
 
 @Module
 class FirebaseModule {
@@ -18,7 +17,6 @@ class FirebaseModule {
     @Provides
     fun provideFirebaseUid(preference: PreferenceProvider) = FirebaseUserUid(preference)
 
-    @Singleton
     @Provides
     fun provideFirebaseStoreAdapter(firebaseUserUid: FirebaseUserUid, db: FirebaseFirestore) = FirebaseStorageAdapter(firebaseUserUid, db)
 }

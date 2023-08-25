@@ -1,19 +1,20 @@
 package evgeniy.ryzhikov.guesstheflag.viewmodel
 
-import androidx.lifecycle.DefaultLifecycleObserver
-import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseStorageAdapter
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
-import evgeniy.ryzhikov.guesstheflag.data.GetRatingCallback
+import evgeniy.ryzhikov.guesstheflag.data.callbacks.GetPlayerEnvironmentCallback
+import evgeniy.ryzhikov.guesstheflag.data.callbacks.GetRatingCallback
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 import javax.inject.Inject
 
-class RatingViewModel(): ViewModel(), DefaultLifecycleObserver {
-    var ratingListLiveData = MutableLiveData<ArrayList<StatisticData>>()
-    var playerPositionInRatingLiveData = MutableLiveData<Int>()
+class RatingViewModel(): ViewModel() {
+    val ratingListLiveData = MutableLiveData<ArrayList<StatisticData>>()
+    val playerPositionLiveData = MediatorLiveData<Int>()
+    var playerList = ArrayList<StatisticData>()
 
     @Inject
     lateinit var fsa: FirebaseStorageAdapter
@@ -25,17 +26,35 @@ class RatingViewModel(): ViewModel(), DefaultLifecycleObserver {
     }
 
     fun getRating() {
-        fsa.getRatingList(object : GetRatingCallback {
+        fsa.getTop10(object : GetRatingCallback {
             override fun onSuccess(ratingList: ArrayList<StatisticData>) {
                 ratingList.sortByDescending {statisticData ->
                     statisticData.totalPoints
                 }
-                playerPositionInRatingLiveData.postValue(getPlayerPositionInRating(ratingList))
                 ratingListLiveData.postValue(ratingList)
             }
 
             override fun onFailure(e: Exception) {
             }
+        })
+        getPlayerEnvironment()
+    }
+
+    private fun getPlayerEnvironment() {
+        fsa.getPlayerEnvironment(object : GetPlayerEnvironmentCallback{
+            override fun onSuccess(
+                ratingList: ArrayList<StatisticData>,
+                playerPositionLiveData: MutableLiveData<Int>
+            ) {
+                playerList = ratingList
+                this@RatingViewModel.playerPositionLiveData.addSource(playerPositionLiveData) {
+                    this@RatingViewModel.playerPositionLiveData.value = it
+                }
+            }
+
+            override fun onFailure(e: Exception) {
+            }
+
         })
     }
 
@@ -47,12 +66,6 @@ class RatingViewModel(): ViewModel(), DefaultLifecycleObserver {
             }
         }
         return -1
-    }
-
-    override fun onDestroy(owner: LifecycleOwner) {
-        super.onDestroy(owner)
-        ratingListLiveData = MutableLiveData<ArrayList<StatisticData>>()
-        playerPositionInRatingLiveData = MutableLiveData<Int>()
     }
 
 }

@@ -15,27 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
-        android:id="@+id/tvHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/ButtonTextMenu"
-        android:layout_margin="@dimen/stat_padding_around_text"
-        android:fontFamily="@font/neucha"
-        android:text="@string/menu_rating_player_position"
-        app:layout_constraintTop_toBottomOf="@id/yandexBanner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <evgeniy.ryzhikov.guesstheflag.view.customview.RatingItem
-        android:id="@+id/ratingItem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHeader" />
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -46,7 +25,7 @@
         app:layout_constraintBottom_toTopOf="@id/btnBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ratingItem">
+        app:layout_constraintTop_toBottomOf="@id/yandexBanner">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ratingRecycler"
@@ -66,7 +45,7 @@
         app:layout_constraintBottom_toTopOf="@id/btnBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ratingItem">
+        app:layout_constraintTop_toBottomOf="@id/yandexBanner">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/loadingAnimation"

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseStorageAdapter
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
-import evgeniy.ryzhikov.guesstheflag.data.GetStatisticCallback
+import evgeniy.ryzhikov.guesstheflag.data.callbacks.GetStatisticCallback
 import evgeniy.ryzhikov.guesstheflag.domain.RoundResult
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
 import javax.inject.Inject

@@ -20,7 +20,6 @@ class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
 
-
     @Inject
     lateinit var preference : PreferenceProvider
     @Inject
@@ -69,7 +68,6 @@ class SettingsFragment : Fragment() {
             media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
             displayChangeNameFragment()
         }
-
     }
 
     private fun displayChangeNameFragment() {
