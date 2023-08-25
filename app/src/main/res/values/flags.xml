@@ -382,5 +382,105 @@
     <string name="france_pays_de_la_loire">Пеи-де-ла-Луар (Франция)</string>
     <string name="france_provence_alpes_cote_d_azur">Прованс Альпы Лазурный берег (Франция)</string>
 
+    <string name="germany_baden_wurttemberg">Баден Вюртемберг (Германия)</string>
+    <string name="germany_bavaria">Бавария (Германия)</string>
+    <string name="germany_berlin">Берлин (Германия)</string>
+    <string name="germany_brandenburg">Бранденбург (Германия)</string>
+    <string name="germany_bremen">Бремен (Германия)</string>
+    <string name="germany_hamburg">Гамбург (Германия)</string>
+    <string name="germany_hesse">Гессе (Германия)</string>
+    <string name="germany_lower_saxony">Нижняя Саксония (Германия)</string>
+    <string name="germany_mecklenburg_western_pomerania">Мекленбург Передняя Померания (Германия)</string>
+    <string name="germany_north_rhine_westphalia">Северный Рейн-Вестфалия (Германия)</string>
+    <string name="germany_rhineland_palatinate">Рейнланд-Пфальц (Германия)</string>
+    <string name="germany_saxony">Саксония (Германия)</string>
+    <string name="germany_saxony_anhalt">Саксония Анхальт (Германия)</string>
+    <string name="germany_schleswig_holstein">Шлезвиг-Гольштейн (Германия)</string>
+    <string name="germany_thuringia">Тюрингия (Германия)</string>
+
+    <string name="italy_abruzzo">Абруццо (Италия)</string>
+    <string name="italy_apulia">Апулия (Италия)</string>
+    <string name="italy_basilicata">Базиликата (Италия)</string>
+    <string name="italy_calabria">Калабрия (Италия)</string>
+    <string name="italy_campania">Кампания (Италия)</string>
+    <string name="italy_friuli_venezia_giulia">Фриули-Венеция-Джулия (Италия)</string>
+    <string name="italy_lazio">Лацио (Италия)</string>
+    <string name="italy_liguria">Лигурия (Италия)</string>
+    <string name="italy_lombardy">Ломбардия (Италия)</string>
+    <string name="italy_marche">Марке (Италия)</string>
+    <string name="italy_molise">Молизе (Италия)</string>
+    <string name="italy_piedmont">Пьемонт (Италия)</string>
+    <string name="italy_sardinia">Сардиния (Италия)</string>
+    <string name="italy_sicilian">Сицилия (Италия)</string>
+    <string name="italy_trentino_south_tyrol">Трентино Южный Тироль (Италия)</string>
+    <string name="italy_tuscany">Тоскана (Италия)</string>
+    <string name="italy_umbria">Умбрия (Италия)</string>
+    <string name="italy_valle_d_aosta">Валле д Аоста (Италия)</string>
+    <string name="italy_veneto">Венеция (Италия)</string>
+
+    <string name="spain_andalucia">Андалусия (Испания)</string>
+    <string name="spain_aragon">Арагон (Испания)</string>
+    <string name="spain_asturias">Астурия (Испания)</string>
+    <string name="spain_balearic_Islands">Балеарские острова (Испания)</string>
+    <string name="spain_bandera_de_navarra">Бандера де Наварра (Испания)</string>
+    <string name="spain_basque_country">Страна Басков (Испания)</string>
+    <string name="spain_canary_Islands">Канарские острова (Испания)</string>
+    <string name="spain_cantabria">Кантабрия (Испания)</string>
+    <string name="spain_castile_and_leon">Кастилия и Леон (Испания)</string>
+    <string name="spain_castilla_la_mancha">Кастилья-ла-Манча (Испания)</string>
+    <string name="spain_catalonia">Каталония (Испания)</string>
+    <string name="spain_ceuta">Сеута (Испания)</string>
+    <string name="spain_community_of_madrid">Мадрид (Испания)</string>
+    <string name="spain_extremadura">Эстремадура (Испания)</string>
+    <string name="spain_galicia">Галисия (Испания)</string>
+    <string name="spain_land_of_valencia">Валенсия (Испания)</string>
+    <string name="spain_la_rioja">Ла Риоха (Испания)</string>
+    <string name="spain_melilla">Мелилья (Испания)</string>
+    <string name="spain_region_of_murcia">Мурсия (Испания)</string>
+
+    <string name="poland_wojewodztwo_dolnoslaskie">Нижнеслаское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_kujawsko_pomorskie">Куявско-Поморское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_lodzkie">Лодзинское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_lubelskie">Люблинское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_lubuskie">Любушское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_malopolskie">Малопольское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_mazowieckie">Мазовецкое воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_opolskie">Опольское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_podkarpackie">Подкарпатское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_podlaskie">Подляское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_pomorskie">Поморское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_slaskie">Воеводство ленское (Польша)</string>
+    <string name="poland_wojewodztwo_swietokrzyskie">Свентокшиское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_warminsko_mazurskie">Варминско-Мазурское воеводство (Польша)</string>
+    <string name="poland_wojewodztwo_zachodniopomorskie">Воеводство западно-поморское (Польша)</string>
+
+    <string name="lithuania_aukstaitija">Аукштайтия (Литва)</string>
+    <string name="lithuania_dzukija">Дзукия (Литва)</string>
+    <string name="lithuania_lithuania_minor">Малая Литва (Литва)</string>
+    <string name="lithuania_suvalkija">Сувалкия (Литва)</string>
+    <string name="lithuania_wojewodztwo_wielkopolskie">Воеводство Великопольское (Литва)</string>
+    <string name="lithuania_zemaitija">Жемайтия (Литва)</string>
+
+    <string name="ukraine_cherkasy_oblast">Черкасская область (Украина)</string>
+    <string name="ukraine_chernivtsi_oblast">Черновицкая область (Украина)</string>
+    <string name="ukraine_dnipropetrovsk_oblast">Днепропетровская область (Украина)</string>
+    <string name="ukraine_ivano_frankivsk_oblast">Ивано-Франковская область (Украина)</string>
+    <string name="ukraine_kharkiv_oblast">Харьковская область (Украина)</string>
+    <string name="ukraine_khmelnytskyi_oblast">Хмельницкая область (Украина)</string>
+    <string name="ukraine_kirovohrad_oblast">Кировоградская область (Украина)</string>
+    <string name="ukraine_kyiv">Киев (Украина)</string>
+    <string name="ukraine_kyiv_oblast">Киевская область (Украина)</string>
+    <string name="ukraine_lviv_oblast">Львовская область (Украина)</string>
+    <string name="ukraine_mykolaiv_oblast">Николаевская область (Украина)</string>
+    <string name="ukraine_odesa_oblast">Одесская область (Украина)</string>
+    <string name="ukraine_poltava_oblast">Полтавская область (Украина)</string>
+    <string name="ukraine_rivne_oblast">Ровенская область (Украина)</string>
+    <string name="ukraine_sumy_oblast">Сумская область (Украина)</string>
+    <string name="ukraine_ternopil_oblast">Тернопольская область (Украина)</string>
+    <string name="ukraine_transcarpathian_oblast">Закарпатская область (Украина)</string>
+    <string name="ukraine_vinnytskaya_oblast">Винницкая область (Украина)</string>
+    <string name="ukraine_volyn_oblast">Волынская область (Украина)</string>
+    <string name="ukraine_zhytomyr_oblast">Житомирская область (Украина)</string>
+
 
 </resources>
