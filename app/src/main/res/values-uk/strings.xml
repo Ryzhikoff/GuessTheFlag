@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Вгадай Прапор!</string>
+    <string name="menu_start_game">Гра</string>
+    <string name="menu_statistic">Статистика</string>
+    <string name="menu_exit">Вихід</string>
+    <string name="menu_setting">Налаштування</string>
+    <string name="menu_back">назад</string>
+    <string name="menu_country_flag">Прапори країн</string>
+    <string name="menu_region_flag">Прапори регіонів</string>
+    <string name="menu_country_map">Карти країн</string>
+    <string name="menu_region_map">Карти регіонів</string>
+    <string name="statistic_round_title">Результати раунду</string>
+    <string name="statistic_correct_answer">Кількість вірних відповідей</string>
+    <string name="statistic_wrong_answer">Кількість неправильних відповідей</string>
+    <string name="statistic_round_points">Набрані окуляри</string>
+    <string name="statistic_all_points">Набрані окуляри</string>
+    <string name="statistic_total_title">Загальні результати</string>
+    <string name="menu_in_main_menu">У головне меню</string>
+    <string name="menu_again">Грати знову</string>
+    <string name="statistic_total_answers">Усього питань</string>
+    <string name="statistic_percent_correct_answers">Відсоток вірних відповідей</string>
+    <string name="energy_not_enough_1">Упс! Енергія закінчилася!</string>
+    <string name="energy_not_enough_2">Що б заповнити енергію подивися відео!</string>
+    <string name="menu_watch_ad">Дивитися відео</string>
+    <string name="alert_double_tap_exit">Натисніть двічі для виходу з гри</string>
+    <string name="error_auth">Помилка авторизації</string>
+    <string name="error_btn_try_again">Спробувати знову</string>
+    <string name="statistic_total_game">Усього ігор</string>
+    <string name="settings_volume_music">Гучність музики</string>
+    <string name="settings_volume_sounds">Гучність звуків</string>
+    <string name="setting_change_name">Змінити ім\'я</string>
+    <string name="setting_hint_input_name">Введи ім\'я\n</string>
+    <string name="setting_save_name">Зберегти</string>
+    <string name="settings_non_length_name">Імїя має бути не коротше 3 букв</string>
+    <string name="menu_rating">Рейтинг гравців</string>
+    <string name="statistic_rating_top10">Топ 10 гравців</string>
+    <string name="menu_rating_player_position">Твоя позиція у рейтингу:</string>
+    <string name="menu_rating_wins">Перемоги</string>
+    <string name="menu_rating_games">Ігри</string>
+    <string name="menu_rating_points">Окуляри</string>
+    <string name="setting_player_name">Твоє ім\'я у рейтингу:</string>
+    <string name="error_reward_ad_not_loaded">Упс! Реклама не завантажена! Спробуй ще раз!</string>
+    <string name="statistic_rating_player_tittle">Твої результати:</string>
+
+    <string name="afghanistan">Афганістан</string>
+    <string name="albania">Албанія</string>
+    <string name="algeria">Алжир</string>
+    <string name="american_samoa">Американське Самоа</string>
+    <string name="andorra">Андорра</string>
+    <string name="angola">Ангола</string>
+    <string name="anguilla">Ангілья</string>
+    <string name="antigua_and_barbuda">Антигуа та Барбуда</string>
+    <string name="argentina">Аргентина</string>
+    <string name="armenia">Вірменія</string>
+    <string name="aruba">Аруба</string>
+    <string name="australia">Австралія</string>
+    <string name="austria">Австрія</string>
+    <string name="azerbaijan">Азербайджан</string>
+    <string name="bahamas">Багами</string>
+    <string name="bahrain">Бахрейн</string>
+    <string name="bangladesh">Бангладеш</string>
+    <string name="barbados">Барбадос</string>
+    <string name="belarus">Білорусь</string>
+    <string name="belgium">Бельгія</string>
+    <string name="belize">Беліз</string>
+    <string name="benin">Бенін</string>
+    <string name="bermuda">Бермуди</string>
+    <string name="bhutan">Бутан</string>
+    <string name="bolivia">Болівія</string>
+    <string name="bosnia_and_herzegovina">Боснія і Герцеговина</string>
+    <string name="botswana">Ботсвана</string>
+    <string name="brazil">Бразилія</string>
+    <string name="british_virgin_islands">Британські Віргінські острови</string>
+    <string name="brunei">Бруней</string>
+    <string name="bulgaria">Болгарія</string>
+    <string name="burkina_faso">Буркіна-Фасо</string>
+    <string name="burundi">Бурунді</string>
+    <string name="cambodia">Камбоджа</string>
+    <string name="cameroon">Камерун</string>
+    <string name="canada">Канада</string>
+    <string name="cape_verde">Кабо-Верде</string>
+    <string name="cayman_islands">Кайманові острови</string>
+    <string name="central_african_republic">Центрально-Африканська Республіка</string>
+    <string name="chad">Чад</string>
+    <string name="chile">Чилі</string>
+    <string name="china">Китай</string>
+    <string name="colombia">Колумбія</string>
+    <string name="comoros">Коморські острови</string>
+    <string name="cook_islands">Острови Кука</string>
+    <string name="costa_rica">Коста-Ріка</string>
+    <string name="croatia">Хорватія</string>
+    <string name="cuba">Куба</string>
+    <string name="curacao">Кюрасао</string>
+    <string name="cyprus">Кіпр</string>
+    <string name="czech_republic">Чехія</string>
+    <string name="democratic_republic_of_the_congo">Демократична Республіка Конго</string>
+    <string name="denmark">Данія</string>
+    <string name="djibouti">Джібуті</string>
+    <string name="dominica">Домініка</string>
+    <string name="dominican_republic">Домініканська республіка</string>
+    <string name="ecuador">Еквадор</string>
+    <string name="egypt">Єгипет</string>
+    <string name="el_salvador">Сальвадор</string>
+    <string name="equatorial_guinea">Екваторіальна Гвінея</string>
+    <string name="eritrea">Еритрея</string>
+    <string name="estonia">Естонія</string>
+    <string name="eswatini">Есватині</string>
+    <string name="ethiopia">Ефіопія</string>
+    <string name="faroe_islands">Фарерські острови</string>
+    <string name="federated_states_of_micronesia">Федеративні Штати Мікронезії</string>
+    <string name="fiji">Фіджі</string>
+    <string name="finland">Фінляндія</string>
+    <string name="france">Франція</string>
+    <string name="french_polynesia">Французька Полінезія</string>
+    <string name="gabon">Габон</string>
+    <string name="gambia">Гамбія</string>
+    <string name="georgia">Грузія</string>
+    <string name="germany">Німеччина</string>
+    <string name="ghana">Гана</string>
+    <string name="gibraltar">Гібралтар</string>
+    <string name="greece">Греція</string>
+    <string name="greenland">Гренландія</string>
+    <string name="grenada">Гренада</string>
+    <string name="guatemala">Гватемала</string>
+    <string name="guernsey">Гернсі</string>
+    <string name="guinea_bissau">Гвінея-бісау</string>
+    <string name="guinea">Гвінея</string>
+    <string name="guyana">Гайана</string>
+    <string name="haiti">Гаїті</string>
+    <string name="honduras">Гондурас</string>
+    <string name="hong_kong">Гонконг</string>
+    <string name="hungary">Угорщина</string>
+    <string name="iceland">Ісландія</string>
+    <string name="india">Індія</string>
+    <string name="indonesia">Індонезія</string>
+    <string name="iran">Іран</string>
+    <string name="iraq">Ірак</string>
+    <string name="ireland">Ірландія</string>
+    <string name="isle_of_man">Острів Мен</string>
+    <string name="israel">Ізраїль</string>
+    <string name="italy">Італія</string>
+    <string name="ivory_coast">Кіт-д Івуар</string>
+    <string name="jamaica">Ямайка</string>
+    <string name="japan">Японія</string>
+    <string name="jersey">Джерсі</string>
+    <string name="jordan">Йорданія</string>
+    <string name="kazakhstan">Казахстан</string>
+    <string name="kenya">Кенія</string>
+    <string name="kiribati">Кірібаті</string>
+    <string name="kosovo">Косово</string>
+    <string name="kuwait">Кувейт</string>
+    <string name="kyrgyzstan">Киргизстан</string>
+    <string name="laos">Лаос</string>
+    <string name="latvia">Латвія</string>
+    <string name="lebanon">Ліван</string>
+    <string name="lesotho">Лесото</string>
+    <string name="liberia">Ліберія</string>
+    <string name="libya">Лівія</string>
+    <string name="liechtenstein">Ліхтенштейн</string>
+    <string name="lithuania">Литва</string>
+    <string name="luxembourg">Люксембург</string>
+    <string name="macau">Макао</string>
+    <string name="madagascar">Мадагаскар</string>
+    <string name="malawi">Малаві</string>
+    <string name="malaysia">Малайзія</string>
+    <string name="maldives">Мальдіви</string>
+    <string name="mali">Малі</string>
+    <string name="malta">Мальта</string>
+    <string name="marshall_Islands">Маршаллові острови</string>
+    <string name="mauritania">Мавританія</string>
+    <string name="mauritius">Маврикій</string>
+    <string name="mexico">Мексика</string>
+    <string name="moldova">Молдова</string>
+    <string name="monaco">Монако</string>
+    <string name="mongolia">Монголія</string>
+    <string name="montenegro">Чорногорія</string>
+    <string name="montserrat">Монтсеррат</string>
+    <string name="morocco">Марокко</string>
+    <string name="mozambique">Мозамбік</string>
+    <string name="myanmar">М\'янма</string>
+    <string name="namibia">Намібія</string>
+    <string name="nauru">Науру</string>
+    <string name="nepal">Непал</string>
+    <string name="netherlands">Нідерланди</string>
+    <string name="new_caledonia">Нова Каледонія</string>
+    <string name="new_zealand">Нова Зеландія</string>
+    <string name="nicaragua">Нікарагуа</string>
+    <string name="niger">Нігер</string>
+    <string name="nigeria">Нігерія</string>
+    <string name="northern_mariana_islands">Північні Маріанські острови</string>
+    <string name="north_korea">Північна Корея</string>
+    <string name="north_macedonia">Північна Македонія</string>
+    <string name="norway">Норвегія</string>
+    <string name="oman">Оман</string>
+    <string name="pakistan">Пакистан</string>
+    <string name="palau">Палау</string>
+    <string name="palestine">Палестина</string>
+    <string name="panama">Панама</string>
+    <string name="papua_new_guinea">Папуа Нова Гвінея</string>
+    <string name="paraguay">Парагвай</string>
+    <string name="peru">Перу</string>
+    <string name="philippines">Філіппіни</string>
+    <string name="poland">Польща</string>
+    <string name="portugal">Португалія</string>
+    <string name="puerto_rico">Пуерто-Ріко</string>
+    <string name="qatar">Катар</string>
+    <string name="republic_of_the_congo">Республіка Конго</string>
+    <string name="romania">Румунія</string>
+    <string name="russia">Росія</string>
+    <string name="rwanda">Руанда</string>
+    <string name="saint_barthelemy">Сен-Бартельмі</string>
+    <string name="saint_helena_ascension_and_tristan_da_cunha">Вознесіння Святої Єлени та Трістан-да-Кунья</string>
+    <string name="saint_kitts_and_nevis">Сент-Кітс і Невіс</string>
+    <string name="saint_lucia">Санкт-Люсія</string>
+    <string name="saint_martin">Святий Мартін</string>
+    <string name="saint_pierre_and_miquelon">Сен-П\'єр та Мікелон</string>
+    <string name="saint_vincent_and_the_grenadines">Святий Вінсент та Гренадини</string>
+    <string name="samoa">Самоа</string>
+    <string name="san_marino">Сан-Маріно</string>
+    <string name="sao_tome_and_principe">Сан-Томе та Прінсіпі</string>
+    <string name="saudi_arabia">Саудівська Аравія</string>
+    <string name="senegal">Сенегал</string>
+    <string name="serbia">Сербія</string>
+    <string name="seychelles">Сейшели</string>
+    <string name="sierra_leone">Сьєрра-Леоне</string>
+    <string name="singapore">Сінгапур</string>
+    <string name="sint_maarten">Сінт-Мартен</string>
+    <string name="slovakia">Словаччина</string>
+    <string name="slovenia">Словенія</string>
+    <string name="solomon_islands">Соломонові острови</string>
+    <string name="somalia">Сомалі</string>
+    <string name="south_africa">Південно-Африканська Республіка</string>
+    <string name="south_korea">Південна Корея</string>
+    <string name="south_sudan">Південний Судан</string>
+    <string name="spain">Іспанія</string>
+    <string name="sri_lanka">Шрі Ланка</string>
+    <string name="sudan">Судан</string>
+    <string name="suriname">Суринам</string>
+    <string name="sweden">Швеція</string>
+    <string name="switzerland">Швейцарія</string>
+    <string name="syria">Сирія</string>
+    <string name="taiwan">Тайвань</string>
+    <string name="tajikistan">Таджикистан</string>
+    <string name="tanzania">Танзанія</string>
+    <string name="thailand">Таїланд</string>
+    <string name="timor_leste">Тимор-Лешті</string>
+    <string name="togo">Того</string>
+    <string name="tonga">Тонга</string>
+    <string name="trinidad_and_tobago">Трінідад і Тобаго</string>
+    <string name="tunisia">Туніс</string>
+    <string name="turkey">Туреччина</string>
+    <string name="turkmenistan">Туркменістан</string>
+    <string name="turks_and_caicos_islands">Острова Теркс та Кайкос</string>
+    <string name="tuvalu">Тувалу</string>
+    <string name="guam">Гуам</string>
+    <string name="uganda">Уганда</string>
+    <string name="ukraine">Україна</string>
+    <string name="united_arab_emirates">Об\'єднані Арабські Емірати</string>
+    <string name="united_kingdom">Великобританія</string>
+    <string name="united_states">Сполучені Штати Америки</string>
+    <string name="united_states_virgin_islands">Віргінські острови США</string>
+    <string name="uruguay">Уругвай</string>
+    <string name="uzbekistan">Узбекистан</string>
+    <string name="vanuatu">Вануату</string>
+    <string name="venezuela">Венесуела</string>
+    <string name="vietnam">В\'єтнам</string>
+    <string name="wallis_and_futuna">Уолліс та Футуна</string>
+    <string name="yemen">Ємен</string>
+    <string name="zambia">Замбія</string>
+    <string name="zimbabwe">Зімбабве</string>
+    <string name="usa_alabama">Алабама (США)</string>
+    <string name="usa_alaska">Аляска (США)</string>
+    <string name="usa_arizona">Арізона (США)</string>
+    <string name="usa_arkansas">Арканзас (США)</string>
+    <string name="usa_california">Каліфорнія (США)</string>
+    <string name="usa_colorado">Колорадо (США)</string>
+    <string name="usa_connecticut">Коннектикут (США)</string>
+    <string name="usa_delaware">Делавер (США)</string>
+    <string name="usa_district_of_columbia">округ Колумбія (США)</string>
+    <string name="usa_florida">Флорида (США)</string>
+    <string name="usa_georgia">Грузія (США)</string>
+    <string name="usa_hawaii">Гаваї (США)</string>
+    <string name="usa_idaho">Айдахо (США)</string>
+    <string name="usa_illinois">Іллінойс (США)</string>
+    <string name="usa_indiana">Індіана (США)</string>
+    <string name="usa_iowa">Айова (США)</string>
+    <string name="usa_kansas">Канзас (США)</string>
+    <string name="usa_kentucky">Кентуккі (США)</string>
+    <string name="usa_louisiana">Луїзіана (США)</string>
+    <string name="usa_maine">Мен (США)</string>
+    <string name="usa_maryland">Меріленд (США)</string>
+    <string name="usa_massachusetts">Массачусетс (США)</string>
+    <string name="usa_michigan">Мічіган (США)</string>
+    <string name="usa_minnesota">Міннесота (США)</string>
+    <string name="usa_mississippi">Міссісіпі (США)</string>
+    <string name="usa_missouri">Міссурі (США)</string>
+    <string name="usa_montana">Монтана (США)</string>
+    <string name="usa_nebraska">Небраска (США)</string>
+    <string name="usa_nevada">Невада (США)</string>
+    <string name="usa_new_hampshire">Нью-Гемпшир (США)</string>
+    <string name="usa_new_jersey">Нью-Джерсі (США)</string>
+    <string name="usa_new_mexico">Нью-Мексико (США)</string>
+    <string name="usa_new_york">Нью-Йорк, США)</string>
+    <string name="usa_north_carolina">Північна Кароліна (США)</string>
+    <string name="usa_north_dakota">Північна Дакота (США)</string>
+    <string name="usa_ohio">Огайо (США)</string>
+    <string name="usa_oklahoma">Оклахома (США)</string>
+    <string name="usa_oregon">Орегон (США)</string>
+    <string name="usa_pennsylvania">Пенсільванія (США)</string>
+    <string name="usa_rhode_island">Род-Айленд (США)</string>
+    <string name="usa_south_carolina">Південна Кароліна (США)</string>
+    <string name="usa_south_dakota">Північна Дакота (США)</string>
+    <string name="usa_tennessee">Теннессі (США)</string>
+    <string name="usa_texas">Техас (США)</string>
+    <string name="usa_utah">Юта (США)</string>
+    <string name="usa_vermont">Вермонт (США)</string>
+    <string name="usa_virginia">Вірджинія (США)</string>
+    <string name="usa_washington">Вашингтон (США)</string>
+    <string name="usa_west_virginia">Західна Віргінія (США)</string>
+    <string name="usa_wisconsin">Вісконсін (США)</string>
+    <string name="usa_wyoming">Вайомінг (США)</string>
+    <string name="russia_adygea">Адигея (Росія)</string>
+    <string name="russia_altai_krai">Алтайський край (Росія)</string>
+    <string name="russia_altai_republic">Республіка Алтай (Росія)</string>
+    <string name="russia_amur_oblast">Амурська область (Росія)</string>
+    <string name="russia_arkhangelsk_oblast">Архангельська область (Росія)</string>
+    <string name="russia_astrakhan_oblast">Астраханська область (Росія)</string>
+    <string name="russia_bashkortostan">Башкортостан (Росія)</string>
+    <string name="russia_belgorod_oblast">Білгородська область (Росія)</string>
+    <string name="russia_bryansk_oblast">Брянська область (Росія)</string>
+    <string name="russia_buryatia">Бурятія (Росія)</string>
+    <string name="russia_chechen_republic">Чеченська Республіка (Росія)</string>
+    <string name="russia_chelyabinsk_oblast">Челябінська область (Росія)</string>
+    <string name="russia_chukotka">Чукотка (Росія)</string>
+    <string name="russia_chuvashia">Чувашія (Росія)</string>
+    <string name="russia_dagestan">Дагестан (Росія)</string>
+    <string name="russia_ingushetia">Інгушетія (Росія)</string>
+    <string name="russia_irkutsk_oblast">Іркутська область (Росія)</string>
+    <string name="russia_ivanovo_oblast">Іванівська область (Росія)</string>
+    <string name="russia_jewish_autonomous_oblast">Єврейська автономна область (Росія)</string>
+    <string name="russia_kabardino_balkaria">Кабардино-Балкарія (Росія)</string>
+    <string name="russia_kaliningrad_oblast">Калінінградська область (Росія)</string>
+    <string name="russia_kalmykia">Калмикія (Росія)</string>
+    <string name="russia_kaluga_oblast">Калузька область (Росія)</string>
+    <string name="russia_kamchatka_krai">Камчатський край (Росія)</string>
+    <string name="russia_karachay_cherkessia">Карачаєво-Черкесія (Росія)</string>
+    <string name="russia_karelia">Карелія (Росія)</string>
+    <string name="russia_kemerovo_oblast">Кемеровська область (Росія)</string>
+    <string name="russia_khabarovsk_krai">Хабаровський край (Росія)</string>
+    <string name="russia_khakassia">Хакасія (Росія)</string>
+    <string name="russia_kirov_oblast">Кіровська область (Росія)</string>
+    <string name="russia_komi">Комі (Росія)</string>
+    <string name="russia_kostroma_oblast">Костромська область (Росія)</string>
+    <string name="russia_krasnodar_krai">Краснодарський край (Росія)</string>
+    <string name="russia_krasnoyarsk_krai">Красноярський край (Росія)</string>
+    <string name="russia_kurgan_oblast">Курганська область (Росія)</string>
+    <string name="russia_kursk_oblast">Курська область (Росія)</string>
+    <string name="russia_leningrad_oblast">Ленінградська область (Росія)</string>
+    <string name="russia_lipetsk_oblast">Липецька область (Росія)</string>
+    <string name="russia_magadan_oblast">Магаданська область (Росія)</string>
+    <string name="russia_mari_el">Марій Ел (Росія)</string>
+    <string name="russia_mordovia">Мордовія (Росія)</string>
+    <string name="russia_moscow">Москва, Росія)</string>
+    <string name="russia_moscow_oblast">Московська область (Росія)</string>
+    <string name="russia_murmansk_oblast">Мурманська область (Росія)</string>
+    <string name="russia_nenets_autonomous_district">Ненецький автономний округ (Росія)</string>
+    <string name="russia_nizhny_novgorod_region">Нижегородська область (Росія)</string>
+    <string name="russia_north_ossetia">Північна Осетія (Росія)</string>
+    <string name="russia_novgorod_oblast">Новгородська область (Росія)</string>
+    <string name="russia_novosibirsk__oblast">Новосибірськ_ область (Росія)</string>
+    <string name="russia_omsk_oblast">Омська область (Росія)</string>
+    <string name="russia_orenburg_oblast">Оренбурзька область (Росія)</string>
+    <string name="russia_penza_oblast">Пензенська область (Росія)</string>
+    <string name="russia_perm_krai">Пермський край (Росія)</string>
+    <string name="russia_primorsky_krai">Приморський край (Росія)</string>
+    <string name="russia_pskov_oblast">Псковська область (Росія)</string>
+    <string name="russia_rostov_oblast">Ростовська область (Росія)</string>
+    <string name="russia_ryazan_oblast">Рязанська область (Росія)</string>
+    <string name="russia_saint_petersburg">Санкт-Петербург, Росія)</string>
+    <string name="russia_sakha">Саха (Росія)</string>
+    <string name="russia_sakhalin_oblast">Сахалінська область (Росія)</string>
+    <string name="russia_samara_oblast">Самарська область (Росія)</string>
+    <string name="russia_saratov_oblast">Саратовська область (Росія)</string>
+    <string name="russia_smolensk_oblast">Смоленська область (Росія)</string>
+    <string name="russia_stavropol_krai">Ставропольський край (Росія)</string>
+    <string name="russia_sverdlovsk_oblast">Свердловська область (Росія)</string>
+    <string name="russia_tambov_oblast">Тамбовська область (Росія)</string>
+    <string name="russia_tatarstan">Татарстан (Росія)</string>
+    <string name="russia_tomsk_oblast">Томська область (Росія)</string>
+    <string name="russia_tula_oblast">Тульська область (Росія)</string>
+    <string name="russia_tuva">Тува (Росія)</string>
+    <string name="russia_tver_oblast">Тверська область (Росія)</string>
+    <string name="russia_tyumen_oblast">Тюменська область (Росія)</string>
+    <string name="russia_udmurtia">Удмуртія (Росія)</string>
+    <string name="russia_ulyanovsk_oblast">Ульянівська область (Росія)</string>
+    <string name="russia_vladimir_oblast">Володимирська область (Росія)</string>
+    <string name="russia_volgograd_oblast">Волгоградська область (Росія)</string>
+    <string name="russia_vologda_oblast">Вологодська область (Росія)</string>
+    <string name="russia_voronezh_oblast">Воронезька область (Росія)</string>
+    <string name="russia_yamal_nenets_autonomous_district">Ямало-Ненецький автономний округ (Росія)</string>
+    <string name="russia_yaroslavl_oblast">Ярославська область (Росія)</string>
+    <string name="russia_yugra">Югра (Росія)</string>
+    <string name="russia_zabaykalsky_krai">Забайкальський край (Росія)</string>
+    <string name="belarus_brest_oblast">Брестська область (Білорусь)</string>
+    <string name="belarus_homyel_oblast">Гомельська область (Білорусь)</string>
+    <string name="belarus_hrodna_oblasts">Гродненська область (Білорусь)</string>
+    <string name="belarus_mahilyow_oblast">Могилівська область (Білорусь)</string>
+    <string name="belarus_minsk">Мінськ, Білорусь)</string>
+    <string name="belarus_minsk_oblast">Мінська область (Білорусь)</string>
+    <string name="belarus_vitsebsk_oblast">Вітебська область (Білорусь)</string>
+    <string name="france_auvergne_rhone_alpes">Овернь Рона Альпи (Франція)</string>
+    <string name="france_bourgogne_franche_comte">Бургундія Франш Конте (Франція)</string>
+    <string name="france_brittany">Бретань (Франція)</string>
+    <string name="france_centre_val_de_loire">Центр Валь-де-Луар (Франція)</string>
+    <string name="france_corsica">Корсика (Франція)</string>
+    <string name="france_hauts_de_france">О-де-Франс (Франція)</string>
+    <string name="france_normandie">Нормандія (Франція)</string>
+    <string name="france_nouvelle_aquitaine">Нова Аквітанія (Франція)</string>
+    <string name="france_occitanie">Окситанія (Франція)</string>
+    <string name="france_pays_de_la_loire">Пеї-де-ла-Луар (Франція)</string>
+    <string name="france_provence_alpes_cote_d_azur">Прованс Альпи Лазурний берег (Франція)</string>
+    <string name="germany_baden_wurttemberg">Баден Вюртемберг (Німеччина)</string>
+    <string name="germany_bavaria">Баварія (Німеччина)</string>
+    <string name="germany_berlin">Берлін, Німеччина)</string>
+    <string name="germany_brandenburg">Бранденбург (Німеччина)</string>
+    <string name="germany_bremen">Бремен (Німеччина)</string>
+    <string name="germany_hamburg">Гамбург (Німеччина)</string>
+    <string name="germany_hesse">Гессе (Німеччина)</string>
+    <string name="germany_lower_saxony">Нижня Саксонія (Німеччина)</string>
+    <string name="germany_mecklenburg_western_pomerania">Мекленбург Передня Померанія (Німеччина)</string>
+    <string name="germany_north_rhine_westphalia">Північний Рейн-Вестфалія (Німеччина)</string>
+    <string name="germany_rhineland_palatinate">Рейнланд-Пфальц (Німеччина)</string>
+    <string name="germany_saxony">Саксонія (Німеччина)</string>
+    <string name="germany_saxony_anhalt">Саксонія Анхальт (Німеччина)</string>
+    <string name="germany_schleswig_holstein">Шлезвіг-Гольштейн (Німеччина)</string>
+    <string name="germany_thuringia">Тюрінгія (Німеччина)</string>
+    <string name="italy_abruzzo">Абруццо (Італія)</string>
+    <string name="italy_apulia">Апулія (Італія)</string>
+    <string name="italy_basilicata">Базилікату (Італія)</string>
+    <string name="italy_calabria">Калабрія (Італія)</string>
+    <string name="italy_campania">Компанія (Італія)</string>
+    <string name="italy_friuli_venezia_giulia">Фріулі-Венеція-Джулія (Італія)</string>
+    <string name="italy_lazio">Лаціо (Італія)</string>
+    <string name="italy_liguria">Лігурія (Італія)</string>
+    <string name="italy_lombardy">Ломбардія (Італія)</string>
+    <string name="italy_marche">Марке (Італія)</string>
+    <string name="italy_molise">Молізе (Італія)</string>
+    <string name="italy_piedmont">П\'ємонт (Італія)</string>
+    <string name="italy_sardinia">Сардинія (Італія)</string>
+    <string name="italy_sicilian">Сицилія (Італія)</string>
+    <string name="italy_trentino_south_tyrol">Трентіно Південний Тіроль (Італія)</string>
+    <string name="italy_tuscany">Тоскана (Італія)</string>
+    <string name="italy_umbria">Умбрія (Італія)</string>
+    <string name="italy_valle_d_aosta">Валле д Аоста (Італія)</string>
+    <string name="italy_veneto">Венеція (Італія)</string>
+    <string name="spain_andalucia">Андалусія (Іспанія)</string>
+    <string name="spain_aragon">Арагон (Іспанія)</string>
+    <string name="spain_asturias">Астурія (Іспанія)</string>
+    <string name="spain_balearic_Islands">Балеарські острови (Іспанія)</string>
+    <string name="spain_bandera_de_navarra">Бандера де Наварра (Іспанія)</string>
+    <string name="spain_basque_country">Країна Басків (Іспанія)</string>
+    <string name="spain_canary_Islands">Канарські острови (Іспанія)</string>
+    <string name="spain_cantabria">Кантабрія (Іспанія)</string>
+    <string name="spain_castile_and_leon">Кастілія та Леон (Іспанія)</string>
+    <string name="spain_castilla_la_mancha">Кастілья-ла-Манча (Іспанія)</string>
+    <string name="spain_catalonia">Каталонія (Іспанія)</string>
+    <string name="spain_ceuta">Сеута (Іспанія)</string>
+    <string name="spain_community_of_madrid">Мадрид (Іспанія)</string>
+    <string name="spain_extremadura">Естремадура (Іспанія)</string>
+    <string name="spain_galicia">Галісія (Іспанія)</string>
+    <string name="spain_land_of_valencia">Валенсія (Іспанія)</string>
+    <string name="spain_la_rioja">Ла Ріоха (Іспанія)</string>
+    <string name="spain_melilla">Мелілья (Іспанія)</string>
+    <string name="spain_region_of_murcia">Мурсія (Іспанія)</string>
+    <string name="poland_wojewodztwo_dolnoslaskie">Нижньослаське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_kujawsko_pomorskie">Куявсько-Поморське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_lodzkie">Лодзинське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_lubelskie">Люблінське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_lubuskie">Любуське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_malopolskie">Малопольське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_mazowieckie">Мазовецьке воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_opolskie">Опольське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_podkarpackie">Підкарпатське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_podlaskie">Підляське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_pomorskie">Поморське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_slaskie">Воєводство ленське (Польща)</string>
+    <string name="poland_wojewodztwo_swietokrzyskie">Свентокшиське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_warminsko_mazurskie">Вармінсько-Мазурське воєводство (Польща)</string>
+    <string name="poland_wojewodztwo_zachodniopomorskie">Західно-поморське воєводство (Польща)</string>
+    <string name="lithuania_aukstaitija">Аукштайтія (Литва)</string>
+    <string name="lithuania_dzukija">Дзукія (Литва)</string>
+    <string name="lithuania_lithuania_minor">Мала Литва (Литва)</string>
+    <string name="lithuania_suvalkija">Сувалкія (Литва)</string>
+    <string name="lithuania_wojewodztwo_wielkopolskie">Воєводство Великопольське (Литва)</string>
+    <string name="lithuania_zemaitija">Жемайтія (Литва)</string>
+    <string name="ukraine_cherkasy_oblast">Черкаська область (Україна)</string>
+    <string name="ukraine_chernivtsi_oblast">Чернівецька область (Україна)</string>
+    <string name="ukraine_dnipropetrovsk_oblast">Дніпропетровська область (Україна)</string>
+    <string name="ukraine_ivano_frankivsk_oblast">Івано-Франківська область (Україна)</string>
+    <string name="ukraine_kharkiv_oblast">Харківська область (Україна)</string>
+    <string name="ukraine_khmelnytskyi_oblast">Хмельницька область (Україна)</string>
+    <string name="ukraine_kirovohrad_oblast">Кіровоградська область (Україна)</string>
+    <string name="ukraine_kyiv">Київ, Україна)</string>
+    <string name="ukraine_kyiv_oblast">Київська область (Україна)</string>
+    <string name="ukraine_lviv_oblast">Львівська область (Україна)</string>
+    <string name="ukraine_mykolaiv_oblast">Миколаївська область (Україна)</string>
+    <string name="ukraine_odesa_oblast">Одеська область (Україна)</string>
+    <string name="ukraine_poltava_oblast">Полтавська область (Україна)</string>
+    <string name="ukraine_rivne_oblast">Рівненська область (Україна)</string>
+    <string name="ukraine_sumy_oblast">Сумська область (Україна)</string>
+    <string name="ukraine_ternopil_oblast">Тернопільська область (Україна)</string>
+    <string name="ukraine_transcarpathian_oblast">Закарпатська область (Україна)</string>
+    <string name="ukraine_vinnytskaya_oblast">Вінницька область (Україна)</string>
+    <string name="ukraine_volyn_oblast">Волинська область (Україна)</string>
+    <string name="ukraine_zhytomyr_oblast">Житомирська область (Україна)</string>
+
+    <string-array name="facts">
+        <item>Найдавніший у світі прапор виготовили приблизно п\'ять тисяч років тому на території сучасного Ірану. Він був виготовлений зі сплаву міді з іншими металами.</item>
+        <item>Розташування зірок на бразильському прапорі відповідає їх становищу на небосхилі в ту саму секунду, коли Бразилія здобула незалежність.</item>
+        <item>На прапорі африканської країни Мозамбік зображено автомат Калашнікова.</item>
+        <item>Прапор Парагваю — єдиний у світі двосторонній прапор, зображення з обох сторін відрізняються один від одного.</item>
+        <item>Прапор Філіппін у воєнний час перевертають нагору ногами.</item>
+        <item>У багатьох країнах образа державного прапора суворо карається законом.</item>
+        <item>Піратський прапор, відомий як «Веселий Роджер», використовувався піратами, щоб замаскуватися під зачумлене судно, оскільки останні зазвичай вивішували чорне полотнище, іноді з черепом на ньому.</item>
+        <item>На прапорі Челябінська зображено верблюда.</item>
+        <item>Прапор Данії — найстаріший прапор, що використовується до цього дня.</item>
+        <item>Непальський прапор – єдиний непрямокутний прапор у світі.</item>
+        <item>Планета Марс має свій прапор.</item>
+        <item>Білий прапор — міжнародний перемир\'я символ.</item>
+        <item>Півмісяць є на прапорах більшості мусульманських країн.</item>
+        <item>Найпоширеніші на прапорах країн кольори — білий, синій і червоний.</item>
+        <item>Прапор Швейцарії має квадратну форму.</item>
+        <item>Наука, що вивчає прапори, називається вексилологія.</item>
+        <item>Прапор чеського міста Дечин — один із небагатьох прапорів із хвилястими смугами, а не прямими.</item>
+        <item>У Данії можна робити будь-що, з національним прапором, але заборонено ображати прапори інших країн.</item>
+        <item>З усіх існуючих держав США найчастіше змінювали свій прапор, додаючи до нього нові зірки.</item>
+        <item>Один із наймолодших державних прапорів — прапор Лівії, затверджений 1977 року.</item>
+        <item>Багато прапорів країн світу дотримуються певного стандарту форми. Це прямокутне полотно у співвідношенні 1:2 або 2:3. Однак є й винятки. Це Швейцарія, Непал та Ватикан.</item>
+        <item>Найоригінальнішою формою може похвалитися прапор Непалу. Він є два з\'єднаних разом вимпела і має 5 кутів.</item>
+        <item>Комбінація білого, синього та червоного зустрічається дуже часто. Причому хоча б один із цих кольорів присутній майже на всіх прапорах світу. Виняток – Ямайка. Її державний символ поєднує зелений, чорний і жовтий колір.</item>
+        <item>На гватемальському прапорі зображено сувій, у якому вказано дату незалежності Центральної Америки від Іспанії.</item>
+        <item>«Батьком» російського триколору став Петро I: саме за його указом від 20 січня 1705 «на торгових всяких судах» мали піднімати біло-синьо-червоний прапор.</item>
+        <item>Стародавні російські прапори та прапори були трикутними і прикрашалися образами святих, картинами зі Святого Письма та довгими титулами государя.</item>
+        <item>Прийнято вважати, що біла смуга російському прапорі означає шляхетність і відвертість, синя – вірність, чесність і цнотливість, а червона – мужність, сміливість, великодушність і любов.</item>
+        <item>Триколор до Росії повернувся 22 серпня 1991 року. Саме тоді над Білим Домом вперше було піднято новий прапор нової Росії, який замінив собою червоний прапор із серпом та молотом, під яким країна жила з 1918 року.</item>
+        <item>Найбільший прапор Росії було піднято на горі Ельбрус у 2016 році. Його розгорнули на висоті чотири тисячі метрів, а площа прапора становила майже 1000 "квадратів".</item>
+        <item>Російський прапор є і в Книзі рекордів Гіннеса: під час флешмобу «Я люблю Владивосток» жителі та гості міста склали найбільше живе зображення прапора – його довжина сягнула 707 метрів.</item>
+        <item>Наука, яка вивчає прапори, називається вексилологією.</item>
+        <item>Кожен колір на прапорі символічний, він розкриває певне явище чи історичний факт.</item>
+        <item>Прапори відрізняються як квітами, а й пропорціями. Ширина та довжина полотнища зазвичай визначається законодавством країни.</item>
+        <item>Державний прапор є не просто одним із головних символів країни. Він може розповісти про деякі факти її історії, про традиції народу і навіть про найважливіші події.</item>
+        <item>У багатьох країнах образа державного прапора суворо карається законом.</item>
+        <item>Найдепресивніший колір – чорний – має досить похмуре тлумачення і на прапорах. Зазвичай він говорить про трагічні події в історії країни: наприклад, про жорстокі війни.</item>
+        <item>Звання найстарішого прапора у світі гордо носить датську. Перші згадки про червоне полотнище з білим хрестом з\'явилися у літописах 1219 року.</item>
+        <item>З 1815 до 1830 прапор Франції був просто білим.</item>
+        <item>Прапори Румунії та Чаду відрізняються лише відтінком синього кольору.</item>
+        <item>Найпоширеніші на прапорах країн кольори — білий, синій і червоний.</item>
+        <item>Прапор Норвегії був названий "матір'ю всіх прапорів", тому що на ньому можна знайти прапори Індонезії, Польщі, Фінляндії, Франції, Нідерландів та Таїланду.</item>
+        <item>У мирний час на прапорі Філіппін синя смуга розташована на вершині прапора. Під час війни прапор перевертається нагору ногами, а зверху виявляється червона смуга.</item>
+        <item>Білий прапор — міжнародний перемир\'я символ.</item>
+        <item>Коло на прапорі Бангладеша розташоване не точно в центрі, а зміщене трохи вліво. Вважається, що коли прапор майорить у повітрі, то створюється видимість, що коло знаходиться в його центрі.</item>
+        <item>Марс має свій прапор, який був розроблений інженером NASA.</item>
+        <item>Швейцарія та Ватикан — дві країни, у яких прапори квадратні.</item>
+        <item>Прапор чеського міста Дечин — один із небагатьох прапорів із хвилястими смугами, а не прямими.</item>
+        <item>Після Олімпійських ігор 1920 року перший олімпійський прапор зник безвісти цілих 77 років. Зрештою, один із олімпійців, який виступав на той час, зізнався, що всі ці роки зберігав його у своїй валізі.</item>
+        <item>Півмісяць є на прапорах більшості мусульманських країн.</item>
+        <item>Велика зірка на китайському прапорі символізує Компартію, тоді як чотири маленькі зірки символізують економічні класи Китаю: селяни, робітники, дрібна буржуазія і «патріотичні капіталісти».</item>
+        <item>Англійські підводні човни, піднімаючись на поверхню, іноді вивішують піратські прапори. Але це зовсім не означає, що ними плавають морські розбійники.</item>
+        <item>Слова "Аллах Акбар" повторюються 22 рази на прапорі Ірану.</item>
+        <item>Зображення майбутнього прапора Аляски запропонував 13-річний підліток.</item>
+        <item>Один із наймолодших державних прапорів — прапор Лівії, затверджений 1977 року</item>
+        <item>Під час Олімпійських ігор 1936 було виявлено, що у Ліхтенштейна та Гаїті повністю однакові прапори (чого ніхто не помічав до цього часу). Тож Ліхтенштейн додав корону на свій прапор.</item>
+        <item>У Саудівській Аравії ніколи не приспускають прапор на знак жалоби.</item>
+        <item>Прапор Парагваю є єдиним національним прапором у світі з різними емблемами на його лицьовій та зворотній стороні.</item>
+        <item>Монако та Індонезії мають однакові прапори, за винятком розміру (прапор Монако вужчий).</item>
+        <item>З 1977 до 2011 року прапор Лівії був єдиним одноколірним прапором у світі (зелений).</item>
+        <item>Прапори Камбоджі та Афганістану - єдині, на яких зображені будівлі.</item>
+        <item>Відповідно до Кодексу прапора Сполучених Штатів, на прапорі США в жодному разі не може бути розміщена реклама.</item>
+        <item>Прапор Афганістану було перероблено 20 разів. Це більше, ніж у будь-якій іншій країні.</item>
+        <item>З усіх існуючих держав США найчастіше змінювали свій прапор, додаючи до нього нові зірки.</item>
+        <item>Техас є єдиним американським штатом, в якому люди можуть скласти присягу не лише перед державним прапором, а також перед прапором штату.</item>
+        <item>Данцям дозволяється робити зі своїм прапором що завгодно, при цьому ображати іноземні прапори заборонено.</item>
+        <item>Прапор Непалу вважається єдиним у світі, який не має прямокутної форми.</item>
+        <item>Прапор Швейцарії виконано у вигляді квадрата.</item>
+        <item>Вексилологія - наука, що займається вивченням прапорів.</item>
+        <item>Головна відмінність прапора полягає в тому, що воно може бути тільки в одному екземплярі.</item>
+        <item>Вважається, що прапори сталися з Китаю та Індії.</item>
+        <item>Чорний прапор виступає символом анархії, повного заперечення структури та символ непокори.</item>
+        <item>Прапор червоного хреста та півмісяця символізує міжнародну організацію надання допомоги пораненим та хворим. Символ цієї організації у його нинішньому вигляді став застосовуватись із 1929 року.</item>
+        <item>Нацистський прапор – найспірніший прапор із усіх існуючих. Нині його використання заборонено у багатьох країнах цивілізованого світу. Його розробником є Гітлер.</item>
+        <item>Кольори на прапорі Філіппін змінюються місцями: у воєнний час верхня смуга – червона, нижня – синя.</item>
+        <item>Створення Великої Ведмедиці красується на прапорі Аляски.</item>
+        <item>Скандинавський хрест видно на прапорах країн Північної Європи.</item>
+        <item>На прапорах Іраку, Афганістану, Саудівської Аравії є арабська писемність.</item>
+        <item>Прапор Бразилії містить девіз португальською.</item>
+        <item>Під час мирних переговорів представники Північної та Південної Кореї приносили на них щоразу великі прапори своїх країн до зали засідань.</item>
+    </string-array>
+
+</resources>

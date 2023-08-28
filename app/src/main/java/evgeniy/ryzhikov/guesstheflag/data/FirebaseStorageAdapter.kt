@@ -122,6 +122,24 @@ class FirebaseStorageAdapter @Inject constructor(
         return@runBlocking arrayListOf<StatisticData>(playerStatisticData, onTopPlayer, onBellowPlayer)
     }
 
+//    private fun getPlayerEnvironment(
+//        playerPoints: Int,
+//        playerStatisticData: StatisticData
+//    ): PlayerEnvironment = runBlocking {
+//        getPlayerPosition(playerPoints) { position ->
+//            val onTopPlayer = getOnTop(playerPoints)
+//            val onBellowPlayer = getFromBellow(playerPoints)
+//            val playerPosition = position
+//            return@runBlocking PlayerEnvironment(
+//                playerPosition = playerPosition,
+//                playerStatisticData = playerStatisticData,
+//                onTopPlayerStatisticData = onTopPlayer,
+//                onBellowPlayerStatisticData = onBellowPlayer
+//            )
+//        }
+//    }
+
+
     private suspend fun getOnTop(playerPoints: Int): StatisticData {
         val snap = db.collection(FB_COLLECTION_NAME)
             .whereGreaterThan("totalPoints", playerPoints)
