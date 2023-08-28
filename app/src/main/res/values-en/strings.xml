@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Guess the Flag!</string>
+    <string name="menu_start_game">A game</string>
+    <string name="menu_statistic">Statistics</string>
+    <string name="menu_exit">Exit</string>
+    <string name="menu_setting">Settings</string>
+    <string name="menu_back">Back</string>
+    <string name="menu_country_flag">Country flags</string>
+    <string name="menu_region_flag">Regional flags</string>
+    <string name="menu_country_map">Country maps</string>
+    <string name="menu_region_map">Region maps</string>
+    <string name="statistic_round_title">Round results</string>
+    <string name="statistic_correct_answer">Number of correct answers</string>
+    <string name="statistic_wrong_answer">Number of wrong answers</string>
+    <string name="statistic_round_points">Points scored</string>
+    <string name="statistic_all_points">Points scored</string>
+    <string name="statistic_total_title">General results</string>
+    <string name="menu_in_main_menu">To main menu</string>
+    <string name="menu_again">play again</string>
+    <string name="statistic_total_answers">Total questions</string>
+    <string name="statistic_percent_correct_answers">Percentage of correct answers</string>
+    <string name="energy_not_enough_1">Oops! Energy is over!</string>
+    <string name="energy_not_enough_2">To replenish energy, watch the video!</string>
+    <string name="menu_watch_ad">Watch the video</string>
+    <string name="alert_double_tap_exit">Press twice to exit the game</string>
+    <string name="error_auth">Authorisation Error</string>
+    <string name="error_btn_try_again">try again</string>
+    <string name="statistic_total_game">Total games</string>
+    <string name="settings_volume_music">Music volume</string>
+    <string name="settings_volume_sounds">Sound volume</string>
+    <string name="setting_change_name">Change name</string>
+    <string name="setting_hint_input_name">Enter name\n</string>
+    <string name="setting_save_name">Save</string>
+    <string name="settings_non_length_name">Name must be at least 3 letters</string>
+    <string name="menu_rating">Player Rating</string>
+    <string name="statistic_rating_top10">Top 10 players</string>
+    <string name="menu_rating_player_position">Your position in the ranking:</string>
+    <string name="menu_rating_wins">victories</string>
+    <string name="menu_rating_games">Games</string>
+    <string name="menu_rating_points">Glasses</string>
+    <string name="setting_player_name">Your name in the ranking:</string>
+    <string name="error_reward_ad_not_loaded">Oops! Ads not loaded! Try again!</string>
+    <string name="statistic_rating_player_tittle">Your results:</string>
+    <string name="afghanistan">Afghanistan</string>
+    <string name="albania">Albania</string>
+    <string name="algeria">Algeria</string>
+    <string name="american_samoa">American Samoa</string>
+    <string name="andorra">Andorra</string>
+    <string name="angola">Angola</string>
+    <string name="anguilla">Anguilla</string>
+    <string name="antigua_and_barbuda">Antigua and Barbuda</string>
+    <string name="argentina">Argentina</string>
+    <string name="armenia">Armenia</string>
+    <string name="aruba">Aruba</string>
+    <string name="australia">Australia</string>
+    <string name="austria">Austria</string>
+    <string name="azerbaijan">Azerbaijan</string>
+    <string name="bahamas">Bahamas</string>
+    <string name="bahrain">Bahrain</string>
+    <string name="bangladesh">Bangladesh</string>
+    <string name="barbados">Barbados</string>
+    <string name="belarus">Belarus</string>
+    <string name="belgium">Belgium</string>
+    <string name="belize">Belize</string>
+    <string name="benin">Benin</string>
+    <string name="bermuda">Bermuda</string>
+    <string name="bhutan">Butane</string>
+    <string name="bolivia">Bolivia</string>
+    <string name="bosnia_and_herzegovina">Bosnia and Herzegovina</string>
+    <string name="botswana">Botswana</string>
+    <string name="brazil">Brazil</string>
+    <string name="british_virgin_islands">British Virgin Islands</string>
+    <string name="brunei">Brunei</string>
+    <string name="bulgaria">Bulgaria</string>
+    <string name="burkina_faso">Burkina Faso</string>
+    <string name="burundi">Burundi</string>
+    <string name="cambodia">Cambodia</string>
+    <string name="cameroon">Cameroon</string>
+    <string name="canada">Canada</string>
+    <string name="cape_verde">Cape Verde</string>
+    <string name="cayman_islands">Cayman islands</string>
+    <string name="central_african_republic">Central African Republic</string>
+    <string name="chad">Chad</string>
+    <string name="chile">Chile</string>
+    <string name="china">China</string>
+    <string name="colombia">Colombia</string>
+    <string name="comoros">Comoros</string>
+    <string name="cook_islands">Cook Islands</string>
+    <string name="costa_rica">Costa Rica</string>
+    <string name="croatia">Croatia</string>
+    <string name="cuba">Cuba</string>
+    <string name="curacao">Curacao</string>
+    <string name="cyprus">Cyprus</string>
+    <string name="czech_republic">Czech</string>
+    <string name="democratic_republic_of_the_congo">Democratic Republic of the Congo</string>
+    <string name="denmark">Denmark</string>
+    <string name="djibouti">Djibouti</string>
+    <string name="dominica">Dominica</string>
+    <string name="dominican_republic">Dominican Republic</string>
+    <string name="ecuador">Ecuador</string>
+    <string name="egypt">Egypt</string>
+    <string name="el_salvador">Salvador</string>
+    <string name="equatorial_guinea">Equatorial Guinea</string>
+    <string name="eritrea">Eritrea</string>
+    <string name="estonia">Estonia</string>
+    <string name="eswatini">Eswatini</string>
+    <string name="ethiopia">Ethiopia</string>
+    <string name="faroe_islands">Faroe islands</string>
+    <string name="federated_states_of_micronesia">Federated States of Micronesia</string>
+    <string name="fiji">Fiji</string>
+    <string name="finland">Finland</string>
+    <string name="france">France</string>
+    <string name="french_polynesia">French polynesia</string>
+    <string name="gabon">Gabon</string>
+    <string name="gambia">Gambia</string>
+    <string name="georgia">Georgia</string>
+    <string name="germany">Germany</string>
+    <string name="ghana">Ghana</string>
+    <string name="gibraltar">Gibraltar</string>
+    <string name="greece">Greece</string>
+    <string name="greenland">Greenland</string>
+    <string name="grenada">Grenada</string>
+    <string name="guatemala">Guatemala</string>
+    <string name="guernsey">guernsey</string>
+    <string name="guinea_bissau">guinea-bissau</string>
+    <string name="guinea">Guinea</string>
+    <string name="guyana">Guyana</string>
+    <string name="haiti">Haiti</string>
+    <string name="honduras">Honduras</string>
+    <string name="hong_kong">Hong Kong</string>
+    <string name="hungary">Hungary</string>
+    <string name="iceland">Iceland</string>
+    <string name="india">India</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="iran">Iran</string>
+    <string name="iraq">Iraq</string>
+    <string name="ireland">Ireland</string>
+    <string name="isle_of_man">Isle Of Man</string>
+    <string name="israel">Israel</string>
+    <string name="italy">Italy</string>
+    <string name="ivory_coast">Ivory Coast</string>
+    <string name="jamaica">Jamaica</string>
+    <string name="japan">Japan</string>
+    <string name="jersey">Jersey</string>
+    <string name="jordan">Jordan</string>
+    <string name="kazakhstan">Kazakhstan</string>
+    <string name="kenya">Kenya</string>
+    <string name="kiribati">Kiribati</string>
+    <string name="kosovo">Kosovo</string>
+    <string name="kuwait">Kuwait</string>
+    <string name="kyrgyzstan">Kyrgyzstan</string>
+    <string name="laos">Laos</string>
+    <string name="latvia">Latvia</string>
+    <string name="lebanon">Lebanon</string>
+    <string name="lesotho">Lesotho</string>
+    <string name="liberia">Liberia</string>
+    <string name="libya">Libya</string>
+    <string name="liechtenstein">Liechtenstein</string>
+    <string name="lithuania">Lithuania</string>
+    <string name="luxembourg">Luxembourg</string>
+    <string name="macau">Macau</string>
+    <string name="madagascar">Madagascar</string>
+    <string name="malawi">Malawi</string>
+    <string name="malaysia">Malaysia</string>
+    <string name="maldives">Maldives</string>
+    <string name="mali">Mali</string>
+    <string name="malta">Malta</string>
+    <string name="marshall_Islands">Marshall Islands</string>
+    <string name="mauritania">Mauritania</string>
+    <string name="mauritius">Mauritius</string>
+    <string name="mexico">Mexico</string>
+    <string name="moldova">Moldova</string>
+    <string name="monaco">Monaco</string>
+    <string name="mongolia">Mongolia</string>
+    <string name="montenegro">Montenegro</string>
+    <string name="montserrat">Montserrat</string>
+    <string name="morocco">Morocco</string>
+    <string name="mozambique">Mozambique</string>
+    <string name="myanmar">Myanmar</string>
+    <string name="namibia">Namibia</string>
+    <string name="nauru">Nauru</string>
+    <string name="nepal">Nepal</string>
+    <string name="netherlands">Netherlands</string>
+    <string name="new_caledonia">New Caledonia</string>
+    <string name="new_zealand">New Zealand</string>
+    <string name="nicaragua">Nicaragua</string>
+    <string name="niger">Niger</string>
+    <string name="nigeria">Nigeria</string>
+    <string name="northern_mariana_islands">Northern Mariana Islands</string>
+    <string name="north_korea">North Korea</string>
+    <string name="north_macedonia">North Macedonia</string>
+    <string name="norway">Norway</string>
+    <string name="oman">Oman</string>
+    <string name="pakistan">Pakistan</string>
+    <string name="palau">Palau</string>
+    <string name="palestine">Palestine</string>
+    <string name="panama">Panama</string>
+    <string name="papua_new_guinea">Papua New Guinea</string>
+    <string name="paraguay">Paraguay</string>
+    <string name="peru">Peru</string>
+    <string name="philippines">Philippines</string>
+    <string name="poland">Poland</string>
+    <string name="portugal">Portugal</string>
+    <string name="puerto_rico">Puerto Rico</string>
+    <string name="qatar">Qatar</string>
+    <string name="republic_of_the_congo">Republic of the Congo</string>
+    <string name="romania">Romania</string>
+    <string name="russia">Russia</string>
+    <string name="rwanda">Rwanda</string>
+    <string name="saint_barthelemy">Saint Barthelemy</string>
+    <string name="saint_helena_ascension_and_tristan_da_cunha">Ascension of Saint Helena and Tristan da Cunha</string>
+    <string name="saint_kitts_and_nevis">Saint Kitts and Nevis</string>
+    <string name="saint_lucia">St. Lucia</string>
+    <string name="saint_martin">saint martin</string>
+    <string name="saint_pierre_and_miquelon">Saint Pierre and Miquelon</string>
+    <string name="saint_vincent_and_the_grenadines">Saint Vincent and the Grenadines</string>
+    <string name="samoa">Samoa</string>
+    <string name="san_marino">San Marino</string>
+    <string name="sao_tome_and_principe">Sao Tome and Principe</string>
+    <string name="saudi_arabia">Saudi Arabia</string>
+    <string name="senegal">Senegal</string>
+    <string name="serbia">Serbia</string>
+    <string name="seychelles">Seychelles</string>
+    <string name="sierra_leone">Sierra Leone</string>
+    <string name="singapore">Singapore</string>
+    <string name="sint_maarten">Sint Maarten</string>
+    <string name="slovakia">Slovakia</string>
+    <string name="slovenia">Slovenia</string>
+    <string name="solomon_islands">Solomon islands</string>
+    <string name="somalia">Somalia</string>
+    <string name="south_africa">Republic of South Africa</string>
+    <string name="south_korea">South Korea</string>
+    <string name="south_sudan">South Sudan</string>
+    <string name="spain">Spain</string>
+    <string name="sri_lanka">Sri Lanka</string>
+    <string name="sudan">Sudan</string>
+    <string name="suriname">Suriname</string>
+    <string name="sweden">Sweden</string>
+    <string name="switzerland">Switzerland</string>
+    <string name="syria">Syria</string>
+    <string name="taiwan">Taiwan</string>
+    <string name="tajikistan">Tajikistan</string>
+    <string name="tanzania">Tanzania</string>
+    <string name="thailand">Thailand</string>
+    <string name="timor_leste">Timor Leste</string>
+    <string name="togo">Togo</string>
+    <string name="tonga">Tonga</string>
+    <string name="trinidad_and_tobago">Trinidad and Tobago</string>
+    <string name="tunisia">Tunisia</string>
+    <string name="turkey">Türkiye</string>
+    <string name="turkmenistan">Turkmenistan</string>
+    <string name="turks_and_caicos_islands">Turks and Caicos Islands</string>
+    <string name="tuvalu">Tuvalu</string>
+    <string name="guam">Guam</string>
+    <string name="uganda">Uganda</string>
+    <string name="ukraine">Ukraine</string>
+    <string name="united_arab_emirates">United Arab Emirates</string>
+    <string name="united_kingdom">Great Britain</string>
+    <string name="united_states">USA</string>
+    <string name="united_states_virgin_islands">US Virgin Islands</string>
+    <string name="uruguay">Uruguay</string>
+    <string name="uzbekistan">Uzbekistan</string>
+    <string name="vanuatu">Vanuatu</string>
+    <string name="venezuela">Venezuela</string>
+    <string name="vietnam">Vietnam</string>
+    <string name="wallis_and_futuna">Wallis and Futuna</string>
+    <string name="yemen">Yemen</string>
+    <string name="zambia">Zambia</string>
+    <string name="zimbabwe">Zimbabwe</string>
+    <string name="usa_alabama">Alabama (USA)</string>
+    <string name="usa_alaska">Alaska (USA)</string>
+    <string name="usa_arizona">Arizona (USA)</string>
+    <string name="usa_arkansas">Arkansas (USA)</string>
+    <string name="usa_california">California (USA)</string>
+    <string name="usa_colorado">Colorado (USA)</string>
+    <string name="usa_connecticut">Connecticut (USA)</string>
+    <string name="usa_delaware">Delaware (USA)</string>
+    <string name="usa_district_of_columbia">District of Columbia (USA)</string>
+    <string name="usa_florida">Florida (USA)</string>
+    <string name="usa_georgia">Georgia (USA)</string>
+    <string name="usa_hawaii">Hawaii (USA)</string>
+    <string name="usa_idaho">Idaho (USA)</string>
+    <string name="usa_illinois">Illinois (USA)</string>
+    <string name="usa_indiana">Indiana (USA)</string>
+    <string name="usa_iowa">Iowa (USA)</string>
+    <string name="usa_kansas">Kansas (USA)</string>
+    <string name="usa_kentucky">Kentucky (USA)</string>
+    <string name="usa_louisiana">Louisiana (USA)</string>
+    <string name="usa_maine">Maine (USA)</string>
+    <string name="usa_maryland">Maryland (USA)</string>
+    <string name="usa_massachusetts">Massachusetts (USA)</string>
+    <string name="usa_michigan">Michigan (USA)</string>
+    <string name="usa_minnesota">Minnesota (USA)</string>
+    <string name="usa_mississippi">Mississippi (USA)</string>
+    <string name="usa_missouri">Missouri (USA)</string>
+    <string name="usa_montana">Montana (USA)</string>
+    <string name="usa_nebraska">Nebraska (USA)</string>
+    <string name="usa_nevada">Nevada (USA)</string>
+    <string name="usa_new_hampshire">New Hampshire (USA)</string>
+    <string name="usa_new_jersey">New Jersey (USA)</string>
+    <string name="usa_new_mexico">New Mexico (USA)</string>
+    <string name="usa_new_york">New York, USA)</string>
+    <string name="usa_north_carolina">North Carolina (USA)</string>
+    <string name="usa_north_dakota">North Dakota (USA)</string>
+    <string name="usa_ohio">Ohio (USA)</string>
+    <string name="usa_oklahoma">Oklahoma (USA)</string>
+    <string name="usa_oregon">Oregon (USA)</string>
+    <string name="usa_pennsylvania">Pennsylvania (USA)</string>
+    <string name="usa_rhode_island">Rhode Island (USA)</string>
+    <string name="usa_south_carolina">South Carolina (USA)</string>
+    <string name="usa_south_dakota">North Dakota (USA)</string>
+    <string name="usa_tennessee">Tennessee (USA)</string>
+    <string name="usa_texas">Texas (USA)</string>
+    <string name="usa_utah">Utah (USA)</string>
+    <string name="usa_vermont">Vermont (USA)</string>
+    <string name="usa_virginia">Virginia (USA)</string>
+    <string name="usa_washington">Washington (USA)</string>
+    <string name="usa_west_virginia">West Virginia (USA)</string>
+    <string name="usa_wisconsin">Wisconsin (USA)</string>
+    <string name="usa_wyoming">Wyoming (USA)</string>
+    <string name="russia_adygea">Adygea (Russia)</string>
+    <string name="russia_altai_krai">Altai Territory (Russia)</string>
+    <string name="russia_altai_republic">Republic of Altai (Russia)</string>
+    <string name="russia_amur_oblast">Amur Region (Russia)</string>
+    <string name="russia_arkhangelsk_oblast">Arkhangelsk region (Russia)</string>
+    <string name="russia_astrakhan_oblast">Astrakhan region (Russia)</string>
+    <string name="russia_bashkortostan">Bashkortostan (Russia)</string>
+    <string name="russia_belgorod_oblast">Belgorod region (Russia)</string>
+    <string name="russia_bryansk_oblast">Bryansk region (Russia)</string>
+    <string name="russia_buryatia">Buryatia (Russia)</string>
+    <string name="russia_chechen_republic">Chechen Republic (Russia)</string>
+    <string name="russia_chelyabinsk_oblast">Chelyabinsk region (Russia)</string>
+    <string name="russia_chukotka">Chukotka (Russia)</string>
+    <string name="russia_chuvashia">Chuvashia (Russia)</string>
+    <string name="russia_dagestan">Dagestan (Russia)</string>
+    <string name="russia_ingushetia">Ingushetia (Russia)</string>
+    <string name="russia_irkutsk_oblast">Irkutsk region (Russia)</string>
+    <string name="russia_ivanovo_oblast">Ivanovo region (Russia)</string>
+    <string name="russia_jewish_autonomous_oblast">Jewish Autonomous Region (Russia)</string>
+    <string name="russia_kabardino_balkaria">Kabardino-Balkaria (Russia)</string>
+    <string name="russia_kaliningrad_oblast">Kaliningrad region (Russia)</string>
+    <string name="russia_kalmykia">Kalmykia (Russia)</string>
+    <string name="russia_kaluga_oblast">Kaluga region (Russia)</string>
+    <string name="russia_kamchatka_krai">Kamchatka Territory (Russia)</string>
+    <string name="russia_karachay_cherkessia">Karachay-Cherkessia (Russia)</string>
+    <string name="russia_karelia">Karelia (Russia)</string>
+    <string name="russia_kemerovo_oblast">Kemerovo region (Russia)</string>
+    <string name="russia_khabarovsk_krai">Khabarovsk Territory (Russia)</string>
+    <string name="russia_khakassia">Khakassia (Russia)</string>
+    <string name="russia_kirov_oblast">Kirov region (Russia)</string>
+    <string name="russia_komi">Komi (Russia)</string>
+    <string name="russia_kostroma_oblast">Kostroma region (Russia)</string>
+    <string name="russia_krasnodar_krai">Krasnodar Territory (Russia)</string>
+    <string name="russia_krasnoyarsk_krai">Krasnoyarsk Territory (Russia)</string>
+    <string name="russia_kurgan_oblast">Kurgan region (Russia)</string>
+    <string name="russia_kursk_oblast">Kursk region (Russia)</string>
+    <string name="russia_leningrad_oblast">Leningrad region (Russia)</string>
+    <string name="russia_lipetsk_oblast">Lipetsk region (Russia)</string>
+    <string name="russia_magadan_oblast">Magadan region (Russia)</string>
+    <string name="russia_mari_el">Mari El (Russia)</string>
+    <string name="russia_mordovia">Mordovia (Russia)</string>
+    <string name="russia_moscow">Moscow, Russia)</string>
+    <string name="russia_moscow_oblast">Moscow region (Russia)</string>
+    <string name="russia_murmansk_oblast">Murmansk region (Russia)</string>
+    <string name="russia_nenets_autonomous_district">Nenets Autonomous Okrug (Russia)</string>
+    <string name="russia_nizhny_novgorod_region">Nizhny Novgorod region (Russia)</string>
+    <string name="russia_north_ossetia">North Ossetia (Russia)</string>
+    <string name="russia_novgorod_oblast">Novgorod region (Russia)</string>
+    <string name="russia_novosibirsk__oblast">Novosibirsk_ region (Russia)</string>
+    <string name="russia_omsk_oblast">Omsk region (Russia)</string>
+    <string name="russia_orenburg_oblast">Orenburg region (Russia)</string>
+    <string name="russia_penza_oblast">Penza region (Russia)</string>
+    <string name="russia_perm_krai">Perm Territory (Russia)</string>
+    <string name="russia_primorsky_krai">Primorsky Krai (Russia)</string>
+    <string name="russia_pskov_oblast">Pskov region (Russia)</string>
+    <string name="russia_rostov_oblast">Rostov region (Russia)</string>
+    <string name="russia_ryazan_oblast">Ryazan region (Russia)</string>
+    <string name="russia_saint_petersburg">Saint-Petersburg, Russia)</string>
+    <string name="russia_sakha">Sakha (Russia)</string>
+    <string name="russia_sakhalin_oblast">Sakhalin region (Russia)</string>
+    <string name="russia_samara_oblast">Samara region (Russia)</string>
+    <string name="russia_saratov_oblast">Saratov region (Russia)</string>
+    <string name="russia_smolensk_oblast">Smolensk region (Russia)</string>
+    <string name="russia_stavropol_krai">Stavropol Territory (Russia)</string>
+    <string name="russia_sverdlovsk_oblast">Sverdlovsk region (Russia)</string>
+    <string name="russia_tambov_oblast">Tambov region (Russia)</string>
+    <string name="russia_tatarstan">Tatarstan (Russia)</string>
+    <string name="russia_tomsk_oblast">Tomsk region (Russia)</string>
+    <string name="russia_tula_oblast">Tula region (Russia)</string>
+    <string name="russia_tuva">Tuva (Russia)</string>
+    <string name="russia_tver_oblast">Tver region (Russia)</string>
+    <string name="russia_tyumen_oblast">Tyumen region (Russia)</string>
+    <string name="russia_udmurtia">Udmurtiya (Russia)</string>
+    <string name="russia_ulyanovsk_oblast">Ulyanovsk region (Russia)</string>
+    <string name="russia_vladimir_oblast">Vladimir region (Russia)</string>
+    <string name="russia_volgograd_oblast">Volgograd region (Russia)</string>
+    <string name="russia_vologda_oblast">Vologda region (Russia)</string>
+    <string name="russia_voronezh_oblast">Voronezh region (Russia)</string>
+    <string name="russia_yamal_nenets_autonomous_district">Yamalo-Nenets Autonomous Okrug (Russia)</string>
+    <string name="russia_yaroslavl_oblast">Yaroslavl region (Russia)</string>
+    <string name="russia_yugra">Yugra (Russia)</string>
+    <string name="russia_zabaykalsky_krai">Trans-Baikal Territory (Russia)</string>
+    <string name="belarus_brest_oblast">Brest region (Belarus)</string>
+    <string name="belarus_homyel_oblast">Gomel region (Belarus)</string>
+    <string name="belarus_hrodna_oblasts">Grodno region (Belarus)</string>
+    <string name="belarus_mahilyow_oblast">Mogilev region (Belarus)</string>
+    <string name="belarus_minsk">Minsk, Belarus)</string>
+    <string name="belarus_minsk_oblast">Minsk region (Belarus)</string>
+    <string name="belarus_vitsebsk_oblast">Vitebsk region (Belarus)</string>
+    <string name="france_auvergne_rhone_alpes">Auvergne Rhone Alpes (France)</string>
+    <string name="france_bourgogne_franche_comte">Burgundy Franche Comte (France)</string>
+    <string name="france_brittany">Brittany (France)</string>
+    <string name="france_centre_val_de_loire">Center of Val-de-Loire (France)</string>
+    <string name="france_corsica">Corsica (France)</string>
+    <string name="france_hauts_de_france">Hauts-de-France (France)</string>
+    <string name="france_normandie">Normandy (France)</string>
+    <string name="france_nouvelle_aquitaine">New Aquitaine (France)</string>
+    <string name="france_occitanie">Occitania (France)</string>
+    <string name="france_pays_de_la_loire">Pays de la Loire (France)</string>
+    <string name="france_provence_alpes_cote_d_azur">Provence Alpes Cote d\'Azur (France)</string>
+    <string name="germany_baden_wurttemberg">Baden Württemberg (Germany)</string>
+    <string name="germany_bavaria">Bavaria (Germany)</string>
+    <string name="germany_berlin">Berlin, Germany)</string>
+    <string name="germany_brandenburg">Brandenburg (Germany)</string>
+    <string name="germany_bremen">Bremen (Germany)</string>
+    <string name="germany_hamburg">Hamburg, Germany)</string>
+    <string name="germany_hesse">Hesse (Germany)</string>
+    <string name="germany_lower_saxony">Lower Saxony (Germany)</string>
+    <string name="germany_mecklenburg_western_pomerania">Mecklenburg Western Pomerania (Germany)</string>
+    <string name="germany_north_rhine_westphalia">North Rhine-Westphalia (Germany)</string>
+    <string name="germany_rhineland_palatinate">Rhineland-Palatinate (Germany)</string>
+    <string name="germany_saxony">Saxony (Germany)</string>
+    <string name="germany_saxony_anhalt">Saxony Anhalt (Germany)</string>
+    <string name="germany_schleswig_holstein">Schleswig-Holstein (Germany)</string>
+    <string name="germany_thuringia">Thuringia (Germany)</string>
+    <string name="italy_abruzzo">Abruzzo (Italy)</string>
+    <string name="italy_apulia">Apulia (Italy)</string>
+    <string name="italy_basilicata">Basilicata (Italy)</string>
+    <string name="italy_calabria">Calabria (Italy)</string>
+    <string name="italy_campania">Campania (Italy)</string>
+    <string name="italy_friuli_venezia_giulia">Friuli Venezia Giulia (Italy)</string>
+    <string name="italy_lazio">Lazio (Italy)</string>
+    <string name="italy_liguria">Liguria (Italy)</string>
+    <string name="italy_lombardy">Lombardy (Italy)</string>
+    <string name="italy_marche">Marche (Italy)</string>
+    <string name="italy_molise">Molise (Italy)</string>
+    <string name="italy_piedmont">Piedmont (Italy)</string>
+    <string name="italy_sardinia">Sardinia (Italy)</string>
+    <string name="italy_sicilian">Sicily (Italy)</string>
+    <string name="italy_trentino_south_tyrol">Trentino South Tyrol (Italy)</string>
+    <string name="italy_tuscany">Tuscany (Italy)</string>
+    <string name="italy_umbria">Umbria (Italy)</string>
+    <string name="italy_valle_d_aosta">Valle d\'Aosta (Italy)</string>
+    <string name="italy_veneto">Venice, Italy)</string>
+    <string name="spain_andalucia">Andalusia (Spain)</string>
+    <string name="spain_aragon">Aragon (Spain)</string>
+    <string name="spain_asturias">Asturias (Spain)</string>
+    <string name="spain_balearic_Islands">Balearic Islands (Spain)</string>
+    <string name="spain_bandera_de_navarra">Bandera de Navarra (Spain)</string>
+    <string name="spain_basque_country">Basque Country (Spain)</string>
+    <string name="spain_canary_Islands">Canary Islands (Spain)</string>
+    <string name="spain_cantabria">Cantabria (Spain)</string>
+    <string name="spain_castile_and_leon">Castile and León (Spain)</string>
+    <string name="spain_castilla_la_mancha">Castilla-la-Mancha (Spain)</string>
+    <string name="spain_catalonia">Catalonia (Spain)</string>
+    <string name="spain_ceuta">Ceuta (Spain)</string>
+    <string name="spain_community_of_madrid">Madrid, Spain)</string>
+    <string name="spain_extremadura">Extremadura (Spain)</string>
+    <string name="spain_galicia">Galicia (Spain)</string>
+    <string name="spain_land_of_valencia">Valencia (Spain)</string>
+    <string name="spain_la_rioja">La Rioja (Spain)</string>
+    <string name="spain_melilla">Melilla (Spain)</string>
+    <string name="spain_region_of_murcia">Murcia (Spain)</string>
+    <string name="poland_wojewodztwo_dolnoslaskie">Nizhneslaskie Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_kujawsko_pomorskie">Kuyavian-Pomeranian Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_lodzkie">Lodz Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_lubelskie">Lublin Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_lubuskie">Lubusz Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_malopolskie">Lesser Poland Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_mazowieckie">Masovian Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_opolskie">Opolskie Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_podkarpackie">Subcarpathian Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_podlaskie">Podlasie Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_pomorskie">Pomeranian Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_slaskie">Lena Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_swietokrzyskie">Świętokrzyskie Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_warminsko_mazurskie">Warmian-Masurian Voivodeship (Poland)</string>
+    <string name="poland_wojewodztwo_zachodniopomorskie">West Pomeranian Voivodeship (Poland)</string>
+    <string name="lithuania_aukstaitija">Aukstaitija (Lithuania)</string>
+    <string name="lithuania_dzukija">Dzukija (Lithuania)</string>
+    <string name="lithuania_lithuania_minor">Lithuania Minor (Lithuania)</string>
+    <string name="lithuania_suvalkija">Suvalkia (Lithuania)</string>
+    <string name="lithuania_wojewodztwo_wielkopolskie">Greater Poland Voivodeship (Lithuania)</string>
+    <string name="lithuania_zemaitija">Samogitia (Lithuania)</string>
+    <string name="ukraine_cherkasy_oblast">Cherkasy region (Ukraine)</string>
+    <string name="ukraine_chernivtsi_oblast">Chernivtsi region (Ukraine)</string>
+    <string name="ukraine_dnipropetrovsk_oblast">Dnepropetrovsk region (Ukraine)</string>
+    <string name="ukraine_ivano_frankivsk_oblast">Ivano-Frankivsk region (Ukraine)</string>
+    <string name="ukraine_kharkiv_oblast">Kharkiv region (Ukraine)</string>
+    <string name="ukraine_khmelnytskyi_oblast">Khmelnitsky region (Ukraine)</string>
+    <string name="ukraine_kirovohrad_oblast">Kirovograd region (Ukraine)</string>
+    <string name="ukraine_kyiv">Kyiv, Ukraine)</string>
+    <string name="ukraine_kyiv_oblast">Kyiv region (Ukraine)</string>
+    <string name="ukraine_lviv_oblast">Lviv region (Ukraine)</string>
+    <string name="ukraine_mykolaiv_oblast">Mykolaiv region (Ukraine)</string>
+    <string name="ukraine_odesa_oblast">Odessa region (Ukraine)</string>
+    <string name="ukraine_poltava_oblast">Poltava region (Ukraine)</string>
+    <string name="ukraine_rivne_oblast">Rivne region (Ukraine)</string>
+    <string name="ukraine_sumy_oblast">Sumy region (Ukraine)</string>
+    <string name="ukraine_ternopil_oblast">Ternopil region (Ukraine)</string>
+    <string name="ukraine_transcarpathian_oblast">Transcarpathian region (Ukraine)</string>
+    <string name="ukraine_vinnytskaya_oblast">Vinnitsa region (Ukraine)</string>
+    <string name="ukraine_volyn_oblast">Volyn region (Ukraine)</string>
+    <string name="ukraine_zhytomyr_oblast">Zhytomyr region (Ukraine)</string>
+
+    <string-array name="facts">
+        <item>The oldest flag in the world was made about five thousand years ago on the territory of modern Iran. It was made from an alloy of copper with other metals.</item>
+        <item>The position of the stars on the Brazilian flag corresponds to their position in the sky at the very second when Brazil gained independence.</item>
+        <item>The flag of the African country of Mozambique depicts a Kalashnikov assault rifle.</item>
+        <item>The flag of Paraguay is the only double-sided flag in the world, the images on both sides are different from each other.</item>
+        <item>The Philippine flag is flipped upside down during wartime.</item>
+        <item>In many countries, insulting the national flag is severely punished by law.</item>
+        <item>The pirate flag, known as the "Jolly Roger", was used by pirates to disguise themselves as plague-stricken ships, as the latter were usually hung with a black banner, sometimes with a skull on it.</item>
+        <item>The flag of Chelyabinsk depicts a camel.</item>
+        <item>The flag of Denmark is the oldest of the flags used to this day.</item>
+        <item>The Nepalese flag is the only non-rectangular flag in the world.</item>
+        <item>The planet Mars has its own flag.</item>
+        <item>The white flag is the international symbol of truce.</item>
+        <item>The crescent appears on the flags of most Muslim countries.</item>
+        <item>The most common colors on national flags are white, blue and red.</item>
+        <item>The flag of Switzerland is square in shape.</item>
+        <item>The science that studies flags is called vexillology.</item>
+        <item>The flag of the Czech city of Decin is one of the few flags with wavy stripes instead of straight ones.</item>
+        <item>In Denmark, you can do whatever you want with the national flag, but it is forbidden to insult the flags of other countries.</item>
+        <item>Of all the existing states, the United States has changed its flag more often than others, adding new stars to it.</item>
+        <item>One of the youngest state flags is the flag of Libya, approved in 1977.</item>
+        <item>Almost all flags of the countries of the world adhere to a certain standard of form. This is a rectangular canvas in a ratio of 1:2 or 2:3. However, there are exceptions. These are Switzerland, Nepal and the Vatican.</item>
+        <item>The flag of Nepal boasts the most original form. It consists of two pennants connected together and has 5 corners.</item>
+        <item>The combination of white, blue and red is very common. Moreover, at least one of these colors is present on almost all flags of the world. The exception is Jamaica. Its state symbol combines green, black and yellow.</item>
+        <item>The Guatemalan flag features a scroll that contains the date of Central America\'s independence from Spain.</item>
+        <item>The “father” of the Russian tricolor was Peter I: it was precisely by his decree of January 20, 1705 that the white-blue-red flag was to be raised on all merchant ships.</item>
+        <item>Ancient Russian flags and banners were triangular and decorated with images of saints, pictures from the Holy Scriptures and long titles of the sovereign.</item>
+        <item>It is generally accepted that the white stripe on the Russian flag means nobility and frankness, the blue one - loyalty, honesty and chastity, and the red one - courage, courage, generosity and love.</item>
+        <item>The tricolor returned to Russia on August 22, 1991. It was then that the new flag of the new Russia was first raised over the White House, which replaced the red flag with a sickle and a hammer, under which the country had lived since 1918.</item>
+        <item>The largest Russian flag was raised on Mount Elbrus in 2016. It was deployed at a height of four thousand meters, and the area of the flag was almost 1000 "squares".</item>
+        <item>The Russian flag is also in the Guinness Book of Records: during the flash mob “I love Vladivostok”, residents and guests of the city made the largest live image of the flag - its length was 707 meters.</item>
+        <item>The science that studies flags is called vexillology.</item>
+        <item>Each color on the flag is symbolic, it reveals a certain phenomenon or historical fact.</item>
+        <item>Flags differ not only in colors, but also in proportions. The width and length of the banner is usually determined by the legislation of the country.</item>
+        <item>The national flag is not just one of the main symbols of the country. He can tell about some facts of her history, about the traditions of the people, and even about the most significant events.</item>
+        <item>In many countries, insulting the national flag is severely punished by law.</item>
+        <item>The most depressing color - black - has a rather gloomy interpretation on the flags. He usually talks about tragic events in the history of the country: for example, about cruel wars.</item>
+        <item>The Danish flag proudly bears the title of the oldest flag in the world. The first mention of a red cloth with a white cross appeared in the annals of 1219.</item>
+        <item>From 1815 until 1830 the flag of France was simply white.</item>
+        <item>The flags of Romania and Chad differ only in the shade of blue.</item>
+        <item>The most common colors on national flags are white, blue and red.</item>
+        <item>The flag of Norway has been called the "mother of all flags" because the flags of Indonesia, Poland, Finland, France, the Netherlands and Thailand can be found on it.</item>
+        <item>During peacetime, the flag of the Philippines has a blue stripe at the top of the flag. During war, the flag is turned upside down with a red stripe on top.</item>
+        <item>The white flag is the international symbol of truce.</item>
+        <item>The circle on the flag of Bangladesh is not located exactly in the center, but is shifted slightly to the left. It is believed that when the flag flies in the air, it appears that the circle is in its center.</item>
+        <item>Mars has its own flag, which was designed by a NASA engineer.</item>
+        <item>Switzerland and the Vatican are two countries that have square flags.</item>
+        <item>The flag of the Czech city of Decin is one of the few flags with wavy stripes instead of straight ones.</item>
+        <item>After the 1920 Olympics, the first Olympic flag went missing for 77 years. In the end, one of the Olympians who competed at the time admitted that he kept it in his suitcase all these years.</item>
+        <item>The crescent appears on the flags of most Muslim countries.</item>
+        <item>The big star on the Chinese flag symbolizes the Communist Party, while the 4 small stars symbolize China\'s economic classes: peasants, workers, petty bourgeoisie and "patriotic capitalists".</item>
+        <item>British submarines, rising to the surface, sometimes hang out pirate flags. But this does not mean at all that sea robbers swim on them.</item>
+        <item>The words "Allah Akbar" are repeated 22 times on the flag of Iran.</item>
+        <item>The image of the future flag of Alaska was proposed by a 13-year-old teenager.</item>
+        <item>One of the youngest state flags is the flag of Libya, approved in 1977.</item>
+        <item>During the 1936 Olympics, it was discovered that Liechtenstein and Haiti had exactly the same flags (something no one noticed until that time). Therefore, Liechtenstein added a crown to its flag.</item>
+        <item>In Saudi Arabia, the flag is never flown at half mast in mourning.</item>
+        <item>The flag of Paraguay is the only national flag in the world with different emblems on its front and back.</item>
+        <item>Monaco and Indonesia share the same flags, except for the size (Monaco\'s flag is narrower).</item>
+        <item>From 1977 to 2011, the flag of Libya was the only single color flag in the world (green).</item>
+        <item>The flags of Cambodia and Afghanistan are the only ones that feature buildings.</item>
+        <item>In accordance with the United States Flag Code, advertising may not be placed on the US flag under any circumstances.</item>
+        <item>The flag of Afghanistan has been redesigned 20 times. This is more than in any other country.</item>
+        <item>Of all the existing states, the United States has changed its flag more often than others, adding new stars to it.</item>
+        <item>Texas is the only US state where people can take an oath not only in front of the state flag, but also in front of the state flag.</item>
+        <item>The Danes are allowed to do whatever they want with their flag, while insulting foreign flags is prohibited.</item>
+        <item>The flag of Nepal is considered the only one in the world that does not have a rectangular shape.</item>
+        <item>The flag of Switzerland is made in the form of a square.</item>
+        <item>Vexillology is the science that studies flags.</item>
+        <item>The main difference between a banner and a flag is that it can only be in one copy.</item>
+        <item>Flags are believed to have originated from China and India.</item>
+        <item>The black flag is a symbol of anarchy, a complete denial of the structure and a symbol of insubordination.</item>
+        <item>The flag of the red cross and crescent symbolizes the international organization for the care of the wounded and sick. The symbol of this organization in its current form has been used since 1929.</item>
+        <item>The Nazi flag is the most controversial flag in existence. Now its use is prohibited in many countries of the civilized world. Its developer is Hitler himself.</item>
+        <item>The colors on the flag of the Philippines are reversed: in wartime, the top stripe is red, the bottom stripe is blue.</item>
+        <item>The constellation Ursa Major appears on the flag of Alaska.</item>
+        <item>The Scandinavian cross is visible on the flags of the Nordic countries.</item>
+        <item>The flags of Iraq, Afghanistan, Saudi Arabia have Arabic script.</item>
+        <item>The flag of Brazil contains the motto in Portuguese.</item>
+        <item>During the peace talks, representatives of North and South Korea each time brought larger and larger flags of their countries into the meeting room.</item>
+    </string-array>
+
+</resources>

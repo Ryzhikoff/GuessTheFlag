@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bayrağı tahmin et!</string>
+    <string name="menu_start_game">Bir oyun</string>
+    <string name="menu_statistic">İstatistik</string>
+    <string name="menu_exit">çıkış</string>
+    <string name="menu_setting">Ayarlar</string>
+    <string name="menu_back">Geri</string>
+    <string name="menu_country_flag">Ülke bayrakları</string>
+    <string name="menu_region_flag">Bölgesel bayraklar</string>
+    <string name="menu_country_map">Ülke haritaları</string>
+    <string name="menu_region_map">Bölge haritaları</string>
+    <string name="statistic_round_title">Tur sonuçları</string>
+    <string name="statistic_correct_answer">Doğru cevap sayısı</string>
+    <string name="statistic_wrong_answer">Yanlış cevap sayısı</string>
+    <string name="statistic_round_points">Kazanılan puanlar</string>
+    <string name="statistic_all_points">Kazanılan puanlar</string>
+    <string name="statistic_total_title">Genel sonuçlar</string>
+    <string name="menu_in_main_menu">Ana menüye</string>
+    <string name="menu_again">tekrar oyna</string>
+    <string name="statistic_total_answers">Toplam sorular</string>
+    <string name="statistic_percent_correct_answers">Doğru cevapların yüzdesi</string>
+    <string name="energy_not_enough_1">Hata! Enerji bitti!</string>
+    <string name="energy_not_enough_2">Enerjinizi yenilemek için videoyu izleyin!</string>
+    <string name="menu_watch_ad">Videoyu izle</string>
+    <string name="alert_double_tap_exit">Oyundan çıkmak için iki kez basın</string>
+    <string name="error_auth">Yetkilendirme Hatası</string>
+    <string name="error_btn_try_again">tekrar deneyin</string>
+    <string name="statistic_total_game">Toplam oyunlar</string>
+    <string name="settings_volume_music">Müzik sesi</string>
+    <string name="settings_volume_sounds">Ses seviyesi</string>
+    <string name="setting_change_name">İsmini değiştir</string>
+    <string name="setting_hint_input_name">Adı girin\n</string>
+    <string name="setting_save_name">Kaydetmek</string>
+    <string name="settings_non_length_name">İsim en az 3 harften oluşmalıdır</string>
+    <string name="menu_rating">Oyuncu Derecelendirmesi</string>
+    <string name="statistic_rating_top10">En iyi 10 oyuncu</string>
+    <string name="menu_rating_player_position">Sıralamadaki konumunuz:</string>
+    <string name="menu_rating_wins">zaferler</string>
+    <string name="menu_rating_games">Oyunlar</string>
+    <string name="menu_rating_points">Gözlük</string>
+    <string name="setting_player_name">Sıralamadaki adınız:</string>
+    <string name="error_reward_ad_not_loaded">Hata! Reklamlar yüklenmedi! Tekrar deneyin!</string>
+    <string name="statistic_rating_player_tittle">Senin sonuçların:</string>
+
+    <string name="afghanistan">Afganistan</string>
+    <string name="albania">Arnavutluk</string>
+    <string name="algeria">Cezayir</string>
+    <string name="american_samoa">Amerikan Samoası</string>
+    <string name="andorra">Andorra</string>
+    <string name="angola">Angola</string>
+    <string name="anguilla">Anguilla</string>
+    <string name="antigua_and_barbuda">Antigua ve Barbuda</string>
+    <string name="argentina">Arjantin</string>
+    <string name="armenia">Ermenistan</string>
+    <string name="aruba">Aruba</string>
+    <string name="australia">Avustralya</string>
+    <string name="austria">Avusturya</string>
+    <string name="azerbaijan">Azerbaycan</string>
+    <string name="bahamas">Bahamalar</string>
+    <string name="bahrain">Bahreyn</string>
+    <string name="bangladesh">Bangladeş</string>
+    <string name="barbados">Barbados</string>
+    <string name="belarus">Belarus</string>
+    <string name="belgium">Belçika</string>
+    <string name="belize">Belize</string>
+    <string name="benin">Benin</string>
+    <string name="bermuda">Bermuda</string>
+    <string name="bhutan">Bütan</string>
+    <string name="bolivia">Bolivya</string>
+    <string name="bosnia_and_herzegovina">Bosna Hersek</string>
+    <string name="botswana">Botsvana</string>
+    <string name="brazil">Brezilya</string>
+    <string name="british_virgin_islands">Britanya Virjin Adaları</string>
+    <string name="brunei">Brunei</string>
+    <string name="bulgaria">Bulgaristan</string>
+    <string name="burkina_faso">Burkina Faso</string>
+    <string name="burundi">Burundi</string>
+    <string name="cambodia">Kamboçya</string>
+    <string name="cameroon">Kamerun</string>
+    <string name="canada">Kanada</string>
+    <string name="cape_verde">Yeşil Burun Adaları</string>
+    <string name="cayman_islands">Cayman Adaları</string>
+    <string name="central_african_republic">Orta Afrika Cumhuriyeti</string>
+    <string name="chad">Çad</string>
+    <string name="chile">Şili</string>
+    <string name="china">Çin</string>
+    <string name="colombia">Kolombiya</string>
+    <string name="comoros">Komorlar</string>
+    <string name="cook_islands">Cook Adaları</string>
+    <string name="costa_rica">Kosta Rika</string>
+    <string name="croatia">Hırvatistan</string>
+    <string name="cuba">Küba</string>
+    <string name="curacao">Curacao</string>
+    <string name="cyprus">Kıbrıs</string>
+    <string name="czech_republic">Çek</string>
+    <string name="democratic_republic_of_the_congo">Kongo Demokratik Cumhuriyeti</string>
+    <string name="denmark">Danimarka</string>
+    <string name="djibouti">Cibuti</string>
+    <string name="dominica">Dominika</string>
+    <string name="dominican_republic">Dominik Cumhuriyeti</string>
+    <string name="ecuador">Ekvador</string>
+    <string name="egypt">Mısır</string>
+    <string name="el_salvador">Salvador</string>
+    <string name="equatorial_guinea">Ekvator Ginesi</string>
+    <string name="eritrea">Eritre</string>
+    <string name="estonia">Estonya</string>
+    <string name="eswatini">Esvatini</string>
+    <string name="ethiopia">Etiyopya</string>
+    <string name="faroe_islands">Faroe Adaları</string>
+    <string name="federated_states_of_micronesia">Mikronezya Federe Devletleri</string>
+    <string name="fiji">Fiji</string>
+    <string name="finland">Finlandiya</string>
+    <string name="france">Fransa</string>
+    <string name="french_polynesia">Fransız Polinezyası</string>
+    <string name="gabon">Gabon</string>
+    <string name="gambia">Gambiya</string>
+    <string name="georgia">Gürcistan</string>
+    <string name="germany">Almanya</string>
+    <string name="ghana">Gana</string>
+    <string name="gibraltar">Cebelitarık</string>
+    <string name="greece">Yunanistan</string>
+    <string name="greenland">Grönland</string>
+    <string name="grenada">Grenada</string>
+    <string name="guatemala">Guatemala</string>
+    <string name="guernsey">Guernsey</string>
+    <string name="guinea_bissau">gine-bissau</string>
+    <string name="guinea">Gine</string>
+    <string name="guyana">Guyana</string>
+    <string name="haiti">Haiti</string>
+    <string name="honduras">Honduras</string>
+    <string name="hong_kong">Hong Kong</string>
+    <string name="hungary">Macaristan</string>
+    <string name="iceland">İzlanda</string>
+    <string name="india">Hindistan</string>
+    <string name="indonesia">Endonezya</string>
+    <string name="iran">İran</string>
+    <string name="iraq">Irak</string>
+    <string name="ireland">İrlanda</string>
+    <string name="isle_of_man">Man Adası</string>
+    <string name="israel">İsrail</string>
+    <string name="italy">İtalya</string>
+    <string name="ivory_coast">Fildişi Sahili</string>
+    <string name="jamaica">Jamaika</string>
+    <string name="japan">Japonya</string>
+    <string name="jersey">Jersey</string>
+    <string name="jordan">Ürdün</string>
+    <string name="kazakhstan">Kazakistan</string>
+    <string name="kenya">Kenya</string>
+    <string name="kiribati">Kiribati</string>
+    <string name="kosovo">Kosova</string>
+    <string name="kuwait">Kuveyt</string>
+    <string name="kyrgyzstan">Kırgızistan</string>
+    <string name="laos">Laos</string>
+    <string name="latvia">Letonya</string>
+    <string name="lebanon">Lübnan</string>
+    <string name="lesotho">Lesoto</string>
+    <string name="liberia">Liberya</string>
+    <string name="libya">Libya</string>
+    <string name="liechtenstein">Lihtenştayn</string>
+    <string name="lithuania">Litvanya</string>
+    <string name="luxembourg">Lüksemburg</string>
+    <string name="macau">Makao</string>
+    <string name="madagascar">Madagaskar</string>
+    <string name="malawi">Malawi</string>
+    <string name="malaysia">Malezya</string>
+    <string name="maldives">Maldivler</string>
+    <string name="mali">Mali</string>
+    <string name="malta">Malta</string>
+    <string name="marshall_Islands">Marşal Adaları</string>
+    <string name="mauritania">Moritanya</string>
+    <string name="mauritius">Mauritius</string>
+    <string name="mexico">Meksika</string>
+    <string name="moldova">Moldova</string>
+    <string name="monaco">Monako</string>
+    <string name="mongolia">Moğolistan</string>
+    <string name="montenegro">Karadağ</string>
+    <string name="montserrat">Montserrat</string>
+    <string name="morocco">Fas</string>
+    <string name="mozambique">Mozambik</string>
+    <string name="myanmar">Myanmar</string>
+    <string name="namibia">Namibya</string>
+    <string name="nauru">Nauru\'lu</string>
+    <string name="nepal">Nepal</string>
+    <string name="netherlands">Hollanda</string>
+    <string name="new_caledonia">Yeni Kaledonya</string>
+    <string name="new_zealand">Yeni Zelanda</string>
+    <string name="nicaragua">Nikaragua</string>
+    <string name="niger">Nijer</string>
+    <string name="nigeria">Nijerya</string>
+    <string name="northern_mariana_islands">Kuzey Mariana Adaları</string>
+    <string name="north_korea">Kuzey Kore</string>
+    <string name="north_macedonia">Kuzey Makedonya</string>
+    <string name="norway">Norveç</string>
+    <string name="oman">Umman</string>
+    <string name="pakistan">Pakistan</string>
+    <string name="palau">Palau</string>
+    <string name="palestine">Filistin</string>
+    <string name="panama">Panama</string>
+    <string name="papua_new_guinea">Papua Yeni Gine</string>
+    <string name="paraguay">Paraguay</string>
+    <string name="peru">Peru</string>
+    <string name="philippines">Filipinler</string>
+    <string name="poland">Polonya</string>
+    <string name="portugal">Portekiz</string>
+    <string name="puerto_rico">Porto Riko</string>
+    <string name="qatar">Katar</string>
+    <string name="republic_of_the_congo">Kongo Cumhuriyeti</string>
+    <string name="romania">Romanya</string>
+    <string name="russia">Rusya</string>
+    <string name="rwanda">Ruanda</string>
+    <string name="saint_barthelemy">Aziz Barthelemy</string>
+    <string name="saint_helena_ascension_and_tristan_da_cunha">Saint Helena ve Tristan da Cunha\'nın Yükselişi</string>
+    <string name="saint_kitts_and_nevis">Saint Kitts ve Nevis</string>
+    <string name="saint_lucia">Aziz Lucia</string>
+    <string name="saint_martin">Aziz Martin</string>
+    <string name="saint_pierre_and_miquelon">Saint Pierre ve Miquelon</string>
+    <string name="saint_vincent_and_the_grenadines">Saint Vincent ve Grenadinler</string>
+    <string name="samoa">Samoa</string>
+    <string name="san_marino">San Marino</string>
+    <string name="sao_tome_and_principe">Sao Tome ve Principe</string>
+    <string name="saudi_arabia">Suudi Arabistan</string>
+    <string name="senegal">Senegal</string>
+    <string name="serbia">Sırbistan</string>
+    <string name="seychelles">Seyşeller</string>
+    <string name="sierra_leone">Sierra Leone</string>
+    <string name="singapore">Singapur</string>
+    <string name="sint_maarten">Sint Maarten</string>
+    <string name="slovakia">Slovakya</string>
+    <string name="slovenia">Slovenya</string>
+    <string name="solomon_islands">Solomon Adaları</string>
+    <string name="somalia">Somali</string>
+    <string name="south_africa">Güney Afrika Cumhuriyeti</string>
+    <string name="south_korea">Güney Kore</string>
+    <string name="south_sudan">Güney Sudan</string>
+    <string name="spain">ispanya</string>
+    <string name="sri_lanka">Sri Lanka</string>
+    <string name="sudan">Sudan</string>
+    <string name="suriname">Surinam</string>
+    <string name="sweden">İsveç</string>
+    <string name="switzerland">İsviçre</string>
+    <string name="syria">Suriye</string>
+    <string name="taiwan">Tayvan</string>
+    <string name="tajikistan">Tacikistan</string>
+    <string name="tanzania">Tanzanya</string>
+    <string name="thailand">Tayland</string>
+    <string name="timor_leste">Doğu Timor</string>
+    <string name="togo">Gitmek</string>
+    <string name="tonga">Tonga</string>
+    <string name="trinidad_and_tobago">Trinidad ve Tobago</string>
+    <string name="tunisia">Tunus</string>
+    <string name="turkey">Türkiye</string>
+    <string name="turkmenistan">Türkmenistan</string>
+    <string name="turks_and_caicos_islands">Turks ve Caicos Adaları</string>
+    <string name="tuvalu">Tuvalu</string>
+    <string name="guam">Guam</string>
+    <string name="uganda">Uganda</string>
+    <string name="ukraine">Ukrayna</string>
+    <string name="united_arab_emirates">Birleşik Arap Emirlikleri</string>
+    <string name="united_kingdom">Büyük Britanya</string>
+    <string name="united_states">Amerika Birleşik Devletleri</string>
+    <string name="united_states_virgin_islands">Amerika Birleşik Devletleri Virgin Adaları</string>
+    <string name="uruguay">Uruguay</string>
+    <string name="uzbekistan">Özbekistan</string>
+    <string name="vanuatu">Vanuatu</string>
+    <string name="venezuela">Venezuela</string>
+    <string name="vietnam">Vietnam</string>
+    <string name="wallis_and_futuna">Wallis ve Futuna</string>
+    <string name="yemen">Yemen</string>
+    <string name="zambia">Zambiya</string>
+    <string name="zimbabwe">Zimbabve</string>
+    <string name="usa_alabama">Alabama (ABD)</string>
+    <string name="usa_alaska">Alaska (ABD)</string>
+    <string name="usa_arizona">Arizona (ABD)</string>
+    <string name="usa_arkansas">Arkansas (ABD)</string>
+    <string name="usa_california">Kaliforniya, ABD)</string>
+    <string name="usa_colorado">Kolorado (ABD)</string>
+    <string name="usa_connecticut">Connecticut (ABD)</string>
+    <string name="usa_delaware">Delaware (ABD)</string>
+    <string name="usa_district_of_columbia">Columbia Bölgesi (ABD)</string>
+    <string name="usa_florida">Florida (ABD)</string>
+    <string name="usa_georgia">Gürcistan (ABD)</string>
+    <string name="usa_hawaii">Havai (ABD)</string>
+    <string name="usa_idaho">Idaho (ABD)</string>
+    <string name="usa_illinois">Illinois (ABD)</string>
+    <string name="usa_indiana">Indiana (ABD)</string>
+    <string name="usa_iowa">Iowa (ABD)</string>
+    <string name="usa_kansas">Kansas (ABD)</string>
+    <string name="usa_kentucky">Kentucky (ABD)</string>
+    <string name="usa_louisiana">Louisiana (ABD)</string>
+    <string name="usa_maine">Maine (ABD)</string>
+    <string name="usa_maryland">Maryland (ABD)</string>
+    <string name="usa_massachusetts">Massachusetts (ABD)</string>
+    <string name="usa_michigan">Michigan (ABD)</string>
+    <string name="usa_minnesota">Minnesota (ABD)</string>
+    <string name="usa_mississippi">Mississippi (ABD)</string>
+    <string name="usa_missouri">Missouri (ABD)</string>
+    <string name="usa_montana">Montana (ABD)</string>
+    <string name="usa_nebraska">Nebraska (ABD)</string>
+    <string name="usa_nevada">Nevada (ABD)</string>
+    <string name="usa_new_hampshire">New Hampshire (ABD)</string>
+    <string name="usa_new_jersey">New Jersey (ABD)</string>
+    <string name="usa_new_mexico">New Mexico (ABD)</string>
+    <string name="usa_new_york">New York, ABD)</string>
+    <string name="usa_north_carolina">Kuzey Carolina (ABD)</string>
+    <string name="usa_north_dakota">Kuzey Dakota (ABD)</string>
+    <string name="usa_ohio">Ohio (ABD)</string>
+    <string name="usa_oklahoma">Oklahoma (ABD)</string>
+    <string name="usa_oregon">Oregon (ABD)</string>
+    <string name="usa_pennsylvania">Pensilvanya (ABD)</string>
+    <string name="usa_rhode_island">Rhode Adası (ABD)</string>
+    <string name="usa_south_carolina">Güney Karolina (ABD)</string>
+    <string name="usa_south_dakota">Kuzey Dakota (ABD)</string>
+    <string name="usa_tennessee">Tennessee (ABD)</string>
+    <string name="usa_texas">Teksas (ABD)</string>
+    <string name="usa_utah">Utah (ABD)</string>
+    <string name="usa_vermont">Vermont (ABD)</string>
+    <string name="usa_virginia">Virjinya (ABD)</string>
+    <string name="usa_washington">Washington (ABD)</string>
+    <string name="usa_west_virginia">Batı Virjinya (ABD)</string>
+    <string name="usa_wisconsin">Wisconsin (ABD)</string>
+    <string name="usa_wyoming">Wyoming (ABD)</string>
+    <string name="russia_adygea">Adıge (Rusya)</string>
+    <string name="russia_altai_krai">Altay Bölgesi (Rusya)</string>
+    <string name="russia_altai_republic">Altay Cumhuriyeti (Rusya)</string>
+    <string name="russia_amur_oblast">Amur Bölgesi (Rusya)</string>
+    <string name="russia_arkhangelsk_oblast">Arhangelsk bölgesi (Rusya)</string>
+    <string name="russia_astrakhan_oblast">Astrahan bölgesi (Rusya)</string>
+    <string name="russia_bashkortostan">Başkurdistan (Rusya)</string>
+    <string name="russia_belgorod_oblast">Belgorod bölgesi (Rusya)</string>
+    <string name="russia_bryansk_oblast">Bryansk bölgesi (Rusya)</string>
+    <string name="russia_buryatia">Buryatya (Rusya)</string>
+    <string name="russia_chechen_republic">Çeçen Cumhuriyeti (Rusya)</string>
+    <string name="russia_chelyabinsk_oblast">Çelyabinsk bölgesi (Rusya)</string>
+    <string name="russia_chukotka">Çukotka (Rusya)</string>
+    <string name="russia_chuvashia">Çuvaşistan (Rusya)</string>
+    <string name="russia_dagestan">Dağıstan (Rusya)</string>
+    <string name="russia_ingushetia">İnguşetya (Rusya)</string>
+    <string name="russia_irkutsk_oblast">Irkutsk bölgesi (Rusya)</string>
+    <string name="russia_ivanovo_oblast">Ivanovo bölgesi (Rusya)</string>
+    <string name="russia_jewish_autonomous_oblast">Yahudi Özerk Bölgesi (Rusya)</string>
+    <string name="russia_kabardino_balkaria">Kabardey-Balkar (Rusya)</string>
+    <string name="russia_kaliningrad_oblast">Kaliningrad bölgesi (Rusya)</string>
+    <string name="russia_kalmykia">Kalmıkya (Rusya)</string>
+    <string name="russia_kaluga_oblast">Kaluga bölgesi (Rusya)</string>
+    <string name="russia_kamchatka_krai">Kamçatka Bölgesi (Rusya)</string>
+    <string name="russia_karachay_cherkessia">Karaçay-Çerkesya (Rusya)</string>
+    <string name="russia_karelia">Karelya (Rusya)</string>
+    <string name="russia_kemerovo_oblast">Kemerovo bölgesi (Rusya)</string>
+    <string name="russia_khabarovsk_krai">Habarovsk Bölgesi (Rusya)</string>
+    <string name="russia_khakassia">Hakasya (Rusya)</string>
+    <string name="russia_kirov_oblast">Kirov bölgesi (Rusya)</string>
+    <string name="russia_komi">Komi (Rusya)</string>
+    <string name="russia_kostroma_oblast">Kostroma bölgesi (Rusya)</string>
+    <string name="russia_krasnodar_krai">Krasnodar Bölgesi (Rusya)</string>
+    <string name="russia_krasnoyarsk_krai">Krasnoyarsk Bölgesi (Rusya)</string>
+    <string name="russia_kurgan_oblast">Kurgan bölgesi (Rusya)</string>
+    <string name="russia_kursk_oblast">Kursk bölgesi (Rusya)</string>
+    <string name="russia_leningrad_oblast">Leningrad bölgesi (Rusya)</string>
+    <string name="russia_lipetsk_oblast">Lipetsk bölgesi (Rusya)</string>
+    <string name="russia_magadan_oblast">Magadan bölgesi (Rusya)</string>
+    <string name="russia_mari_el">Mari El (Rusya)</string>
+    <string name="russia_mordovia">Mordovya (Rusya)</string>
+    <string name="russia_moscow">Moskova, Rusya)</string>
+    <string name="russia_moscow_oblast">Moskova bölgesi (Rusya)</string>
+    <string name="russia_murmansk_oblast">Murmansk bölgesi (Rusya)</string>
+    <string name="russia_nenets_autonomous_district">Nenets Özerk Okrugu (Rusya)</string>
+    <string name="russia_nizhny_novgorod_region">Nizhny Novgorod bölgesi (Rusya)</string>
+    <string name="russia_north_ossetia">Kuzey Osetya (Rusya)</string>
+    <string name="russia_novgorod_oblast">Novgorod bölgesi (Rusya)</string>
+    <string name="russia_novosibirsk__oblast">Novosibirsk_ bölgesi (Rusya)</string>
+    <string name="russia_omsk_oblast">Omsk bölgesi (Rusya)</string>
+    <string name="russia_orenburg_oblast">Orenburg bölgesi (Rusya)</string>
+    <string name="russia_penza_oblast">Penza bölgesi (Rusya)</string>
+    <string name="russia_perm_krai">Perm Bölgesi (Rusya)</string>
+    <string name="russia_primorsky_krai">Primorsky Krayı (Rusya)</string>
+    <string name="russia_pskov_oblast">Pskov bölgesi (Rusya)</string>
+    <string name="russia_rostov_oblast">Rostov bölgesi (Rusya)</string>
+    <string name="russia_ryazan_oblast">Ryazan bölgesi (Rusya)</string>
+    <string name="russia_saint_petersburg">Saint-Petersburg, Rusya)</string>
+    <string name="russia_sakha">Saha (Rusya)</string>
+    <string name="russia_sakhalin_oblast">Sakhalin bölgesi (Rusya)</string>
+    <string name="russia_samara_oblast">Samara bölgesi (Rusya)</string>
+    <string name="russia_saratov_oblast">Saratov bölgesi (Rusya)</string>
+    <string name="russia_smolensk_oblast">Smolensk bölgesi (Rusya)</string>
+    <string name="russia_stavropol_krai">Stavropol Bölgesi (Rusya)</string>
+    <string name="russia_sverdlovsk_oblast">Sverdlovsk bölgesi (Rusya)</string>
+    <string name="russia_tambov_oblast">Tambov bölgesi (Rusya)</string>
+    <string name="russia_tatarstan">Tataristan (Rusya)</string>
+    <string name="russia_tomsk_oblast">Tomsk bölgesi (Rusya)</string>
+    <string name="russia_tula_oblast">Tula bölgesi (Rusya)</string>
+    <string name="russia_tuva">Tuva (Rusya)</string>
+    <string name="russia_tver_oblast">Tver bölgesi (Rusya)</string>
+    <string name="russia_tyumen_oblast">Tümen bölgesi (Rusya)</string>
+    <string name="russia_udmurtia">Udmurtiya (Rusya)</string>
+    <string name="russia_ulyanovsk_oblast">Ulyanovsk bölgesi (Rusya)</string>
+    <string name="russia_vladimir_oblast">Vladimir bölgesi (Rusya)</string>
+    <string name="russia_volgograd_oblast">Volgograd bölgesi (Rusya)</string>
+    <string name="russia_vologda_oblast">Vologda bölgesi (Rusya)</string>
+    <string name="russia_voronezh_oblast">Voronej bölgesi (Rusya)</string>
+    <string name="russia_yamal_nenets_autonomous_district">Yamalo-Nenets Özerk Okrugu (Rusya)</string>
+    <string name="russia_yaroslavl_oblast">Yaroslavl bölgesi (Rusya)</string>
+    <string name="russia_yugra">Yugra (Rusya)</string>
+    <string name="russia_zabaykalsky_krai">Trans-Baykal Bölgesi (Rusya)</string>
+    <string name="belarus_brest_oblast">Brest bölgesi (Beyaz Rusya)</string>
+    <string name="belarus_homyel_oblast">Gomel bölgesi (Beyaz Rusya)</string>
+    <string name="belarus_hrodna_oblasts">Grodno bölgesi (Belarus)</string>
+    <string name="belarus_mahilyow_oblast">Mogilev bölgesi (Beyaz Rusya)</string>
+    <string name="belarus_minsk">Minsk, Beyaz Rusya)</string>
+    <string name="belarus_minsk_oblast">Minsk bölgesi (Belarus)</string>
+    <string name="belarus_vitsebsk_oblast">Vitebsk bölgesi (Beyaz Rusya)</string>
+    <string name="france_auvergne_rhone_alpes">Auvergne Rhone Alpes (Fransa)</string>
+    <string name="france_bourgogne_franche_comte">Burgonya Franche Comte (Fransa)</string>
+    <string name="france_brittany">Brittany (Fransa)</string>
+    <string name="france_centre_val_de_loire">Val-de-Loire Merkezi (Fransa)</string>
+    <string name="france_corsica">Korsika (Fransa)</string>
+    <string name="france_hauts_de_france">Hauts-de-France (Fransa)</string>
+    <string name="france_normandie">Normandiya (Fransa)</string>
+    <string name="france_nouvelle_aquitaine">Yeni Akitanya (Fransa)</string>
+    <string name="france_occitanie">Oksitanya (Fransa)</string>
+    <string name="france_pays_de_la_loire">Pays de la Loire (Fransa)</string>
+    <string name="france_provence_alpes_cote_d_azur">Provence Alpes Cote d\'Azur (Fransa)</string>
+    <string name="germany_baden_wurttemberg">Baden Württemberg (Almanya)</string>
+    <string name="germany_bavaria">Bavyera (Almanya)</string>
+    <string name="germany_berlin">Berlin, Almanya)</string>
+    <string name="germany_brandenburg">Brandenburg (Almanya)</string>
+    <string name="germany_bremen">Bremen (Almanya)</string>
+    <string name="germany_hamburg">Hamburg, Almanya)</string>
+    <string name="germany_hesse">Hesse (Almanya)</string>
+    <string name="germany_lower_saxony">Aşağı Saksonya (Almanya)</string>
+    <string name="germany_mecklenburg_western_pomerania">Mecklenburg Batı Pomeranya (Almanya)</string>
+    <string name="germany_north_rhine_westphalia">Kuzey Ren-Vestfalya (Almanya)</string>
+    <string name="germany_rhineland_palatinate">Rhineland-Pfalz (Almanya)</string>
+    <string name="germany_saxony">Saksonya (Almanya)</string>
+    <string name="germany_saxony_anhalt">Saksonya Anhalt (Almanya)</string>
+    <string name="germany_schleswig_holstein">Schleswig-Holstein (Almanya)</string>
+    <string name="germany_thuringia">Thüringen (Almanya)</string>
+    <string name="italy_abruzzo">Abruzzo (İtalya)</string>
+    <string name="italy_apulia">Apulia (İtalya)</string>
+    <string name="italy_basilicata">Basilicata (İtalya)</string>
+    <string name="italy_calabria">Calabria (İtalya)</string>
+    <string name="italy_campania">Campania (İtalya)</string>
+    <string name="italy_friuli_venezia_giulia">Friuli Venezia Giulia (İtalya)</string>
+    <string name="italy_lazio">Lazio (İtalya)</string>
+    <string name="italy_liguria">Ligurya (İtalya)</string>
+    <string name="italy_lombardy">Lombardiya (İtalya)</string>
+    <string name="italy_marche">Marche (İtalya)</string>
+    <string name="italy_molise">Molise (İtalya)</string>
+    <string name="italy_piedmont">Piedmont (İtalya)</string>
+    <string name="italy_sardinia">Sardunya (İtalya)</string>
+    <string name="italy_sicilian">Sicilya (İtalya)</string>
+    <string name="italy_trentino_south_tyrol">Trentino Güney Tirol (İtalya)</string>
+    <string name="italy_tuscany">Toskana (İtalya)</string>
+    <string name="italy_umbria">Umbria (İtalya)</string>
+    <string name="italy_valle_d_aosta">Valle d\'Aosta (İtalya)</string>
+    <string name="italy_veneto">Venedik, İtalya)</string>
+    <string name="spain_andalucia">Endülüs (İspanya)</string>
+    <string name="spain_aragon">Aragon (İspanya)</string>
+    <string name="spain_asturias">Asturias (İspanya)</string>
+    <string name="spain_balearic_Islands">Balear Adaları (İspanya)</string>
+    <string name="spain_bandera_de_navarra">Bandera de Navarra (İspanya)</string>
+    <string name="spain_basque_country">Bask Ülkesi (İspanya)</string>
+    <string name="spain_canary_Islands">Kanarya Adaları (İspanya)</string>
+    <string name="spain_cantabria">Cantabria (İspanya)</string>
+    <string name="spain_castile_and_leon">Kastilya ve Leon (İspanya)</string>
+    <string name="spain_castilla_la_mancha">Kastilya-la-Mancha (İspanya)</string>
+    <string name="spain_catalonia">Katalonya (İspanya)</string>
+    <string name="spain_ceuta">Ceuta (İspanya)</string>
+    <string name="spain_community_of_madrid">Madrid, İspanya)</string>
+    <string name="spain_extremadura">Ekstremadura (İspanya)</string>
+    <string name="spain_galicia">Galiçya (İspanya)</string>
+    <string name="spain_land_of_valencia">Valensiya (İspanya)</string>
+    <string name="spain_la_rioja">La Rioja (İspanya)</string>
+    <string name="spain_melilla">Melilla (İspanya)</string>
+    <string name="spain_region_of_murcia">Murcia (İspanya)</string>
+    <string name="poland_wojewodztwo_dolnoslaskie">Nizhneslaskie Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_kujawsko_pomorskie">Kuyavya-Pomeranya Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_lodzkie">Lodz Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_lubelskie">Lublin Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_lubuskie">Lubusz Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_malopolskie">Küçük Polonya Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_mazowieckie">Mazovya Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_opolskie">Opolskie Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_podkarpackie">Alt Karpat Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_podlaskie">Podlasie Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_pomorskie">Pomeranya Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_slaskie">Lena Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_swietokrzyskie">Świętokrzyskie Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_warminsko_mazurskie">Warmian-Mazurya Voyvodalığı (Polonya)</string>
+    <string name="poland_wojewodztwo_zachodniopomorskie">Batı Pomeranya Voyvodalığı (Polonya)</string>
+    <string name="lithuania_aukstaitija">Aukstaitija (Litvanya)</string>
+    <string name="lithuania_dzukija">Dzukija (Litvanya)</string>
+    <string name="lithuania_lithuania_minor">Küçük Litvanya (Litvanya)</string>
+    <string name="lithuania_suvalkija">Suvalkia (Litvanya)</string>
+    <string name="lithuania_wojewodztwo_wielkopolskie">Büyük Polonya Voyvodalığı (Litvanya)</string>
+    <string name="lithuania_zemaitija">Samogitya (Litvanya)</string>
+    <string name="ukraine_cherkasy_oblast">Çerkassi bölgesi (Ukrayna)</string>
+    <string name="ukraine_chernivtsi_oblast">Çernivtsi bölgesi (Ukrayna)</string>
+    <string name="ukraine_dnipropetrovsk_oblast">Dnepropetrovsk bölgesi (Ukrayna)</string>
+    <string name="ukraine_ivano_frankivsk_oblast">Ivano-Frankivsk bölgesi (Ukrayna)</string>
+    <string name="ukraine_kharkiv_oblast">Kharkiv bölgesi (Ukrayna)</string>
+    <string name="ukraine_khmelnytskyi_oblast">Khmelnitsky bölgesi (Ukrayna)</string>
+    <string name="ukraine_kirovohrad_oblast">Kirovograd bölgesi (Ukrayna)</string>
+    <string name="ukraine_kyiv">Kiev, Ukrayna)</string>
+    <string name="ukraine_kyiv_oblast">Kiev bölgesi (Ukrayna)</string>
+    <string name="ukraine_lviv_oblast">Lviv bölgesi (Ukrayna)</string>
+    <string name="ukraine_mykolaiv_oblast">Mykolaiv bölgesi (Ukrayna)</string>
+    <string name="ukraine_odesa_oblast">Odessa bölgesi (Ukrayna)</string>
+    <string name="ukraine_poltava_oblast">Poltava bölgesi (Ukrayna)</string>
+    <string name="ukraine_rivne_oblast">Rivne bölgesi (Ukrayna)</string>
+    <string name="ukraine_sumy_oblast">Sumy bölgesi (Ukrayna)</string>
+    <string name="ukraine_ternopil_oblast">Ternopil bölgesi (Ukrayna)</string>
+    <string name="ukraine_transcarpathian_oblast">Transkarpat bölgesi (Ukrayna)</string>
+    <string name="ukraine_vinnytskaya_oblast">Vinnitsa bölgesi (Ukrayna)</string>
+    <string name="ukraine_volyn_oblast">Volyn bölgesi (Ukrayna)</string>
+    <string name="ukraine_zhytomyr_oblast">Jitomyr bölgesi (Ukrayna)</string>
+
+    <string-array name="facts">
+        <item>Dünyanın en eski bayrağı yaklaşık beş bin yıl önce modern İran topraklarında yapıldı. Bakırın diğer metallerle alaşımından yapılmıştır.</item>
+        <item>Brezilya bayrağındaki yıldızların konumu, Brezilya\'nın bağımsızlığını kazandığı anda gökyüzündeki konumlarına karşılık geliyor.</item>
+        <item>Afrika ülkesi Mozambik\'in bayrağında bir Kalaşnikof saldırı tüfeği tasvir ediliyor.</item>
+        <item>Paraguay bayrağı dünyadaki tek çift taraflı bayraktır, her iki taraftaki görseller birbirinden farklıdır.</item>
+        <item>Filipin bayrağı savaş sırasında ters çevrilir.</item>
+        <item>Pek çok ülkede ulusal bayrağa hakaret etmek yasalarca ağır şekilde cezalandırılır.</item>
+        <item>Jolly Roger olarak bilinen korsan bayrağı, korsanlar tarafından kendilerini vebaya yakalanmış gemiler olarak gizlemek için kullanıldı, çünkü ikincisi genellikle siyah bir pankartla, bazen de üzerinde bir kafatasıyla asılırdı.</item>
+        <item>Çelyabinsk bayrağı bir deveyi tasvir ediyor.</item>
+        <item>Danimarka bayrağı bugüne kadar kullanılan bayrakların en eskisidir.</item>
+        <item>Nepal bayrağı dünyadaki dikdörtgen olmayan tek bayraktır.</item>
+        <item>Mars gezegeninin kendi bayrağı vardır.</item>
+        <item>Beyaz bayrak uluslararası ateşkes sembolüdür.</item>
+        <item>Hilal, çoğu Müslüman ülkenin bayraklarında görülür.</item>
+        <item>Ulusal bayraklarda en yaygın renkler beyaz, mavi ve kırmızıdır.</item>
+        <item>İsviçre bayrağı kare şeklindedir.</item>
+        <item>Bayrakları inceleyen bilime vexillology denir.</item>
+        <item>Çek Cumhuriyeti\'nin Decin şehrinin bayrağı, düz çizgiler yerine dalgalı çizgilere sahip birkaç bayraktan biridir.</item>
+        <item>Danimarka\'da ulusal bayrakla dilediğinizi yapabilirsiniz ancak diğer ülkelerin bayraklarına hakaret etmek yasaktır.</item>
+        <item>Mevcut tüm eyaletler arasında Amerika Birleşik Devletleri bayrağını diğerlerinden daha sık değiştirerek ona yeni yıldızlar ekledi.</item>
+        <item>En genç devlet bayraklarından biri, 1977\'de onaylanan Libya bayrağıdır.</item>
+        <item>Dünya ülkelerinin hemen hemen tüm bayrakları belirli bir biçim standardına uymaktadır. Bu, 1:2 veya 2:3 oranında dikdörtgen bir tuvaldir. Ancak istisnalar da var. Bunlar İsviçre, Nepal ve Vatikan.</item>
+        <item>Nepal bayrağı en orijinal forma sahiptir. Birbirine bağlanan iki flamadan oluşur ve 5 köşelidir.</item>
+        <item>Beyaz, mavi ve kırmızının kombinasyonu çok yaygındır. Üstelik bu renklerden en az biri dünyanın hemen hemen tüm bayraklarında mevcuttur. Bunun istisnası Jamaika\'dır. Devlet sembolü yeşil, siyah ve sarıyı birleştirir.</item>
+        <item>Guatemala bayrağında Orta Amerika\'nın İspanya\'dan bağımsızlığının tarihini içeren bir parşömen bulunur.</item>
+        <item>Rus üç renginin "babası" Peter I\'di: 20 Ocak 1705 tarihli kararnamesi ile beyaz-mavi-kırmızı bayrağın tüm ticari gemilere çekilmesi gerekiyordu.</item>
+        <item>Eski Rus bayrakları ve pankartları üçgen şeklindeydi ve azizlerin resimleri, Kutsal Yazılardan resimler ve hükümdarın uzun unvanlarıyla süslenmişti.</item>
+        <item>Rus bayrağındaki beyaz şeridin asalet ve dürüstlük, mavi şeridin sadakat, dürüstlük ve iffet, kırmızı şeridin ise cesaret, cesaret, cömertlik ve sevgi anlamına geldiği genel olarak kabul edilmektedir.</item>
+        <item>Üç renkli 22 Ağustos 1991\'de Rusya\'ya döndü. İşte o zaman, yeni Rusya\'nın yeni bayrağı, ülkenin 1918\'den beri altında yaşadığı kırmızı bayrağın yerini orak ve çekiçle değiştiren Beyaz Saray\'ın üzerine ilk kez çekildi.</item>
+        <item>En büyük Rus bayrağı 2016 yılında Elbrus Dağı\'na çekildi. Dört bin metre yükseklikte konuşlandırıldı ve bayrağın alanı neredeyse 1000 "kare" idi.</item>
+        <item>Rus bayrağı aynı zamanda Guinness Rekorlar Kitabı\'nda da yer alıyor: "Vladivostok\'u seviyorum" flaş çetesi sırasında şehrin sakinleri ve konukları bayrağın en büyük canlı görüntüsünü yaptılar - uzunluğu 707 metreydi.</item>
+        <item>Bayrakları inceleyen bilime vexillology denir.</item>
+        <item>Bayraktaki her renk semboliktir, belirli bir olguyu veya tarihsel gerçeği ortaya koyar.</item>
+        <item>Bayraklar sadece renkler açısından değil aynı zamanda oranlar açısından da farklılık gösterir. Banner\'ın genişliği ve uzunluğu genellikle ülkenin mevzuatına göre belirlenir.</item>
+        <item>Ulusal bayrak ülkenin ana sembollerinden sadece biri değildir. Tarihinin bazı gerçeklerini, halkın geleneklerini ve hatta en önemli olayları anlatabilir.</item>
+        <item>Pek çok ülkede ulusal bayrağa hakaret etmek yasalarca ağır şekilde cezalandırılır.</item>
+        <item>En iç karartıcı renk olan siyahın bayraklarda oldukça kasvetli bir yorumu var. Genellikle ülke tarihindeki trajik olaylardan bahseder: örneğin acımasız savaşlar hakkında.</item>
+        <item>Danimarka bayrağı dünyanın en eski bayrağı unvanını gururla taşıyor. Beyaz haçlı kırmızı bir kumaşın ilk sözü 1219 yıllıklarında ortaya çıktı.</item>
+        <item>1815\'ten 1830\'a kadar Fransa bayrağı tamamen beyazdı.</item>
+        <item>Romanya ve Çad bayrakları yalnızca mavinin tonunda farklılık gösterir.</item>
+        <item>Ulusal bayraklarda en yaygın renkler beyaz, mavi ve kırmızıdır.</item>
+        <item>Norveç bayrağı, üzerinde Endonezya, Polonya, Finlandiya, Fransa, Hollanda ve Tayland bayraklarının bulunması nedeniyle "tüm bayrakların anası" olarak adlandırılmıştır.</item>
+        <item>Barış zamanında Filipinler bayrağının üst kısmında mavi bir şerit bulunur. Savaş sırasında bayrak, üstünde kırmızı bir şerit olacak şekilde ters çevrilir.</item>
+        <item>Beyaz bayrak uluslararası ateşkes sembolüdür.</item>
+        <item>Bangladeş bayrağındaki daire tam olarak merkezde değil, hafifçe sola kaydırılmış durumda. Bayrak havada dalgalandığında dairenin merkezde göründüğüne inanılıyor.</item>
+        <item>Mars\'ın bir NASA mühendisi tarafından tasarlanan kendi bayrağı vardır.</item>
+        <item>İsviçre ve Vatikan kare bayraklı iki ülkedir.</item>
+        <item>Çek Cumhuriyeti\'nin Decin şehrinin bayrağı, düz çizgiler yerine dalgalı çizgilere sahip birkaç bayraktan biridir.</item>
+        <item>1920 Olimpiyatlarından sonra ilk Olimpiyat bayrağı 77 yıl boyunca kayıptı. Sonunda o dönemde yarışan Olimpiyatçılardan biri onu bunca yıldır çantasında sakladığını itiraf etti.</item>
+        <item>Hilal, çoğu Müslüman ülkenin bayraklarında görülür.</item>
+        <item>Çin bayrağındaki büyük yıldız Komünist Partiyi, 4 küçük yıldız ise Çin\'in ekonomik sınıflarını simgelemektedir: köylüler, işçiler, küçük burjuvazi ve "yurtsever kapitalistler".</item>
+        <item>Yüzeye çıkan İngiliz denizaltıları bazen korsan bayrakları asıyor. Ancak bu, deniz soyguncularının üzerlerinde yüzdüğü anlamına gelmez.</item>
+        <item>İran bayrağında "Allah Ekber" yazısı 22 kez tekrarlanıyor.</item>
+        <item>Alaska\'nın gelecekteki bayrağının görüntüsü 13 yaşındaki bir genç tarafından önerildi.</item>
+        <item>En genç devlet bayraklarından biri, 1977\'de onaylanan Libya bayrağıdır.</item>
+        <item>1936 Olimpiyatları sırasında Lihtenştayn ve Haiti\'nin tamamen aynı bayraklara sahip olduğu keşfedildi (o zamana kadar kimse bunu fark etmemişti). Bu nedenle Lihtenştayn bayrağına bir taç ekledi.</item>
+        <item>Suudi Arabistan\'da yas sırasında bayrak asla yarıya indirilmez.</item>
+        <item>Paraguay bayrağı, dünyada ön ve arka tarafında farklı amblemler bulunan tek ulusal bayraktır.</item>
+        <item>Monako ve Endonezya, boyutları dışında aynı bayrakları paylaşıyor (Monako\'nun bayrağı daha dar).</item>
+        <item>1977\'den 2011\'e kadar Libya bayrağı dünyadaki tek renkli bayraktı (yeşil).</item>
+        <item>Binaların yer aldığı tek bayraklar Kamboçya ve Afganistan bayraklarıdır.</item>
+        <item>Amerika Birleşik Devletleri Bayrak Kanunu uyarınca, hiçbir koşulda ABD bayrağına reklam yerleştirilemez.</item>
+        <item>Afganistan bayrağı 20 kez yeniden tasarlandı. Bu diğer ülkelerden daha fazla.</item>
+        <item>Mevcut tüm eyaletler arasında Amerika Birleşik Devletleri bayrağını diğerlerinden daha sık değiştirerek ona yeni yıldızlar ekledi.</item>
+        <item>Teksas, insanların yalnızca eyalet bayrağı önünde değil aynı zamanda eyalet bayrağı önünde de yemin edebildiği tek ABD eyaletidir.</item>
+        <item>Danimarkalıların kendi bayraklarıyla istediklerini yapmalarına izin verilirken, yabancı bayraklara hakaret etmek yasaktır.</item>
+        <item>Nepal bayrağı dünyada dikdörtgen şekle sahip olmayan tek bayrak olarak kabul ediliyor.</item>
+        <item>İsviçre bayrağı kare şeklinde yapılmıştır.</item>
+        <item>Veksilloloji bayrakları inceleyen bilimdir.</item>
+        <item>Banner ile bayrak arasındaki temel fark, yalnızca tek bir kopya halinde olabilmesidir.</item>
+        <item>Bayrakların Çin ve Hindistan kökenli olduğuna inanılıyor.</item>
+        <item>Siyah bayrak anarşinin, yapının tamamen inkarının ve itaatsizliğin sembolüdür.</item>
+        <item>Kızılhaç ve hilal bayrağı, yaralı ve hastaların bakımına yönelik uluslararası organizasyonu simgelemektedir. Bu örgütün bugünkü haliyle sembolü 1929\'dan beri kullanılmaktadır.</item>
+        <item>Nazi bayrağı var olan en tartışmalı bayraktır. Artık uygar dünyanın birçok ülkesinde kullanımı yasaktır. Geliştiricisi Hitler\'in kendisidir.</item>
+        <item>Filipinler bayrağının renkleri tersinedir: savaş zamanında üst şerit kırmızı, alt şerit mavidir.</item>
+        <item>Büyük Ayı takımyıldızı Alaska bayrağında görünür.</item>
+        <item>İskandinav haçı, İskandinav ülkelerinin bayraklarında görülebilir.</item>
+        <item>Irak, Afganistan, Suudi Arabistan bayrakları Arapça harflerle yazılmıştır.</item>
+        <item>Brezilya bayrağı Portekizce sloganı içeriyor.</item>
+        <item>Barış görüşmeleri sırasında Kuzey ve Güney Kore temsilcileri her seferinde toplantı odasına kendi ülkelerinin giderek daha büyük bayraklarını getirdiler.</item>
+    </string-array>
+
+
+</resources>
