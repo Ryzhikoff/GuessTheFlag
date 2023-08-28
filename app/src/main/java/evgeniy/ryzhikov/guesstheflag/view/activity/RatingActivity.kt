@@ -48,9 +48,8 @@ class RatingActivity : AppCompatActivity() {
             stopLoadingAnimation()
         }
 
-        viewModel.playerPositionLiveData.observe(this) { playerPosition ->
-            Log.d(TAG, "player position: $playerPosition")
-            addPlayerEnvironment(PlayerEnvironment(playerPosition, viewModel.playerList[0],viewModel.playerList[1], viewModel.playerList[2]))
+        viewModel.playerEnvironmentLiveData.observe(this) { playerEnvironment ->
+            addPlayerEnvironment(playerEnvironment)
         }
         getRating()
         addButtonsListeners()
