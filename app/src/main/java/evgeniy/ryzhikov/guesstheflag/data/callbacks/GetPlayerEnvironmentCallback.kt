@@ -1,9 +1,8 @@
 package evgeniy.ryzhikov.guesstheflag.data.callbacks
 
-import androidx.lifecycle.MutableLiveData
-import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
+import evgeniy.ryzhikov.guesstheflag.domain.PlayerEnvironment
 
 interface GetPlayerEnvironmentCallback {
-    fun onSuccess(playerList: ArrayList<StatisticData>, playerPositionLiveData: MutableLiveData<Int>)
+    fun onSuccess(playerEnvironment: PlayerEnvironment)
     fun onFailure(e: Exception)
 }
