@@ -596,6 +596,12 @@
         <item>Flaga Brazylii zawiera motto w języku portugalskim.</item>
         <item>Podczas rozmów pokojowych przedstawiciele Korei Północnej i Południowej za każdym razem wnosili na salę obrad coraz większe flagi swoich krajów.</item>
     </string-array>
+    <string name="greeting_sign_in">Zaloguj się</string>
+    <string name="setting_hint_input_password">Wprowadź hasło</string>
+    <string name="setting_hint_input_email">Wprowadź e-mail</string>
+    <string name="greeting_sign_in_without_account">Zaloguj się bez rejestracji</string>
+    <string name="greeting_google_sign_in">Zaloguj się przy użyciu konta Google</string>
+    <string name="error_identify">Autoryzacja nie powiodła się</string>
 
 
 </resources>

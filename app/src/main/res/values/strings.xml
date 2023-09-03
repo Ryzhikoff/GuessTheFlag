@@ -43,4 +43,10 @@
     <string name="setting_player_name">Твоё имя в рейтинге:</string>
     <string name="error_reward_ad_not_loaded">Упс! Реклама не загружена! Попробуй еще раз!</string>
     <string name="statistic_rating_player_tittle">Твои результаты:</string>
+    <string name="greeting_sign_in">Войти</string>
+    <string name="setting_hint_input_password">Введи пароль</string>
+    <string name="setting_hint_input_email">Введи email</string>
+    <string name="greeting_sign_in_without_account">Войти без регистрации</string>
+    <string name="greeting_google_sign_in">Войти используя Google Аккаунт</string>
+    <string name="error_identify">Авторизация не удалась</string>
 </resources>

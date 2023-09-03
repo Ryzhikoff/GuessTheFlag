@@ -17,10 +17,12 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
+import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
 import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
 import evgeniy.ryzhikov.guesstheflag.databinding.ActivityGreetingBinding
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
+import evgeniy.ryzhikov.guesstheflag.utils.NameGenerator
 import javax.inject.Inject
 
 
@@ -33,6 +35,8 @@ class GreetingActivity : AppCompatActivity() {
     lateinit var preference : PreferenceProvider
     @Inject
     lateinit var media: MediaPlayerController
+    @Inject
+    lateinit var firebaseUserUid: FirebaseUserUid
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +68,15 @@ class GreetingActivity : AppCompatActivity() {
 
     private fun addButtonsListener() {
         binding.signIn.setOnClickListener {
+            it.isEnabled = false
+            binding.btnSignInWithOutAccount.isEnabled = false
             signInWithGoogle()
+        }
+
+        binding.btnSignInWithOutAccount.setOnClickListener {
+            it.isEnabled = false
+            binding.signIn.isEnabled = false
+            signInWithOutRegistration()
         }
 
         binding.btnTryAgain.setOnClickListener {
@@ -94,9 +106,25 @@ class GreetingActivity : AppCompatActivity() {
                 startMenuActivity()
             } else {
                 Toast.makeText(this, task.exception.toString(), Toast.LENGTH_SHORT).show()
-                errorSignInWithGoogle()
+                binding.signIn.isEnabled = true
+                binding.btnSignInWithOutAccount.isEnabled = true
+                //errorSignInWithGoogle()
             }
         }
+    }
+
+    private fun signInWithOutRegistration() {
+        auth.signInAnonymously()
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    firebaseUserUid.setName(NameGenerator.getRandomName())
+                    startMenuActivity()
+                } else {
+                    Toast.makeText(this, task.exception.toString(), Toast.LENGTH_SHORT).show()
+                    binding.signIn.isEnabled = true
+                    binding.btnSignInWithOutAccount.isEnabled = true
+                }
+            }
     }
 
     override fun onResume() {
