@@ -596,5 +596,11 @@
         <item>La bandiera del Brasile contiene il motto in portoghese.</item>
         <item>Durante i colloqui di pace, i rappresentanti della Corea del Nord e del Sud hanno portato nella sala riunioni bandiere sempre più grandi dei loro paesi.</item>
     </string-array>
+    <string name="greeting_sign_in">Accedi</string>
+    <string name="setting_hint_input_password">Inserire la password</string>
+    <string name="setting_hint_input_email">Inserisci l\'email</string>
+    <string name="greeting_sign_in_without_account">Accedi senza registrazione</string>
+    <string name="greeting_google_sign_in">Accedi utilizzando l\'account Google</string>
+    <string name="error_identify">Autorizzazione fallita</string>
 
 </resources>

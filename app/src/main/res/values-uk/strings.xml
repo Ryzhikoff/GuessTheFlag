@@ -596,5 +596,11 @@
         <item>Прапор Бразилії містить девіз португальською.</item>
         <item>Під час мирних переговорів представники Північної та Південної Кореї приносили на них щоразу великі прапори своїх країн до зали засідань.</item>
     </string-array>
+    <string name="greeting_sign_in">Увійти</string>
+    <string name="setting_hint_input_password">Введи пароль</string>
+    <string name="setting_hint_input_email">Введи Емаїл</string>
+    <string name="greeting_sign_in_without_account">Увійти без реєстрації</string>
+    <string name="greeting_google_sign_in">Увійти за допомогою Google облікового запису</string>
+    <string name="error_identify">Авторизація не вдалася</string>
 
 </resources>

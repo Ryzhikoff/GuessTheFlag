@@ -595,6 +595,12 @@
         <item>Бразилия жалауында португал тіліндегі ұран бар.</item>
         <item>Бейбітшілік келіссөздері кезінде Солтүстік және Оңтүстік Корея өкілдері кездесу бөлмесіне өз елдерінің үлкенірек және үлкен туларын әкелді.</item>
     </string-array>
+    <string name="greeting_sign_in">Кіру</string>
+    <string name="setting_hint_input_password">Құпия сөзді енгізіңіз</string>
+    <string name="setting_hint_input_email">Электрондық поштаны енгізіңіз</string>
+    <string name="greeting_sign_in_without_account">Тіркеусіз кіру</string>
+    <string name="greeting_google_sign_in">Google есептік жазбасын пайдаланып кіріңіз</string>
+    <string name="error_identify">Авторизация орындалмады</string>
 
 
 </resources>

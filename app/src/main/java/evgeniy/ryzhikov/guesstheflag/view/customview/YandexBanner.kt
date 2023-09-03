@@ -38,7 +38,7 @@ class YandexBanner(context: Context, attributeSet: AttributeSet) :
     private fun loadAds() {
         val maxWidth =
             (context.resources.displayMetrics.widthPixels / context.resources.displayMetrics.density).toInt()
-        bannerAdView.setAdUnitId(YandexAds.bannerAdUnitId)
+        bannerAdView.setAdUnitId(YandexAds.getBannerAdUnitId())
         bannerAdView.setAdSize(
             AdSize.stickySize(
                 context,
