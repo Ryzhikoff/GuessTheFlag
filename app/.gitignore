@@ -1,3 +1,4 @@
 /build
 src/main/java/evgeniy/ryzhikov/guesstheflag/data/yandex_ads/YandexAds.kt
-src/main/assets/flags
+src/main/assets/flags/
+app/google-services.json

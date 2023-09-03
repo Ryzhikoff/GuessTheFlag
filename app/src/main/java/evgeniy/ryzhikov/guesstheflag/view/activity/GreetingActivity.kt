@@ -3,6 +3,7 @@ package evgeniy.ryzhikov.guesstheflag.view.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -17,10 +18,7 @@ import com.google.firebase.ktx.Firebase
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
-import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences
 import evgeniy.ryzhikov.guesstheflag.databinding.ActivityGreetingBinding
-import evgeniy.ryzhikov.guesstheflag.settings.DEFAULT_MUSIC_VOLUME
-import evgeniy.ryzhikov.guesstheflag.settings.DEFAULT_SOUND_VOLUME
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 import javax.inject.Inject
@@ -59,8 +57,6 @@ class GreetingActivity : AppCompatActivity() {
 
         if (user != null) {
             startMenuActivity()
-        } else {
-            setDefaultSettings()
         }
         addButtonsListener()
         HideNavigationBars.hide(window, binding.root)
@@ -97,6 +93,7 @@ class GreetingActivity : AppCompatActivity() {
             if (task.isSuccessful) {
                 startMenuActivity()
             } else {
+                Toast.makeText(this, task.exception.toString(), Toast.LENGTH_SHORT).show()
                 errorSignInWithGoogle()
             }
         }
@@ -123,8 +120,5 @@ class GreetingActivity : AppCompatActivity() {
         binding.error.visibility = View.VISIBLE
     }
 
-    private fun setDefaultSettings() {
-        preference.putFloat(Preferences.PreferenceName.SETTINGS, Preferences.PreferenceKey.MUSIC_VOLUME, DEFAULT_MUSIC_VOLUME)
-        preference.putFloat(Preferences.PreferenceName.SETTINGS, Preferences.PreferenceKey.SOUND_VOLUME, DEFAULT_SOUND_VOLUME)
-    }
+
 }

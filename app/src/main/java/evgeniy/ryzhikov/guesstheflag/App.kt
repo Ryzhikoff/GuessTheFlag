@@ -39,7 +39,7 @@ class App : Application() {
         })
     }
 
-    private fun isMainProcess(): Boolean {
+    fun isMainProcess(): Boolean {
         return packageName == getCurrentProcessName()
     }
 

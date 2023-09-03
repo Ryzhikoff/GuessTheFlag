@@ -1,9 +1,11 @@
 package evgeniy.ryzhikov.guesstheflag.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import android.os.CountDownTimer
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseStorageAdapter
 import evgeniy.ryzhikov.guesstheflag.data.FirebaseUserUid
@@ -12,11 +14,11 @@ import evgeniy.ryzhikov.guesstheflag.domain.GameMode
 import evgeniy.ryzhikov.guesstheflag.domain.Mode
 import evgeniy.ryzhikov.guesstheflag.domain.RoundResult
 import evgeniy.ryzhikov.guesstheflag.domain.statistic.StatisticData
-import evgeniy.ryzhikov.guesstheflag.settings.NUMBER_OF_QUESTION_PER_ROUND
 import evgeniy.ryzhikov.guesstheflag.settings.POINTS_FOR_WRONG_FLAG_COUNTRY
 import evgeniy.ryzhikov.guesstheflag.settings.POINTS_FOR_WRONG_FLAG_REGION
 import evgeniy.ryzhikov.guesstheflag.settings.POINTS_FOR_WRONG_MAP_COUNTRY
 import evgeniy.ryzhikov.guesstheflag.settings.POINTS_FOR_WRONG_MAP_REGION
+import evgeniy.ryzhikov.guesstheflag.settings.ROUND_TIME_IN_MILLIS
 import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_FLAG_COUNTRY
 import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_FLAG_REGION
 import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_MAP_COUNTRY
@@ -24,7 +26,11 @@ import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_MAP_REGION
 import javax.inject.Inject
 import kotlin.math.roundToInt
 
-class GameMainViewModel(application: Application) : AndroidViewModel(application), DefaultLifecycleObserver {
+class GameMainViewModel(state: SavedStateHandle) : ViewModel(), DefaultLifecycleObserver {
+    private val savedStateHandle = state
+    val timerLiveData =  MutableLiveData<Int>()
+    private var timer : Timer? = null
+    private var countQuestion = 0
 
     var counterCorrectAnswers = 0
         private set
@@ -43,15 +49,54 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
         //questionManager = QuestionManager(getApplication())
-        counterCorrectAnswers = 0
-        counterWrongAnswers = 0
-        points = 0
+        if (!isLaunched()) {
+            counterCorrectAnswers = 0
+            counterWrongAnswers = 0
+            points = 0
+        }
+    }
+
+    override fun onPause(owner: LifecycleOwner) {
+        super.onPause(owner)
+        val duration = timerLiveData.value!! * 1000L
+        savedStateHandle[TIMER] = duration
+        saveData()
+        timer!!.cancel()
+    }
+
+    override fun onResume(owner: LifecycleOwner) {
+        super.onResume(owner)
+        restoreData()
+        val duration = savedStateHandle[TIMER] ?: ROUND_TIME_IN_MILLIS
+        startTimer(duration)
     }
 
     override fun onDestroy(owner: LifecycleOwner) {
         super.onDestroy(owner)
         fsa.clearRatingList()
         fsa.clearPlayerStatisticData()
+    }
+
+    fun newRound() {
+        countQuestion++
+        startTimer(ROUND_TIME_IN_MILLIS)
+    }
+
+    private fun startTimer(duration: Long) {
+        timer?.cancel()
+        timer = Timer(duration)
+        timer!!.start()
+    }
+
+    fun stopTimer() {
+        timer!!.cancel()
+    }
+    fun saveState(value: Boolean) {
+        savedStateHandle[STATE] = value
+    }
+
+    fun isLaunched() : Boolean {
+        return savedStateHandle[STATE] ?: false
     }
 
     fun scoring(isCorrectAnswer: Boolean, timerCount: Int = 0) {
@@ -86,6 +131,7 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
                     Mode.REGION_FLAG -> addRegionFlagStatistic(statisticData, roundResult)
                     Mode.COUNTRY_MAP -> addCountryMapStatistic(statisticData, roundResult)
                     Mode.REGION_MAP -> addRegionMapStatistic(statisticData, roundResult)
+                    else -> addCountryFlagStatistic(statisticData, roundResult)
                 }.apply {
                     name = firebaseUserUid.getName()
                     totalGame += 1
@@ -104,9 +150,24 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
 
     }
 
+    private fun saveData() {
+        savedStateHandle[CORRECT] = counterCorrectAnswers
+        savedStateHandle[WRONG] = counterWrongAnswers
+        savedStateHandle[POINTS] = points
+        savedStateHandle[QUESTIONS] = countQuestion
+    }
+
+    private fun restoreData() {
+        counterCorrectAnswers = savedStateHandle[CORRECT] ?: 0
+        counterWrongAnswers = savedStateHandle[WRONG] ?: 0
+        points = savedStateHandle[POINTS] ?: 0
+        countQuestion = savedStateHandle[QUESTIONS] ?: 0
+    }
+
     fun getRoundResult() : RoundResult {
+        if (countQuestion == 0) restoreData()
         return RoundResult(
-            countQuestions = NUMBER_OF_QUESTION_PER_ROUND,
+            countQuestions = countQuestion,
             countCorrectAnswers = counterCorrectAnswers,
             countWrongAnswers = counterWrongAnswers,
             points = points
@@ -159,4 +220,35 @@ class GameMainViewModel(application: Application) : AndroidViewModel(application
         return "$percent%"
     }
 
+
+    companion object {
+        const val STATE = "IS_LAUNCHED"
+        const val TIMER = "TIMER"
+        const val CORRECT = "CORRECT"
+        const val WRONG = "WRONG"
+        const val POINTS = "POINTS"
+        const val QUESTIONS = "QUESTIONS"
+    }
+
+    private inner class Timer(val duration: Long) {
+        val interval = 1000L
+        private val timer = object : CountDownTimer(duration, interval) {
+            override fun onTick(millisUntilFinished: Long) {
+                val second = (millisUntilFinished / 1000).toInt()
+                timerLiveData.postValue(second)
+            }
+
+            override fun onFinish() {
+                timerLiveData.postValue(0)
+            }
+        }
+
+        fun start() {
+            this.timer.start()
+        }
+
+        fun cancel() {
+            this.timer.cancel()
+        }
+    }
 }

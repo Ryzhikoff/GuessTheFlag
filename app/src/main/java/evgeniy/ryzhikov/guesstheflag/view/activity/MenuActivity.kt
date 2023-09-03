@@ -41,7 +41,6 @@ class MenuActivity : AppCompatActivity(), StartingLoadingAnimation {
         App.instance.dagger.inject(this)
         navController = Navigation.findNavController(this, R.id.navHostMenuFragment)
         setEnergy()
-
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 
         HideNavigationBars.hide(window, bindingMainMenuActivity.root)

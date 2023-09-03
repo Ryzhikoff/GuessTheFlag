@@ -11,6 +11,14 @@ ext {
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('D:\\ready_project\\guesstheflag\\keystore_guesstheflag.jks')
+            storePassword 'Mynewpass*20'
+            keyAlias 'key_guesstheflag'
+            keyPassword 'Mynewpass*20'
+        }
+    }
     namespace 'evgeniy.ryzhikov.guesstheflag'
     compileSdk 33
 
@@ -18,8 +26,8 @@ android {
         applicationId "evgeniy.ryzhikov.guesstheflag"
         minSdk 26
         targetSdk 33
-        versionCode 1
-        versionName "1.0.0"
+        versionCode 3
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,19 +35,20 @@ android {
     buildTypes {
         release {
             debuggable false
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         debug {
             debuggable true
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_19
+        targetCompatibility JavaVersion.VERSION_19
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '19'
     }
     buildFeatures{
         viewBinding true

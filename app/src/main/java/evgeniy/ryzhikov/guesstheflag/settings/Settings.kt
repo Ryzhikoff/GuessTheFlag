@@ -3,7 +3,7 @@ package evgeniy.ryzhikov.guesstheflag.settings
 //Количество вопросов в раунде
 const val NUMBER_OF_QUESTION_PER_ROUND = 10
 //Время райнду
-const val ROUND_TIME_IN_MILLIS = 10000
+const val ROUND_TIME_IN_MILLIS = 10000L
 
 //Очки за верные ответы
 const val STATISTIC_MULTIPLIER_FLAG_COUNTRY = 3
@@ -18,7 +18,7 @@ const val POINTS_FOR_WRONG_MAP_COUNTRY = -12
 const val POINTS_FOR_WRONG_MAP_REGION = -8
 
 //Energy Controller
-const val TIME_IN_SECONDS_ENERGY_RECOVERY = 30 * 60
+const val TIME_IN_SECONDS_ENERGY_RECOVERY = 30*60
 const val ENERGY_START = 3
 const val ENERGY_MAX = 3
 const val ENERGY_ADD_FOR_ADS = 3

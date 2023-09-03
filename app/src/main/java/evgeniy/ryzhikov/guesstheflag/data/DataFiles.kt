@@ -475,7 +475,7 @@ class DataFiles() {
         "ukraine_kharkiv_oblast" to R.string.ukraine_kharkiv_oblast,
         "ukraine_khmelnytskyi_oblast" to R.string.ukraine_khmelnytskyi_oblast,
         "ukraine_kirovohrad_oblast" to R.string.ukraine_kirovohrad_oblast,
-        "ukraine_kyiv_kurovskyi" to R.string.ukraine_kyiv,
+        "ukraine_kyiv" to R.string.ukraine_kyiv,
         "ukraine_kyiv_oblast" to R.string.ukraine_kyiv_oblast,
         "ukraine_lviv_oblast" to R.string.ukraine_lviv_oblast,
         "ukraine_mykolaiv_oblast" to R.string.ukraine_mykolaiv_oblast,

@@ -6,6 +6,8 @@ import android.widget.SeekBar
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.data.preferences.PreferenceProvider
 import evgeniy.ryzhikov.guesstheflag.data.preferences.Preferences.*
+import evgeniy.ryzhikov.guesstheflag.settings.DEFAULT_MUSIC_VOLUME
+import evgeniy.ryzhikov.guesstheflag.settings.DEFAULT_SOUND_VOLUME
 import javax.inject.Inject
 
 /**
@@ -49,6 +51,9 @@ class MediaPlayerController @Inject constructor(val context: Context ,val prefer
     var stopMusic = true
 
     init {
+        if (!preference.contains(PreferenceName.SETTINGS, PreferenceKey.MUSIC_VOLUME)) {
+            setDefaultSettings()
+        }
         playingMusic = preference.getFloat(
             PreferenceName.SETTINGS,
             PreferenceKey.MUSIC_VOLUME
@@ -62,6 +67,11 @@ class MediaPlayerController @Inject constructor(val context: Context ,val prefer
             PreferenceName.SETTINGS,
             PreferenceKey.SOUND_VOLUME
         ) > 0
+    }
+
+    private fun setDefaultSettings() {
+        preference.putFloat(PreferenceName.SETTINGS, PreferenceKey.MUSIC_VOLUME, DEFAULT_MUSIC_VOLUME)
+        preference.putFloat(PreferenceName.SETTINGS, PreferenceKey.SOUND_VOLUME, DEFAULT_SOUND_VOLUME)
     }
 
     private fun initMusic() {

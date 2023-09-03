@@ -84,18 +84,23 @@ class FirebaseStorageAdapter @Inject constructor(
             .whereEqualTo("id", firebaseUserUid.getUid())
             .get()
             .addOnSuccessListener {
-                val statisticData = it.documents[0].toObject<StatisticData>()
-                playerPoints = statisticData!!.totalPoints
-
-                CoroutineScope(Job()).launch {
-                    val playerEnvironment = getPlayerEnvironment(playerPoints, statisticData)
-                    callback.onSuccess(playerEnvironment)
+                val statisticData: StatisticData
+                if (it.documents.size > 0 ) {
+                    statisticData = it.documents[0].toObject<StatisticData>()!!
+                    playerPoints = statisticData.totalPoints
+                } else {
+                    statisticData = StatisticData(name = firebaseUserUid.getName())
+                    playerPoints = statisticData.totalPoints
                 }
 
+                CoroutineScope(Job()).launch {
+                    val playerEnvironment = getPlayerEnvironmentAsync(playerPoints, statisticData)
+                    callback.onSuccess(playerEnvironment)
+                }
             }
     }
 
-    private suspend fun getPlayerEnvironment(
+    private suspend fun getPlayerEnvironmentAsync(
         playerPoints: Int,
         playerStatisticData: StatisticData
     ): PlayerEnvironment = runBlocking {
@@ -104,24 +109,6 @@ class FirebaseStorageAdapter @Inject constructor(
         val playerPosition = getPlayerPosition(playerPoints)
         return@runBlocking PlayerEnvironment(playerPosition, playerStatisticData, onTopPlayer, onBellowPlayer)
     }
-
-//    private fun getPlayerEnvironment(
-//        playerPoints: Int,
-//        playerStatisticData: StatisticData
-//    ): PlayerEnvironment = runBlocking {
-//        getPlayerPosition(playerPoints) { position ->
-//            val onTopPlayer = getOnTop(playerPoints)
-//            val onBellowPlayer = getFromBellow(playerPoints)
-//            val playerPosition = position
-//            return@runBlocking PlayerEnvironment(
-//                playerPosition = playerPosition,
-//                playerStatisticData = playerStatisticData,
-//                onTopPlayerStatisticData = onTopPlayer,
-//                onBellowPlayerStatisticData = onBellowPlayer
-//            )
-//        }
-//    }
-
 
     private suspend fun getOnTop(playerPoints: Int): StatisticData {
         val snap = db.collection(FB_COLLECTION_NAME)

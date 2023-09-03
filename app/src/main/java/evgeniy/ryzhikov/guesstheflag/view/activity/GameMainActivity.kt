@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import evgeniy.ryzhikov.guesstheflag.databinding.ActivityGameMainBinding
 import evgeniy.ryzhikov.guesstheflag.domain.questions.QuestionManager
-import evgeniy.ryzhikov.guesstheflag.utils.RoundTimer
 import android.content.Intent
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
@@ -14,7 +13,6 @@ import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexInterstitialAd
 import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexAdCallback
-import evgeniy.ryzhikov.guesstheflag.settings.*
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 import evgeniy.ryzhikov.guesstheflag.viewmodel.GameMainViewModel
@@ -23,7 +21,6 @@ import javax.inject.Inject
 class GameMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameMainBinding
     private lateinit var questionManager: QuestionManager
-    private lateinit var roundTimer: RoundTimer
     private var timerCount = 10
     private var backPressed = 0L
     private lateinit var yandexInterstitialAd: YandexInterstitialAd
@@ -33,12 +30,23 @@ class GameMainActivity : AppCompatActivity() {
     @Inject
     lateinit var media: MediaPlayerController
 
+    //TODO: пофиксить баг. После перехода по рекламе - не запускать заного раунд
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGameMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         App.instance.dagger.inject(this)
+
+        println("ONCREATE: is Main Procces? ${App.instance.isMainProcess()}")
+
+        if (viewModel.isLaunched()) {
+            startStatisticActivity()
+        } else {
+            viewModel.saveState(true)
+        }
+
         questionManager = QuestionManager(this)
 
         lifecycle.addObserver(viewModel)
@@ -50,6 +58,16 @@ class GameMainActivity : AppCompatActivity() {
 
         setInfoPanel()
         newRound()
+
+        viewModel.timerLiveData.observe(this) { timeLeft ->
+            timerCount = timeLeft
+            if (timeLeft > 0 ) {
+                setTextTimer(timeLeft.toString())
+            } else {
+                processingAnswer("")
+            }
+        }
+
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
         HideNavigationBars.hide(window, binding.root)
     }
@@ -65,9 +83,11 @@ class GameMainActivity : AppCompatActivity() {
         binding.tvCounterCorrect.text = "0"
         binding.tvCounterWrong.text = "0"
     }
+
     private fun newRound() {
         setQuestionAndAnswerOnUi()
-        startTimer()
+        viewModel.newRound()
+        setTextTimer("10")
     }
 
     private fun setQuestionAndAnswerOnUi() {
@@ -90,30 +110,13 @@ class GameMainActivity : AppCompatActivity() {
         }
     }
 
-    private fun startTimer() {
-        binding.tvTimer.text = (ROUND_TIME_IN_MILLIS / 1000).toString()
-        timerCount = ROUND_TIME_IN_MILLIS / 1000
-        roundTimer = RoundTimer(ROUND_TIME_IN_MILLIS.toLong())
-        roundTimer.setOnTickListener {
-            setTextTimer((--timerCount).toString())
-        }
-        roundTimer.setOnFinishListener {
-            roundTimer.stop()
-            runOnUiThread {
-                processingAnswer("")
-            }
-        }
-        roundTimer.start()
-    }
-
     private fun setTextTimer(timer: String) {
-        runOnUiThread {
-            binding.tvTimer.text = timer
-        }
+        binding.tvTimer.text = timer
+
     }
 
     private fun processingAnswer(answer: String) {
-        roundTimer.stop()
+        viewModel.stopTimer()
         binding.answer1.isClickable = false
         binding.answer2.isClickable = false
         binding.answer3.isClickable = false
@@ -145,10 +148,11 @@ class GameMainActivity : AppCompatActivity() {
         viewModel.saveStatistic()
         media.stopMusic = false
 
-        yandexInterstitialAd.showAds(object : YandexAdCallback{
+        yandexInterstitialAd.showAds(object : YandexAdCallback {
             override fun onComplete() {
                 startStatisticActivity()
             }
+
             override fun onError() {
                 startStatisticActivity()
             }
@@ -160,6 +164,9 @@ class GameMainActivity : AppCompatActivity() {
         val roundResult = viewModel.getRoundResult()
         val bundle = Bundle()
         bundle.putParcelable(KEY_PARCELABLE_ROUNDRESULT, roundResult)
+
+        viewModel.saveState(false)
+
         val intent = Intent(this@GameMainActivity, StatisticActivity::class.java)
         intent.putExtra(KEY_PARCELABLE_ROUNDRESULT, bundle)
         startActivity(intent)

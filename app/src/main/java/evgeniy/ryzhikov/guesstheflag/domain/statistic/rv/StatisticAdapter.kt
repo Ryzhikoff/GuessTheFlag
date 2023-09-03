@@ -26,7 +26,6 @@ class StatisticAdapter : ListDelegationAdapter<List<StatItem>>() {
     }
     override fun setItems(items: List<StatItem>?) {
         super.setItems(items)
-        println("setItems list size: ${list.size}")
         notifyDataSetChanged()
     }
 }

@@ -54,6 +54,9 @@ class YandexInterstitialAd(val context: Context) {
             }
 
             override fun onReturnedToApplication() {
+                media.resumeMusic()
+                interstitialAd.destroy()
+                callback.onComplete()
             }
 
             override fun onImpression(p0: ImpressionData?) {

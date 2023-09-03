@@ -56,7 +56,8 @@ class NotEnoughEnergyFragment(var callingActivity: StartingLoadingAnimation?) : 
         binding.btnWathVideo.setOnClickListener {
             media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
             showRewardAd()
-
+            it.isEnabled = false;
+            binding.btnInMainMenu.isEnabled = false
         }
     }
     private fun startMainActivity() {
@@ -76,6 +77,9 @@ class NotEnoughEnergyFragment(var callingActivity: StartingLoadingAnimation?) : 
 
             override fun onError() {
                 Toast.makeText(requireContext(), requireContext().resources.getString(R.string.error_reward_ad_not_loaded), Toast.LENGTH_SHORT).show()
+                binding.btnWathVideo.isEnabled = true
+                binding.btnInMainMenu.isEnabled = true
+                callingActivity?.stopLoadingAnimation()
             }
 
         })
