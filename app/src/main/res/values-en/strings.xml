@@ -595,5 +595,11 @@
         <item>The flag of Brazil contains the motto in Portuguese.</item>
         <item>During the peace talks, representatives of North and South Korea each time brought larger and larger flags of their countries into the meeting room.</item>
     </string-array>
+    <string name="greeting_sign_in">Login</string>
+    <string name="setting_hint_input_password">Enter password</string>
+    <string name="setting_hint_input_email">Enter Email</string>
+    <string name="greeting_sign_in_without_account">Login without registration</string>
+    <string name="greeting_google_sign_in">Login using Google account</string>
+    <string name="error_identify">Authorization failed</string>
 
 </resources>

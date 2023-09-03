@@ -24,7 +24,7 @@ class YandexInterstitialAd(val context: Context) {
 
     fun loadAd() {
         interstitialAd = InterstitialAd(context)
-        interstitialAd.setAdUnitId(YandexAds.interstitialAdUnitId)
+        interstitialAd.setAdUnitId(YandexAds.getInterstitialAdUnitId())
 
         val adRequest = AdRequest.Builder().build()
 

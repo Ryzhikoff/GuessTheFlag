@@ -596,6 +596,12 @@
         <item>La bandera de Brasil contiene el lema en portugués.</item>
         <item>Durante las conversaciones de paz, los representantes de Corea del Norte y del Sur llevaron cada vez a la sala de reuniones banderas cada vez más grandes de sus países.</item>
     </string-array>
+    <string name="greeting_sign_in">Iniciar sesión</string>
+    <string name="setting_hint_input_password">Introducir la contraseña</string>
+    <string name="setting_hint_input_email">Ingrese correo electrónico</string>
+    <string name="greeting_sign_in_without_account">Iniciar sesión sin registrarse</string>
+    <string name="greeting_google_sign_in">Iniciar sesión usando la cuenta de Google</string>
+    <string name="error_identify">Autorización fallida</string>
 
 
 </resources>

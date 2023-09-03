@@ -596,6 +596,12 @@
         <item>Brezilya bayrağı Portekizce sloganı içeriyor.</item>
         <item>Barış görüşmeleri sırasında Kuzey ve Güney Kore temsilcileri her seferinde toplantı odasına kendi ülkelerinin giderek daha büyük bayraklarını getirdiler.</item>
     </string-array>
+    <string name="greeting_sign_in">Giriş</string>
+    <string name="setting_hint_input_password">Parolanı Gir</string>
+    <string name="setting_hint_input_email">E-posta Girin</string>
+    <string name="greeting_sign_in_without_account">Kayıt olmadan giriş yapın</string>
+    <string name="greeting_google_sign_in">Google hesabını kullanarak giriş yapın</string>
+    <string name="error_identify">Yetkilendirme başarısız oldu</string>
 
 
 </resources>

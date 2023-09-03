@@ -596,6 +596,12 @@
         <item>Le drapeau du Brésil contient la devise en portugais.</item>
         <item>Au cours des pourparlers de paix, les représentants de la Corée du Nord et de la Corée du Sud ont apporté à chaque fois des drapeaux de plus en plus grands de leurs pays dans la salle de réunion.</item>
     </string-array>
+    <string name="greeting_sign_in">Connexion</string>
+    <string name="setting_hint_input_password">Entrer le mot de passe</string>
+    <string name="setting_hint_input_email">Entrez votre e-mail</string>
+    <string name="greeting_sign_in_without_account">Connectez-vous sans inscription</string>
+    <string name="greeting_google_sign_in">Connectez-vous en utilisant le compte Google</string>
+    <string name="error_identify">L\'autorisation à échouée</string>
 
 
 </resources>

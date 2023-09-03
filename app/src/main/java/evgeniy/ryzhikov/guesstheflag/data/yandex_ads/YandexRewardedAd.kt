@@ -27,7 +27,7 @@ class YandexRewardedAd(val context: Context) {
 
     fun loadAndStartAd(callback: YandexAdCallback) {
         rewardedAd = RewardedAd(context)
-        rewardedAd.setAdUnitId(YandexAds.rewardedAdUnitId)
+        rewardedAd.setAdUnitId(YandexAds.getRewardedAdUnitId())
         val adRequest = AdRequest.Builder().build()
 
         rewardedAd.setRewardedAdEventListener(object : RewardedAdEventListener{
