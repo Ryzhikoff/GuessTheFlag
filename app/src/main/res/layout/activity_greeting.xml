@@ -33,7 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
-            <TextView
+            <com.lb.auto_fit_textview.AutoResizeTextView
                 android:id="@+id/text"
                 style="@style/ButtonTextMenu.Answers"
                 android:layout_width="wrap_content"

@@ -72,7 +72,10 @@ class NotEnoughEnergyFragment(var callingActivity: StartingLoadingAnimation?) : 
         callingActivity?.startLoadingAnimation()
         yandexRewardedAd.loadAndStartAd(object : YandexAdCallback{
             override fun onComplete() {
-                startMainActivity()
+                callingActivity?.stopLoadingAnimation()
+                if (isVisible) {
+                    startMainActivity()
+                }
             }
 
             override fun onError() {
@@ -87,6 +90,7 @@ class NotEnoughEnergyFragment(var callingActivity: StartingLoadingAnimation?) : 
 
     override fun onDestroyView() {
         super.onDestroyView()
+        callingActivity?.stopLoadingAnimation()
         _binding = null
         callingActivity = null
     }

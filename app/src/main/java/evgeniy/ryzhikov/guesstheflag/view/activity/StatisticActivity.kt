@@ -54,11 +54,6 @@ class StatisticActivity : AppCompatActivity(), StartingLoadingAnimation {
             displayButtonPlayAgain()
         }
 
-//        val roundResult = viewModel.roundResult
-//        if (roundResult.countQuestions != 0) {
-//            addRoundStatistic(roundResult)
-//            displayButtonPlayAgain()
-//        }
         setButtonOnClickListener()
         onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
 

@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.GameMainActivity">
 
+    <View
+        android:id="@+id/clickNextQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        android:clickable="true"
+        android:translationZ="10dp"
+        />
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

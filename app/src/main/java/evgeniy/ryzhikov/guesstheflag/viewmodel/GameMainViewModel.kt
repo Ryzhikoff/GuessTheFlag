@@ -23,6 +23,7 @@ import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_FLAG_COUNTRY
 import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_FLAG_REGION
 import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_MAP_COUNTRY
 import evgeniy.ryzhikov.guesstheflag.settings.STATISTIC_MULTIPLIER_MAP_REGION
+import evgeniy.ryzhikov.guesstheflag.settings.TAG
 import javax.inject.Inject
 import kotlin.math.roundToInt
 
@@ -48,7 +49,6 @@ class GameMainViewModel(state: SavedStateHandle) : ViewModel(), DefaultLifecycle
     }
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
-        //questionManager = QuestionManager(getApplication())
         if (!isLaunched()) {
             counterCorrectAnswers = 0
             counterWrongAnswers = 0
@@ -66,7 +66,7 @@ class GameMainViewModel(state: SavedStateHandle) : ViewModel(), DefaultLifecycle
 
     override fun onResume(owner: LifecycleOwner) {
         super.onResume(owner)
-        restoreData()
+        if (countQuestion == 0) restoreData()
         val duration = savedStateHandle[TIMER] ?: ROUND_TIME_IN_MILLIS
         startTimer(duration)
     }
@@ -91,10 +91,18 @@ class GameMainViewModel(state: SavedStateHandle) : ViewModel(), DefaultLifecycle
     fun stopTimer() {
         timer!!.cancel()
     }
+
+    /**
+     * При запуске раунда сохраняем true, в конце раунда false
+     */
     fun saveState(value: Boolean) {
         savedStateHandle[STATE] = value
     }
 
+    /**
+     * Возвращает true если раунд уже был начат.
+     * Необходима проверка, если пользователь вышел из приложение и система "убила активити"
+     */
     fun isLaunched() : Boolean {
         return savedStateHandle[STATE] ?: false
     }
@@ -124,6 +132,7 @@ class GameMainViewModel(state: SavedStateHandle) : ViewModel(), DefaultLifecycle
 
     fun saveStatistic() {
         val roundResult = getRoundResult()
+        println("$TAG saveStatistic roundResult = $roundResult")
         fsa.getPlayerStatisticData(firebaseUserUid.getUid(), object : GetStatisticCallback {
             override fun onSuccess(statisticData: StatisticData) {
                 val newStatisticData = when (GameMode.mode) {

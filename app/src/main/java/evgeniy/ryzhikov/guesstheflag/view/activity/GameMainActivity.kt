@@ -5,14 +5,24 @@ import androidx.appcompat.app.AppCompatActivity
 import evgeniy.ryzhikov.guesstheflag.databinding.ActivityGameMainBinding
 import evgeniy.ryzhikov.guesstheflag.domain.questions.QuestionManager
 import android.content.Intent
+import android.graphics.BlendMode
+import android.graphics.BlendModeColorFilter
+import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
+import android.os.Build
+import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
-import androidx.appcompat.widget.AppCompatTextView
+import androidx.annotation.DrawableRes
+import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
+import com.lb.auto_fit_textview.AutoResizeTextView
 import evgeniy.ryzhikov.guesstheflag.App
 import evgeniy.ryzhikov.guesstheflag.R
 import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexInterstitialAd
 import evgeniy.ryzhikov.guesstheflag.data.yandex_ads.YandexAdCallback
+import evgeniy.ryzhikov.guesstheflag.settings.ROUND_TIME_IN_MILLIS
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 import evgeniy.ryzhikov.guesstheflag.viewmodel.GameMainViewModel
@@ -21,25 +31,24 @@ import javax.inject.Inject
 class GameMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameMainBinding
     private lateinit var questionManager: QuestionManager
-    private var timerCount = 10
+    private var timerCount = (ROUND_TIME_IN_MILLIS / 1000).toInt()
     private var backPressed = 0L
     private lateinit var yandexInterstitialAd: YandexInterstitialAd
 
     private val viewModel: GameMainViewModel by viewModels()
+    private lateinit var listOfButtons: List<AutoResizeTextView>
+    private val colorChangeButtons = ArrayList<AutoResizeTextView>()
 
     @Inject
     lateinit var media: MediaPlayerController
-
-    //TODO: пофиксить баг. После перехода по рекламе - не запускать заного раунд
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGameMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        listOfButtons = listOf(binding.answer1, binding.answer2, binding.answer3, binding.answer4)
 
         App.instance.dagger.inject(this)
-
-        println("ONCREATE: is Main Procces? ${App.instance.isMainProcess()}")
 
         if (viewModel.isLaunched()) {
             startStatisticActivity()
@@ -56,15 +65,15 @@ class GameMainActivity : AppCompatActivity() {
         yandexInterstitialAd = YandexInterstitialAd(this)
         yandexInterstitialAd.loadAd()
 
-        setInfoPanel()
+        updateCountersAnswers()
         newRound()
 
         viewModel.timerLiveData.observe(this) { timeLeft ->
             timerCount = timeLeft
-            if (timeLeft > 0 ) {
+            if (timeLeft > 0) {
                 setTextTimer(timeLeft.toString())
             } else {
-                processingAnswer("")
+                processingAnswer(null, "")
             }
         }
 
@@ -73,40 +82,31 @@ class GameMainActivity : AppCompatActivity() {
     }
 
     private fun setListenerButtons() {
-        binding.answer1.setOnClickListener { processingAnswer((it as AppCompatTextView).text.toString()) }
-        binding.answer2.setOnClickListener { processingAnswer((it as AppCompatTextView).text.toString()) }
-        binding.answer3.setOnClickListener { processingAnswer((it as AppCompatTextView).text.toString()) }
-        binding.answer4.setOnClickListener { processingAnswer((it as AppCompatTextView).text.toString()) }
+        listOfButtons.forEach { view ->
+            view.setOnClickListener { processingAnswer(view, view.text.toString()) }
+        }
+        binding.clickNextQuestion.setOnClickListener {
+            clickNextQuestion()
+        }
     }
 
-    private fun setInfoPanel() {
-        binding.tvCounterCorrect.text = "0"
-        binding.tvCounterWrong.text = "0"
+    private fun updateCountersAnswers() {
+        binding.tvCounterCorrect.text = viewModel.counterCorrectAnswers.toString()
+        binding.tvCounterWrong.text = viewModel.counterWrongAnswers.toString()
     }
 
     private fun newRound() {
         setQuestionAndAnswerOnUi()
         viewModel.newRound()
-        setTextTimer("10")
+        setTextTimer((ROUND_TIME_IN_MILLIS / 1000).toString())
     }
 
     private fun setQuestionAndAnswerOnUi() {
         binding.ivQuestion.setImageDrawable(questionManager.drawableQuestion)
-        binding.answer1.apply {
-            text = questionManager.answers[0]
-            isClickable = true
-        }
-        binding.answer2.apply {
-            text = questionManager.answers[1]
-            isClickable = true
-        }
-        binding.answer3.apply {
-            text = questionManager.answers[2]
-            isClickable = true
-        }
-        binding.answer4.apply {
-            text = questionManager.answers[3]
-            isClickable = true
+
+        listOfButtons.forEachIndexed { index, view ->
+            view.text = questionManager.answers[index]
+            view.isClickable = true
         }
     }
 
@@ -115,25 +115,51 @@ class GameMainActivity : AppCompatActivity() {
 
     }
 
-    private fun processingAnswer(answer: String) {
+    private fun processingAnswer(clickedView: AutoResizeTextView?, answer: String) {
         viewModel.stopTimer()
-        binding.answer1.isClickable = false
-        binding.answer2.isClickable = false
-        binding.answer3.isClickable = false
-        binding.answer4.isClickable = false
+        listOfButtons.forEach {
+            it.isClickable = false
+        }
 
+        val isCorrectAnswer = questionManager.isCorrectAnswer(answer)
+        playSoundAnswer(isCorrectAnswer)
+        viewModel.scoring(isCorrectAnswer, timerCount)
+        updateCountersAnswers()
+
+        //Если ответ не дан ни какой - просто загружаем след вопрос
+        if (clickedView != null) {
+            colorChangeButtons.add(clickedView)
+            if (isCorrectAnswer) {
+                changeBackgroundView(clickedView, R.drawable.button_background_correct_answer)
+            } else {
+                listOfButtons.forEach { button ->
+                    if (questionManager.isCorrectAnswer(button.text.toString())) {
+                        colorChangeButtons.add(button)
+                        changeBackgroundView(button, R.drawable.button_background_correct_answer)
+                    }
+                }
+                changeBackgroundView(clickedView, R.drawable.button_background_wrong_answer)
+            }
+            binding.clickNextQuestion.visibility = View.VISIBLE
+        } else {
+            prepareNewRound()
+        }
+    }
+
+    private fun playSoundAnswer(isCorrectAnswer: Boolean) {
         media.playSound(
-            if (questionManager.isCorrectAnswer(answer))
+            if (isCorrectAnswer)
                 MediaPlayerController.SoundEvent.CORRECT_ANSWER
             else
                 MediaPlayerController.SoundEvent.WRONG_ANSWER
         )
-        viewModel.scoring(questionManager.isCorrectAnswer(answer), timerCount)
+    }
 
-        binding.tvCounterCorrect.text = viewModel.counterCorrectAnswers.toString()
-        binding.tvCounterWrong.text = viewModel.counterWrongAnswers.toString()
-
-        prepareNewRound()
+    private fun changeBackgroundView(view: AutoResizeTextView, @DrawableRes res: Int) {
+        val text = view.text.toString()
+        view.background = ContextCompat.getDrawable(this, res)
+        view.text = text
+        view.invalidate()
     }
 
     private fun prepareNewRound() {
@@ -144,6 +170,14 @@ class GameMainActivity : AppCompatActivity() {
         }
     }
 
+    private fun clickNextQuestion() {
+        colorChangeButtons.forEach {
+            changeBackgroundView(it, R.drawable.button_background_answers)
+        }
+        binding.clickNextQuestion.visibility = View.GONE
+        colorChangeButtons.clear()
+        prepareNewRound()
+    }
     private fun endGame() {
         viewModel.saveStatistic()
         media.stopMusic = false
@@ -207,5 +241,4 @@ class GameMainActivity : AppCompatActivity() {
     companion object {
         const val TIME_INTERVAL = 2000
     }
-
 }
