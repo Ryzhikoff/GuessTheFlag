@@ -112,7 +112,6 @@ class GameMainActivity : AppCompatActivity() {
 
     private fun setTextTimer(timer: String) {
         binding.tvTimer.text = timer
-
     }
 
     private fun processingAnswer(clickedView: AutoResizeTextView?, answer: String) {
@@ -157,9 +156,11 @@ class GameMainActivity : AppCompatActivity() {
 
     private fun changeBackgroundView(view: AutoResizeTextView, @DrawableRes res: Int) {
         val text = view.text.toString()
-        view.background = ContextCompat.getDrawable(this, res)
-        view.text = text
-        view.invalidate()
+        view.apply {
+            background = ContextCompat.getDrawable(this@GameMainActivity, res)
+            this.text = text
+            invalidate()
+        }
     }
 
     private fun prepareNewRound() {

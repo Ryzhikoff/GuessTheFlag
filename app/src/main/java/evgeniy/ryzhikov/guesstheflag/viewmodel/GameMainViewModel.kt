@@ -58,8 +58,9 @@ class GameMainViewModel(state: SavedStateHandle) : ViewModel(), DefaultLifecycle
 
     override fun onPause(owner: LifecycleOwner) {
         super.onPause(owner)
-        val duration = timerLiveData.value!! * 1000L
-        savedStateHandle[TIMER] = duration
+        if (timerLiveData.value != 0) {
+            savedStateHandle[TIMER] = timerLiveData.value!! * 1000L
+        }
         saveData()
         timer!!.cancel()
     }

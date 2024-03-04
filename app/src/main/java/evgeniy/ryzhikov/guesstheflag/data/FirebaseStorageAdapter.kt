@@ -150,7 +150,7 @@ class FirebaseStorageAdapter @Inject constructor(
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val snapshot = task.result
-                    val result = snapshot.count.toInt()
+                    val result = snapshot.count.toInt() + 1
                     Log.d(TAG, "Count: ${snapshot.count}")
                     continuation.resume(result)
                 } else {
