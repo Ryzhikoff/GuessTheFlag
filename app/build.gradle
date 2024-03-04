@@ -26,8 +26,8 @@ android {
         applicationId "evgeniy.ryzhikov.guesstheflag"
         minSdk 26
         targetSdk 33
-        versionCode 4
-        versionName "1.0.2"
+        versionCode 5
+        versionName "1.0.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -68,8 +68,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
+    //Fragment navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
     implementation "androidx.navigation:navigation-ui-ktx:2.6.0"
+
+    //Adapter delegate for recycler view
     implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.0'
 
     //Create videModel

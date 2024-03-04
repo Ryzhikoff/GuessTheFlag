@@ -64,15 +64,17 @@ class MenuActivity : AppCompatActivity(), StartingLoadingAnimation {
     }
 
     private fun setEnergy() {
-        val countEnergy = " ${energy.get()} / $ENERGY_MAX "
-        bindingMainMenuActivity.tvEnergyCounter.text = countEnergy
-        if (!energy.isFull()) {
-            bindingMainMenuActivity.ivTimer.visibility = View.VISIBLE
-            bindingMainMenuActivity.tvTimer.visibility = View.VISIBLE
-            startTimer()
-        } else {
-            bindingMainMenuActivity.ivTimer.visibility = View.GONE
-            bindingMainMenuActivity.tvTimer.visibility = View.GONE
+        with(bindingMainMenuActivity) {
+            val countEnergy = " ${energy.get()} / $ENERGY_MAX "
+            tvEnergyCounter.text = countEnergy
+            if (!energy.isFull()) {
+                ivTimer.visibility = View.VISIBLE
+                tvTimer.visibility = View.VISIBLE
+                startTimer()
+            } else {
+                ivTimer.visibility = View.GONE
+                tvTimer.visibility = View.GONE
+            }
         }
     }
 
@@ -147,16 +149,19 @@ class MenuActivity : AppCompatActivity(), StartingLoadingAnimation {
     }
 
     override fun startLoadingAnimation() {
-        bindingMainMenuActivity.loadingAnimation.playAnimation()
-        bindingMainMenuActivity.loadingAnimation.visibility = View.VISIBLE
-        bindingMainMenuActivity.containerForLoadAnim.visibility = View.VISIBLE
-
+        with(bindingMainMenuActivity) {
+            loadingAnimation.playAnimation()
+            loadingAnimation.visibility = View.VISIBLE
+            containerForLoadAnim.visibility = View.VISIBLE
+        }
     }
 
     override fun stopLoadingAnimation() {
-        bindingMainMenuActivity.loadingAnimation.cancelAnimation()
-        bindingMainMenuActivity.loadingAnimation.visibility = View.GONE
-        bindingMainMenuActivity.containerForLoadAnim.visibility = View.GONE
+        with(bindingMainMenuActivity) {
+            loadingAnimation.cancelAnimation()
+            loadingAnimation.visibility = View.GONE
+            containerForLoadAnim.visibility = View.GONE
+        }
     }
 
 

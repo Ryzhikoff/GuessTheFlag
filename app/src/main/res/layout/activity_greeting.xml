@@ -21,7 +21,7 @@
             android:id="@+id/signIn"
             android:clickable="true"
             android:layout_width="wrap_content"
-            style="@style/ButtonMenu"
+            style="@style/AnswerButton"
             android:layout_height="wrap_content">
 
             <ImageView
@@ -36,8 +36,8 @@
             <com.lb.auto_fit_textview.AutoResizeTextView
                 android:id="@+id/text"
                 style="@style/ButtonTextMenu.Answers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:padding="@dimen/stat_padding_around_text"
                 android:text="@string/greeting_google_sign_in"
                 android:textAlignment="center"

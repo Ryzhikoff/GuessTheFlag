@@ -25,4 +25,5 @@ class RatingItem(context: Context, attributeSet: AttributeSet): ConstraintLayout
         binding.tvGame.text = games.toString()
         binding.tvPercent.text = percent
     }
+
 }
