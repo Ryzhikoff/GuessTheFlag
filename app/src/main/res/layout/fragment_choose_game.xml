@@ -16,6 +16,12 @@
         android:text="@string/menu_region_flag" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnStartHistoryFlag"
+        style="@style/ButtonMenu"
+        android:fontFamily="@font/neucha"
+        android:text="@string/menu_history_flag" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnStartCountryMap"
         style="@style/ButtonMenu.NonActive"
         android:enabled="false"

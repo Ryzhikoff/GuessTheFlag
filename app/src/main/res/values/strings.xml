@@ -49,4 +49,17 @@
     <string name="greeting_sign_in_without_account">Войти без регистрации</string>
     <string name="greeting_google_sign_in">Войти используя Google Аккаунт</string>
     <string name="error_identify">Авторизация не удалась</string>
+    <string name="england">Англия</string>
+    <string name="austria_hungary">Австро-Венгрия</string>
+    <string name="holy_roman_empire">Свещенная Римская Империя</string>
+    <string name="kampuchea">Кампучия</string>
+    <string name="kazakh_khanate">Казахское ханство</string>
+    <string name="korea">Корея</string>
+    <string name="macedonia">Македония</string>
+    <string name="macedon_empire">Македонская Империя</string>
+    <string name="rhodesia">Родезия</string>
+    <string name="ussr">СССР</string>
+    <string name="yugoslavia">Югославия</string>
+    <string name="zair">Заир</string>
+    <string name="menu_history_flag">Исторические флаги</string>
 </resources>

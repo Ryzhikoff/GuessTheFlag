@@ -70,22 +70,28 @@ class NotEnoughEnergyFragment(var callingActivity: StartingLoadingAnimation?) : 
     private fun showRewardAd() {
         val yandexRewardedAd = YandexRewardedAd(callingActivity as AppCompatActivity)
         callingActivity?.startLoadingAnimation()
-        yandexRewardedAd.loadAndStartAd(object : YandexAdCallback{
-            override fun onComplete() {
-                callingActivity?.stopLoadingAnimation()
-                if (isVisible) {
-                    startMainActivity()
-                }
+        yandexRewardedAd.loadAndStartAd(requireActivity()) {
+            callingActivity?.stopLoadingAnimation()
+            if (isVisible) {
+                startMainActivity()
             }
-
-            override fun onError() {
-                Toast.makeText(requireContext(), requireContext().resources.getString(R.string.error_reward_ad_not_loaded), Toast.LENGTH_SHORT).show()
-                binding.btnWathVideo.isEnabled = true
-                binding.btnInMainMenu.isEnabled = true
-                callingActivity?.stopLoadingAnimation()
-            }
-
-        })
+        }
+//        yandexRewardedAd.loadAndStartAd(object : YandexAdCallback{
+//            override fun onComplete() {
+//                callingActivity?.stopLoadingAnimation()
+//                if (isVisible) {
+//                    startMainActivity()
+//                }
+//            }
+//
+//            override fun onError() {
+//                Toast.makeText(requireContext(), requireContext().resources.getString(R.string.error_reward_ad_not_loaded), Toast.LENGTH_SHORT).show()
+//                binding.btnWathVideo.isEnabled = true
+//                binding.btnInMainMenu.isEnabled = true
+//                callingActivity?.stopLoadingAnimation()
+//            }
+//
+//        })
     }
 
     override fun onDestroyView() {

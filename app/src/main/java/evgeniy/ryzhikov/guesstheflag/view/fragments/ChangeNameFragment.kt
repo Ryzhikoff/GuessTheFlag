@@ -1,6 +1,8 @@
 package evgeniy.ryzhikov.guesstheflag.view.fragments
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +18,7 @@ import javax.inject.Inject
 
 const val TAG_CHANGE_NAME = "fragment_change_name"
 
-class ChangeNameFragment(val callback: SettingsFragment.ChangeNameCallback) : DialogFragment() {
+class ChangeNameFragment(private val callback: SettingsFragment.ChangeNameCallback) : DialogFragment() {
     private var _binding: FragmentChangeNameBinding? = null
     private val binding get() = _binding!!
 
@@ -40,6 +42,8 @@ class ChangeNameFragment(val callback: SettingsFragment.ChangeNameCallback) : Di
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         binding.btnChangeName.setOnClickListener {
             media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)

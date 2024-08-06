@@ -32,14 +32,12 @@ class App : Application() {
     }
 
     private fun initializeYandexAds() {
-        MobileAds.initialize(this, object : InitializationListener {
-            override fun onInitializationCompleted() {
-                Log.d(YANDEX_MOBILE_ADS_TAG, "Yandex ADS SDK initialized")
-            }
-        })
+        MobileAds.initialize(this) {
+            Log.d(YANDEX_MOBILE_ADS_TAG, "Yandex ADS SDK initialized")
+        }
     }
 
-    fun isMainProcess(): Boolean {
+    private fun isMainProcess(): Boolean {
         return packageName == getCurrentProcessName()
     }
 

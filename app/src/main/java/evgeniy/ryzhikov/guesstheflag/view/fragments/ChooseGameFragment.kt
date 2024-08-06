@@ -63,6 +63,11 @@ class ChooseGameFragment : Fragment() {
             startGame(it as AppCompatButton)
         }
 
+        binding.btnStartHistoryFlag.setOnClickListener {
+            media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
+            startGame(it as AppCompatButton)
+        }
+
         //Пока заглушка:
         /*binding.btnStartCountryMap.setOnClickListener {
             media.playSound(MediaPlayerController.SoundEvent.CLICK_BUTTON)
@@ -81,6 +86,7 @@ class ChooseGameFragment : Fragment() {
             GameMode.mode = when (button.id) {
                 R.id.btnStartCountryFlag -> Mode.COUNTRY_FLAG
                 R.id.btnStartRegionFlag -> Mode.REGION_FLAG
+                R.id.btnStartHistoryFlag -> Mode.HISTORY_FLAG
                 R.id.btnStartCountryMap -> Mode.COUNTRY_MAP
                 R.id.btnStartRegionMap -> Mode.REGION_MAP
                 else -> Mode.COUNTRY_FLAG
