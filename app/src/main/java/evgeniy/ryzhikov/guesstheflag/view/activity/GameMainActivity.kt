@@ -179,19 +179,14 @@ class GameMainActivity : AppCompatActivity() {
         colorChangeButtons.clear()
         prepareNewRound()
     }
+
     private fun endGame() {
         viewModel.saveStatistic()
         media.stopMusic = false
 
-        yandexInterstitialAd.showAds(object : YandexAdCallback {
-            override fun onComplete() {
-                startStatisticActivity()
-            }
-
-            override fun onError() {
-                startStatisticActivity()
-            }
-        })
+        yandexInterstitialAd.showAds {
+            startStatisticActivity()
+        }
     }
 
     private fun startStatisticActivity() {
@@ -237,6 +232,11 @@ class GameMainActivity : AppCompatActivity() {
             Toast.makeText(this, R.string.alert_double_tap_exit, Toast.LENGTH_SHORT).show()
         }
         backPressed = System.currentTimeMillis()
+    }
+
+    override fun onDestroy() {
+        yandexInterstitialAd.clear()
+        super.onDestroy()
     }
 
     companion object {

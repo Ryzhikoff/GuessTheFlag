@@ -12,6 +12,7 @@ class DrawableReader(private val context: Context) {
          Mode.REGION_FLAG -> "flags/region_flag/"
          Mode.COUNTRY_MAP -> "flags/country_map/"
          Mode.REGION_MAP -> "flags/region_map/"
+         Mode.HISTORY_FLAG -> "flags/history_map/"
          else -> "flags/country_flag/"
      }
 

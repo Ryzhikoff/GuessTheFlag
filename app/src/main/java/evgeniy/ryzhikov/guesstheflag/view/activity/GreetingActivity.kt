@@ -23,6 +23,7 @@ import evgeniy.ryzhikov.guesstheflag.databinding.ActivityGreetingBinding
 import evgeniy.ryzhikov.guesstheflag.utils.HideNavigationBars
 import evgeniy.ryzhikov.guesstheflag.utils.MediaPlayerController
 import evgeniy.ryzhikov.guesstheflag.utils.NameGenerator
+import java.util.UUID
 import javax.inject.Inject
 
 
@@ -97,6 +98,7 @@ class GreetingActivity : AppCompatActivity() {
     private fun signInWithGoogle() {
         val signInClient = getClient()
         launcher.launch(signInClient.signInIntent)
+        UUID.randomUUID().toString()
     }
 
     private fun firebaseAuthWithGoogle(idToken: String) {
